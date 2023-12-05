@@ -6,10 +6,21 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="标签: vue.js, life,web,vue,实施,运维">
+    <meta name="keywords" content="docker常用命令, life,web,vue,实施,运维">
     <meta name="baidu-site-verification" content="codeva-8TNTAyNUz5">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="标签: vue.js | Mr.Wang">
+    <meta name="description" content="帮助命令
+查看docker版本信息：docker version
+
+显示docker系统信息：docker info
+
+命令帮助：–help
+
+
+镜像命令
+列出本地主机上的镜像：docker images
+
+列出所有镜像：docker im">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +28,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>标签: vue.js | Mr.Wang</title>
+    <title>docker常用命令 | Mr.Wang</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -554,213 +565,752 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                <!-- 
-                    Mr.Wang的博客
-                 -->
-                
-                    标签
-                
-            </div>
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
 
-            <div class="description center-align">
-                
-                    <!-- life,web,vue,实施,运维 -->
-                    <span id="jinrishici-sentence">正在加载今日诗词...</span>
-                
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        docker常用命令
+                    </div>
+                </div>
             </div>
-            
-            
         </div>
     </div>
 </div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- shw2018 洪卫  modify 2019.08.15-->
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/docker/" target="_blank">
+                                <span class="chip bg-color">docker</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/docker/" class="post-category" target="_blank">
+                                docker
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-12-05
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        wang ziming
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        1.2k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        4 分
+                    </div>
+                    
+                
+                
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h5 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h5><ul>
+<li><p>查看docker版本信息：<strong>docker version</strong></p>
+</li>
+<li><p>显示docker系统信息：<strong>docker info</strong></p>
+</li>
+<li><p>命令帮助：<strong>–help</strong></p>
+</li>
+</ul>
+<h5 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h5><ul>
+<li><p>列出本地主机上的镜像：<strong>docker images</strong></p>
+<ul>
+<li><p>列出所有镜像：<strong>docker images -a</strong></p>
+</li>
+<li><p>只显示镜像id：<strong>docker images -q</strong></p>
+</li>
+<li><p>显示镜像摘要信息：docker images -digests</p>
+</li>
+</ul>
+</li>
+<li><p>搜索镜像：<strong>docker search</strong></p>
+</li>
+<li><p>下载远程仓库的镜像：<strong>docker pull</strong></p>
+<ul>
+<li>指定版本下载（MySQL5.7仓库要有的）：<strong>docker pull mysql:5.7</strong></li>
+</ul>
+</li>
+<li><p>删除镜像：<strong>docker rmi</strong></p>
+<ul>
+<li><p>删除全部：<strong>docker rmi $(docker images -aq)</strong></p>
+</li>
+<li><p>删除多个：<strong>docker rmi 镜像名：版本号 镜像名：版本号</strong></p>
+</li>
+<li><p>根据镜像id删除：<strong>docker rmi 镜像ID</strong></p>
+</li>
+</ul>
+</li>
+<li><p>打包镜像：<strong>docker save -o 压缩文件名 镜像ID：版本号</strong></p>
+</li>
+<li><p>加载镜像文件：<strong>docker load -i 压缩文件名</strong></p>
+</li>
+</ul>
+<h5 id="容器命令"><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h5><ul>
+<li><p>新建容器并运行：<strong>docker run -参数 镜像名 /bin/bash</strong></p>
+<ul>
+<li><p>–name给容器一个指定的名字</p>
+</li>
+<li><p>-i 交互模式运行容器</p>
+</li>
+<li><p>-t 给容器分配一个终端</p>
+</li>
+<li><p>-P 随机端口</p>
+</li>
+<li><p>-p 指定端口</p>
+</li>
+<li><p>-d 允许后台运行</p>
+</li>
+<li><p>-rm 用完这个容器就删除</p>
+</li>
+<li><p>数据卷</p>
+<ul>
+<li><p>-v 容器目录：匿名挂载</p>
+</li>
+<li><p>-v 数据卷名：容器目录 具名挂载</p>
+</li>
+<li><p>-v 宿主机目录：容器目录 指定目录挂载</p>
+</li>
+<li><p>容器B挂载到数据卷容器A上：<strong>docker run -it –name 容器B名 –volumes-from 容器A名 镜像：版本号</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>退出容器</p>
+<ul>
+<li><p>停止退出：<strong>exit</strong></p>
+</li>
+<li><p>不停止退出：<strong>Ctrl + Q + P</strong></p>
+</li>
+</ul>
+</li>
+<li><p>启动容器：<strong>docker start 容器ID/容器名</strong></p>
+</li>
+<li><p>重启容器：<strong>docker restart 容器ID/容器名</strong></p>
+</li>
+<li><p>停止容器：<strong>docker stop 容器ID/容器名</strong></p>
+</li>
+<li><p>强制停止容器：<strong>docker kill 容器ID/容器名</strong></p>
+</li>
+<li><p>删除容器</p>
+<ul>
+<li><p>删除指定容器：<strong>docker rm 容器ID</strong></p>
+</li>
+<li><p>删除所有容器：</p>
+<ul>
+<li><p><strong>docker rm -f $(docker ps -aq)</strong></p>
+</li>
+<li><p><strong>docker ps -aq | xargs docker rm</strong></p>
+</li>
+</ul>
+</li>
+<li><p>列出所有运行容器：docker ps -参数</p>
+<ul>
+<li><p>-a 显示正在运行容器 + 历史运行过的容器</p>
+</li>
+<li><p>-l 显示最近创建的容器</p>
+</li>
+<li><p>-n=? 显示最近n个创建的容器</p>
+</li>
+<li><p>-q 只显示容器编号</p>
+</li>
+</ul>
+</li>
+<li><p>查看容器状态：<strong>docker status 容器ID</strong></p>
+</li>
+<li><p>设置启动docker时也启动容器：<strong>docker update 容器名 –restart=always</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h5><ul>
+<li><p>提交容器，成为镜像：<strong>docker commit -a=“作者名” -m=“描述” 容器ID 自己命名容器</strong></p>
+</li>
+<li><p>根据自己写的脚本文件生产镜像：<strong>docker build -f 哪个目录下的哪个文件 -t 名字:版本号</strong></p>
+<ul>
+<li><strong>docker build -f ./tomcatfile -t liang_centos:1</strong></li>
+</ul>
+</li>
+<li><p>常用关键字</p>
+<ul>
+<li><p><strong>FROM</strong> 基础镜像</p>
+</li>
+<li><p><strong>MAINTAINER</strong> 作者信息</p>
+</li>
+<li><p><strong>RUN</strong> 构建容器时执行什么命令</p>
+</li>
+<li><p><strong>CMD</strong> 启动容器时默认命令，执行命令后有参数会追加</p>
+</li>
+<li><p><strong>COPY</strong> 复制文件到镜像中</p>
+</li>
+<li><p><strong>ADD</strong> 复制文件到镜像中，如果是压缩包会自动解压</p>
+</li>
+<li><p><strong>ENV</strong> 配置环境变量</p>
+</li>
+<li><p><strong>VOLUME</strong> 挂载数据卷</p>
+</li>
+<li><p><strong>EXPOSE</strong> 开放端口</p>
+</li>
+<li><p><strong>WORKDIR</strong> 工作目录（容器一级目录）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="docker网络"><a href="#docker网络" class="headerlink" title="docker网络"></a>docker网络</h5><ul>
+<li><p>查看网关：<strong>ip addr</strong></p>
+</li>
+<li><p>服务名访问：<strong>–link(docker run -d –name tomcat1 –link tomcat2 tomcat</strong> 然后tomcat1就可以ping通tomcat2原理是配置了hosts文件)</p>
+</li>
+<li><p>查看网络：<strong>docker network ls</strong></p>
+</li>
+<li><p>查看网络具体配置：<strong>docker network inspect 网络ID</strong></p>
+</li>
+<li><p>创建网卡mynet：<strong>docker network create –driver bridge –subnet 192.168.0.0/16 –gatway 192.168.0.1 mynet</strong></p>
+<ul>
+<li><p>–driver bridge：网络模式选择默认的桥接</p>
+</li>
+<li><p>–subnet：子网范围</p>
+</li>
+<li><p>–gatway：网关地址</p>
+</li>
+<li><p>mynet：网络名</p>
+</li>
+</ul>
+</li>
+<li><p>网络连通：<strong>docker network connent mynet tomcat1</strong>(将tomcat1容器连通到mynet网络)</p>
+</li>
+</ul>
+<h5 id="docker-compose"><a href="#docker-compose" class="headerlink" title="docker compose"></a>docker compose</h5><ul>
+<li><p>查看版本：<strong>docker-compose-version</strong></p>
+</li>
+<li><p>启动应用：<strong>docker-compose up -d</strong>(带上-d就是后台启动)</p>
+</li>
+<li><p>关闭应用：<strong>docker-compose down 或 Ctrl + C</strong></p>
+</li>
+</ul>
+<h5 id="docker-swarm"><a href="#docker-swarm" class="headerlink" title="docker swarm"></a>docker swarm</h5><ul>
+<li><p>初始化：<strong>docker swarm init</strong></p>
+<ul>
+<li>把172.18.80.80这个地址的docker设为swarm的leader(事务节点)：<strong>docker swarm init –advertise -addr 172.18.80.80</strong></li>
+</ul>
+</li>
+<li><p>查看节点：<strong>docker node ls</strong></p>
+</li>
+<li><p>生成事物节点：<strong>docker swarm join-token manager</strong></p>
+</li>
+<li><p>生成工作节点：<strong>docker swarm join-tokrn worker</strong></p>
+</li>
+<li><p>离开所在的swarm：<strong>docker swarm leave</strong></p>
+</li>
+<li><p>服务</p>
+<ul>
+<li><p>创建服务：<strong>docker service create -p 8080:80 –name my-nginx nginx</strong>（与run指令相似）</p>
+</li>
+<li><p>查看服务：<strong>docker service ls</strong></p>
+</li>
+<li><p>查看详细服务：<strong>docker service ps 服务名</strong></p>
+</li>
+<li><p>动态扩展容：<strong>docker service update–replicas 数量 服务名</strong></p>
+</li>
+<li><p>动态扩缩容：<strong>docker service scale 服务名=数量</strong></p>
+</li>
+</ul>
+<h5 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h5></li>
+<li><p>查看日志：<strong>docker logs -tf -tail 数字 容器ID</strong></p>
+<ul>
+<li><p>-t 显示时间戳</p>
+</li>
+<li><p>-f 打印最新日志</p>
+</li>
+<li><p>–tail 数字 打印多少条</p>
+</li>
+</ul>
+</li>
+<li><p>查看容器中运行进程信息：<strong>docker top 容器ID</strong></p>
+</li>
+<li><p>查看容器元数据：<strong>docker inspect 容器ID</strong></p>
+</li>
+<li><p>进入正在运行的容器</p>
+<ul>
+<li><p><strong>docker attach 容器ID</strong></p>
+</li>
+<li><p><strong>docker exec -it 容器ID /bin/bash</strong></p>
+</li>
+</ul>
+</li>
+<li><p>把容器中的文件拷贝到宿主机中：<strong>docker cp 容器ID: /容器文件位置 /宿主机目的位置</strong></p>
+</li>
+<li><p>开机时启动xx容器： <strong>docker update xx容器名 –restart=always</strong></p>
+</li>
+</ul>
 <script>
-// 每天切换 banner 图.  Switch banner image every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+            
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://wcisay.github.io" class="b-link-green">Mr.Wang</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2023/12/05/docker-chang-yong-ming-ling/" class="b-link-green">docker常用命令</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/12/05/docker-chang-yong-ming-ling/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="docker常用命令">
+                        
+                        <span class="card-title">docker常用命令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            docker常用命令（帮助命令、镜像命令、容器命令等）
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-12-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/docker/" class="post-category" target="_blank">
+                                    docker
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/docker/" target="_blank">
+                        <span class="chip bg-color">docker</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/11/24/fu-wu-qi-xiang-guan-zhi-ling-deng-zong-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="服务器相关指令等总结">
+                        
+                        <span class="card-title">服务器相关指令等总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            服务器相关指令、容器及常用工具的汇总
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-11-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/服务器/" class="post-category" target="_blank">
+                                    服务器
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/" target="_blank">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/Nginx/" target="_blank">
+                        <span class="chip bg-color">Nginx</span>
+                    </a>
+                    
+                    <a href="/tags/Docker/" target="_blank">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Mr.Wang<br />'
+            + '作者: wzm<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
 </script>
 
 
     </div>
-</div>
-
-<main class="content">
-
-    
-
-<div id="tags" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fa fa-tags"></i>&nbsp;&nbsp;文章标签
-            </div>
-            <div class="tag-chips">
-                
-                
-                <a href="/tags/Git/" title="Git: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Git" style="background-color: #F9EBEA;">Git
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/软件设计师/" title="软件设计师: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="软件设计师" style="background-color: #F5EEF8;">软件设计师
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/vue-js/" title="vue.js: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="vue.js" style="background-color: #D5F5E3;">vue.js
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Hexo/" title="Hexo: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Hexo" style="background-color: #E8F8F5;">Hexo
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Java/" title="Java: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Java" style="background-color: #FEF9E7;">Java
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/JavaScript/" title="JavaScript: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="JavaScript" style="background-color: #F8F9F9;">JavaScript
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Web基础/" title="Web基础: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Web基础" style="background-color: #82E0AA;">Web基础
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Linux/" title="Linux: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Linux" style="background-color: #D7BDE2;">Linux
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Nginx/" title="Nginx: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Nginx" style="background-color: #A3E4D7;">Nginx
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Docker/" title="Docker: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Docker" style="background-color: #85C1E9;">Docker
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/MySQL/" title="MySQL: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="MySQL" style="background-color: #F8C471;">MySQL
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/SQL-Server/" title="SQL Server: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="SQL Server" style="background-color: #F9E79F;">SQL Server
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/docker/" title="docker: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="docker" style="background-color: #F8F9F9;">docker
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-            </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
         </div>
     </div>
 </div>
 
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
     
 
-    <article id="articles" class="container articles">
-        <div class="row tags-posts">
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="vue.js, Hexo, Java" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2023/11/23/shi-yong-vue2-js-kuang-jia-fu-xie-hexo-de-hexo-theme-matery-zhu-ti/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="使用Vue2.js框架复写Hexo的hexo-theme-matery主题">
-                            
-                            <span class="card-title">使用Vue2.js框架复写Hexo的hexo-theme-matery主题</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-11-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/前端开发/" class="post-category" target="_blank">
-                                前端开发
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </article>
 </main>
 
 

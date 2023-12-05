@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wcisay.github.io/"/>
-  <updated>2023-12-04T01:06:02.117Z</updated>
+  <updated>2023-12-05T07:47:11.233Z</updated>
   <id>https://wcisay.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker常用命令</title>
+    <link href="https://wcisay.github.io/2023/12/05/docker-chang-yong-ming-ling/"/>
+    <id>https://wcisay.github.io/2023/12/05/docker-chang-yong-ming-ling/</id>
+    <published>2023-12-05T05:34:06.000Z</published>
+    <updated>2023-12-05T07:47:11.233Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h5 id=&quot;帮助命令&quot;&gt;&lt;a href=&quot;#帮助命令&quot; class=&quot;headerlink&quot; title=&quot;帮助命令&quot;&gt;&lt;/a&gt;帮助命令&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;查看docker版本信息：&lt;strong&gt;docker
+        
+      
+    
+    </summary>
+    
+      <category term="docker" scheme="https://wcisay.github.io/categories/docker/"/>
+    
+    
+      <category term="docker" scheme="https://wcisay.github.io/tags/docker/"/>
+    
+  </entry>
   
   <entry>
     <title>服务器相关指令等总结</title>
