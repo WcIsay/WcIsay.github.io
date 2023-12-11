@@ -4,11 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="《软件设计师教程》知识点总结（更新中）, life,web,vue,实施,运维">
+    <meta name="keywords" content="js处理时间相关的问题, life,web,vue,实施,运维">
     <meta name="baidu-site-verification" content="codeva-8TNTAyNUz5">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="一、计算机系统知识1.1 计算机系统的基础知识1.1.1 计算机系统硬件基本组成计算机的基本硬件系统：运算器、控制器、存储器、输入设备、输出设备；
-1.1.2 中央处理单元（CPU）中央处理单元：运算器、控制器等部件被集成在一起统称为中央处">
+    <meta name="description" content="一、获取今天之前所有近半年的1号和15号的时间假如今天是2023年12月11号，获取今天之前所有近半年的1号和15号的时间，即：2023-12-01，2023-11-15，2023-11-01…
+&amp;lt;script&amp;gt;
+    // ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>《软件设计师教程》知识点总结（更新中） | Mr.Wang</title>
+    <title>js处理时间相关的问题 | Mr.Wang的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -79,7 +80,7 @@
                     
                     <img src="/medias/logo.jpg" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Mr.Wang</span>
+                    <span class="logo-span">Mr.Wang的博客</span>
                 </a>
             </div>
             
@@ -290,7 +291,7 @@
         
         <img src="/medias/logo.jpg" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Mr.Wang</div>
+        <div class="logo-name">Mr.Wang的博客</div>
         <div class="logo-desc">
             
             life,web,vue,实施,运维
@@ -570,13 +571,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        《软件设计师教程》知识点总结（更新中）
+                        js处理时间相关的问题
                     </div>
                 </div>
             </div>
@@ -686,13 +687,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/软件设计师/" target="_blank">
-                                <span class="chip bg-color">软件设计师</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -700,12 +697,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/软考/" class="post-category" target="_blank">
-                                软考
-                            </a>
-                        
-                            <a href="/categories/软考/技能提升/" class="post-category" target="_blank">
-                                技能提升
+                            <a href="/categories/JavaScript/" class="post-category" target="_blank">
+                                JavaScript
                             </a>
                         
                     </div>
@@ -716,13 +709,13 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-23
+                    2023-12-11
                 </div>
 
                 <div class="post-author info-break-policy">
                     <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
                     
-                        wzm
+                        Wang Ziming
                     
                 </div>
 
@@ -730,14 +723,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.6k
+                        310
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        9 分
+                        1 分
                     </div>
                     
                 
@@ -754,227 +747,57 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、计算机系统知识"><a href="#一、计算机系统知识" class="headerlink" title="一、计算机系统知识"></a>一、计算机系统知识</h1><h2 id="1-1-计算机系统的基础知识"><a href="#1-1-计算机系统的基础知识" class="headerlink" title="1.1 计算机系统的基础知识"></a>1.1 计算机系统的基础知识</h2><h3 id="1-1-1-计算机系统硬件基本组成"><a href="#1-1-1-计算机系统硬件基本组成" class="headerlink" title="1.1.1 计算机系统硬件基本组成"></a>1.1.1 计算机系统硬件基本组成</h3><p>计算机的基本硬件系统：运算器、控制器、存储器、输入设备、输出设备；</p>
-<h3 id="1-1-2-中央处理单元（CPU）"><a href="#1-1-2-中央处理单元（CPU）" class="headerlink" title="1.1.2 中央处理单元（CPU）"></a>1.1.2 中央处理单元（CPU）</h3><p>中央处理单元：运算器、控制器等部件被集成在一起统称为中央处理单元（Center Processing Unit，CPU）；</p>
-<h4 id="1、CPU的功能"><a href="#1、CPU的功能" class="headerlink" title="1、CPU的功能"></a>1、CPU的功能</h4><ol>
-<li>程序控制</li>
-<li>操作控制</li>
-<li>时间控制</li>
-<li>数据处理</li>
-</ol>
-<h4 id="2、CPU的组成"><a href="#2、CPU的组成" class="headerlink" title="2、CPU的组成"></a>2、CPU的组成</h4><p>CPU主要由运算器、控制器、寄存器组和内部总线等组件组成；</p>
-<ol>
-<li><p>运算器</p>
-<p>运算器由<strong>算术逻辑单元</strong>（Arithmetic and Logic Unit，ALU）、<strong>累加寄存器</strong>、<strong>数据缓冲寄存器</strong>和<strong>状态条件寄存器</strong>等组成，是数据加工处理部件，用于完成各种算术和逻辑运算（只能完成计算），所有的操作<strong>由控制器发出控制信号指挥</strong>，故为<strong>执行组件</strong>；</p>
-<p>功能：</p>
-<ol>
-<li>执行所有的算术运算，如加、减、乘、除等基础运算及附加运算；</li>
-<li>执行所有的逻辑运算并进行逻辑测试，如与、或、非、零值测试或两个值的比较等；</li>
-</ol>
-<p>各组成部件的功能：</p>
-<ol>
-<li><p>算术逻辑单元（ALU）</p>
-<p>负责<strong>处理数据</strong>，实现对数据的算术运算和逻辑运算；</p>
-</li>
-<li><p>累加寄存器（AC）</p>
-<p>简称累加器，为算术逻辑单元（ALU）提供<strong>工作区</strong>，运算器中至少有一个累加器；</p>
-</li>
-<li><p>数据缓冲寄存器（DR）</p>
-<p>作为CPU和内存、外部设备之间数据传送的<strong>中转站</strong>，在操作速度上的缓冲；</p>
-<p>对内存存储器进行读/写操作时，用DR暂时存放读/写的一条指令或一个数据字，将不同时间段的读/写数据隔离；</p>
-</li>
-<li><p>状态条件寄存器（PSW）</p>
-<p>PSW保存由算术指令和逻辑指令运行或测试的<strong>结果</strong>建立的各种条件码内容，主要分为<strong>状态标志</strong>和<strong>控制标志</strong>；</p>
-<p>通常，一个算术操作产生一个运算结果，而一个逻辑操作产生一个判决；</p>
-</li>
-</ol>
-</li>
-<li><p>控制器</p>
-<p>用于控制整个CPU的工作，决定了计算机运行过程的自动化（程序的正确执行、异常事件的处理）；</p>
-<p>一般包括指令控制逻辑、时序控制逻辑、总线控制逻辑和中断控制逻辑等；</p>
-<p><strong>指令控制逻辑</strong>要完成取指令、分析指令和执行指令的操作，过程：取指令=&gt;指令译码=&gt;按指令操作码执行=&gt;形成下一条指令地址=&gt;等步骤；</p>
-<ol>
-<li><p>指令寄存器（IR）</p>
-<p>CPU执行一条指令时，先从内存储器取到缓冲寄存器（DR），在送入指令寄存器（IR）暂存，指令译码器（ID）通过指令寄存器（IR）中的内容产生各种微操作指令，由此控制其他组成组件工作，完成相关功能；</p>
-</li>
-<li><p>程序计数器（PC）</p>
-<p>具有寄存信息、计数两种功能，又称指令计数器；</p>
-<p>程序的执行分两种情况：顺序执行、转移执行；</p>
-</li>
-<li><p>地址寄存器（AR）</p>
-<p>保存当前CPU所访问的内存单元的地址；</p>
-<p>由于内存和CPU操作速度上的差异，所以地址寄存器要保存地址信息知道内存的读/写操作完成；</p>
-</li>
-<li><p>指令译码器（ID）</p>
-<p>指令包含：操作码、地址码；</p>
-<p>指令译码器对指令中的操作码字段进行分析解释，识别指令的操作，向操作控制器发出操作信号，控制各部件工作，完成所需功能；</p>
-</li>
-</ol>
-<p><strong>时序控制逻辑</strong>要为每条指令按时间顺序提供应有的控制信号；</p>
-<p><strong>总线控制逻辑</strong>是为多个功能组件服务的信息通路的控制电路；</p>
-<p><strong>中断控制逻辑</strong>用于控制各种中断请求，并根据优先级的高低对中断请求进行排队，逐个交给CPU；</p>
-</li>
-<li><p>寄存器组</p>
-<p>寄存器组可分为：专用寄存器（如运算器和控制器中的寄存器，作用固定）、通用寄存器（用途广泛）；</p>
-</li>
-</ol>
-<h4 id="3、多核CPU"><a href="#3、多核CPU" class="headerlink" title="3、多核CPU"></a>3、多核CPU</h4><h3 id="1-1-3-数据表示"><a href="#1-1-3-数据表示" class="headerlink" title="1.1.3 数据表示"></a>1.1.3 数据表示</h3><p>二进制计数制</p>
-<p>原码、反码、补码、移码（小数无移码）</p>
-<p>原码表示法中，最高位是符号位，0表示正号，1表示负号，其余的n-1位表示数值的绝对值；</p>
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center">+1</th>
-<th align="center">-1</th>
-<th align="center">+0.5</th>
-<th align="center">-0.5</th>
-<th align="center">+0</th>
-<th align="center">-0</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">原码</td>
-<td align="center">00000001</td>
-<td align="center">10000001</td>
-<td align="center">0.1000000</td>
-<td align="center">1.1000000</td>
-<td align="center">00000000</td>
-<td align="center">10000000</td>
-</tr>
-<tr>
-<td align="center">反码</td>
-<td align="center">00000001</td>
-<td align="center">11111110</td>
-<td align="center">0.1000000</td>
-<td align="center">1.0111111</td>
-<td align="center">00000000</td>
-<td align="center">11111111</td>
-</tr>
-<tr>
-<td align="center">补码</td>
-<td align="center">00000001</td>
-<td align="center">11111111</td>
-<td align="center">0.1000000</td>
-<td align="center">1.1000000</td>
-<td align="center">00000000</td>
-<td align="center">00000000</td>
-</tr>
-<tr>
-<td align="center">移码</td>
-<td align="center">10000001</td>
-<td align="center">01111111</td>
-<td align="center">无</td>
-<td align="center">无</td>
-<td align="center">10000000</td>
-<td align="center">10000000</td>
-</tr>
-</tbody></table>
-<ol>
-<li>一个<strong>正数的原码、反码、补码相同</strong>；一个<strong>正数的移码</strong>除最高位与其原码、反码、补码最高位不同外，其他位都相同（<strong>即其原码最高位+1</strong>）；</li>
-<li><strong>一个负数的原码</strong>除最高位与其绝对值的原码不同外，其他位都相同（<strong>即其绝对值的原码最高位+1</strong>）；</li>
-<li><strong>一个负数的反码</strong>与其绝对值的原码、反码每一位都不相同，（<strong>即绝对值反码每一位取反</strong>）；</li>
-<li><strong>一个负数的补码等于其反码末尾+1</strong>；</li>
-<li>除小数外，<strong>任何一个数的补码符号位取反即是相对应的移码</strong>；</li>
-</ol>
-<h3 id="1-1-4-校验码"><a href="#1-1-4-校验码" class="headerlink" title="1.1.4 校验码"></a>1.1.4 校验码</h3><ol>
-<li>奇偶校验码<ol>
-<li>水平奇偶校验码</li>
-<li>垂直奇偶校验码</li>
-<li>水平垂直校验码</li>
-</ol>
-</li>
-<li>海明码</li>
-<li>循环冗余校验码</li>
-</ol>
-<h1 id="二、程序设计语言基础知识"><a href="#二、程序设计语言基础知识" class="headerlink" title="二、程序设计语言基础知识"></a>二、程序设计语言基础知识</h1><h1 id="三、数据结构"><a href="#三、数据结构" class="headerlink" title="三、数据结构"></a>三、数据结构</h1><h1 id="四、操作系统知识"><a href="#四、操作系统知识" class="headerlink" title="四、操作系统知识"></a>四、操作系统知识</h1><h1 id="五、软件工程基础知识"><a href="#五、软件工程基础知识" class="headerlink" title="五、软件工程基础知识"></a>五、软件工程基础知识</h1><h1 id="六、结构化开发方法"><a href="#六、结构化开发方法" class="headerlink" title="六、结构化开发方法"></a>六、结构化开发方法</h1><h1 id="七、面向对象技术"><a href="#七、面向对象技术" class="headerlink" title="七、面向对象技术"></a>七、面向对象技术</h1><h1 id="八、算法设计与分析"><a href="#八、算法设计与分析" class="headerlink" title="八、算法设计与分析"></a>八、算法设计与分析</h1><h1 id="九、数据库技术基础"><a href="#九、数据库技术基础" class="headerlink" title="九、数据库技术基础"></a>九、数据库技术基础</h1><h3 id="9-9-1-数据库与数据库系统"><a href="#9-9-1-数据库与数据库系统" class="headerlink" title="9.9.1 数据库与数据库系统"></a>9.9.1 数据库与数据库系统</h3><p>数据库系统（DataBase System，DBS）是一个采用了数据库技术，有组织地、动态地存储大量相关数据，方便多用户访问的计算机系统。</p>
-<p>DBS由数据库、硬件、软件和人员组成。</p>
-<ol>
-<li><p>数据库</p>
-<p>数据库（DataBase，DB）是统一管理的、长期存储在计算机内的、有组织的相关数据的集合。</p>
-<p>特点：数据间联系密切、冗余度小、独立性高、易拓展，并且可为各类用户共享。</p>
-</li>
-<li><p>硬件</p>
-</li>
-<li><p>软件</p>
-<p>数据库管理系统简称DBMS。</p>
-<p>主要功能包括：数据定义、数据操作、数据库运行管理、数据库的建立与维护。</p>
-</li>
-<li><p>人员</p>
-<p>主要有四类：系统分析员和数据库设计人员、应用程序员、最终用户、数据库管理员（Data Base Administrator，DBA）</p>
-</li>
-</ol>
-<h3 id="9-1-2-数据库管理系统的功能"><a href="#9-1-2-数据库管理系统的功能" class="headerlink" title="9.1.2 数据库管理系统的功能"></a>9.1.2 数据库管理系统的功能</h3><p>数据库管理系统主要实现对共享数据有效地组织、管理和存取，具有以下六个方面的功能：</p>
-<ol>
-<li>数据定义</li>
-<li>数据库操作</li>
-<li>数据库运行管理</li>
-<li>数据的组织、存储和管理</li>
-<li>数据库的建立和维护</li>
-<li>其他功能</li>
-</ol>
-<h3 id="9-1-3-数据库管理系统的特征及分类"><a href="#9-1-3-数据库管理系统的特征及分类" class="headerlink" title="9.1.3 数据库管理系统的特征及分类"></a>9.1.3 数据库管理系统的特征及分类</h3><ol>
-<li>DBMS的特征</li>
-<li>DBMS的分类<ol>
-<li>关系型数据库系统</li>
-<li>面向对象的数据库系统</li>
-<li>对象关系数据库系统</li>
-</ol>
-</li>
-</ol>
-<h3 id="9-1-4-数据库系统的体系结构"><a href="#9-1-4-数据库系统的体系结构" class="headerlink" title="9.1.4 数据库系统的体系结构"></a>9.1.4 数据库系统的体系结构</h3><ol>
-<li>集中式数据库系统</li>
-<li>客户端/服务器结构</li>
-<li>并行数据库系统</li>
-<li>分布式数据库系统</li>
-</ol>
-<h1 id="十、网络与信息安全基础知识"><a href="#十、网络与信息安全基础知识" class="headerlink" title="十、网络与信息安全基础知识"></a>十、网络与信息安全基础知识</h1><h2 id="10-1-网络概述"><a href="#10-1-网络概述" class="headerlink" title="10.1 网络概述"></a>10.1 网络概述</h2><h3 id="10-1-1-计算机网络的概念"><a href="#10-1-1-计算机网络的概念" class="headerlink" title="10.1.1 计算机网络的概念"></a>10.1.1 计算机网络的概念</h3><p>目前人们已公认的有关<strong>计算机网络的定义</strong>是：利用通信设备和线路将地理位置分散、功能独立的自主计算机系统或由计算机控制的外部设备连接起来，在网络操作系统的控制下，按照约定的通信协议进行信息交换，实现资源（硬件资源（CPU、大容量的磁盘、光盘以及打印机等）、软件资源（语言编译器、文本编辑器、各种软件工具和应用程序等））共享的系统。</p>
-<h4 id="1、计算机网络的发展（点、线、面、体）"><a href="#1、计算机网络的发展（点、线、面、体）" class="headerlink" title="1、计算机网络的发展（点、线、面、体）"></a>1、计算机网络的发展（点、线、面、体）</h4><ol>
-<li>具有通信功能的单机系统（终端-计算机网络）</li>
-<li>具有通信功能的多机系统（计算机-计算机网络）</li>
-<li>以共享资源为目的的计算机网络</li>
-<li>以局域网及因特网为支撑环境的分布式计算机系统</li>
-</ol>
-<h4 id="2、计算机网络的功能"><a href="#2、计算机网络的功能" class="headerlink" title="2、计算机网络的功能"></a>2、计算机网络的功能</h4><ol>
-<li><p>数据通信</p>
-</li>
-<li><p>资源共享</p>
-<p>提高系统资源的利用率，软件资源共享、硬件资源共享；</p>
-</li>
-<li><p>负载均衡</p>
-<p>多台计算机相互协作，均衡负载、共同完成任务，某台计算机任务过重时，可将任务分配给其余空闲的多台计算机；</p>
-</li>
-<li><p>高可靠性</p>
-<p>避免单机无后备的情况，某台计算机出现故障后，其任务可由其他计算机代为处理；</p>
-</li>
-</ol>
-<h3 id="10-1-2-计算机网络的分类"><a href="#10-1-2-计算机网络的分类" class="headerlink" title="10.1.2 计算机网络的分类"></a>10.1.2 计算机网络的分类</h3><ol>
-<li><p>局域网（Local Area Network，LAN）</p>
-<p>局域网指传输距离有限、传输速度较高、以共享网络资源为目的的网络系统；</p>
-<p>特点：</p>
-<ol>
-<li>分布范围有限；（园区网、校园网）</li>
-<li>有较高的通信带宽，数据传输率高；（1Mbps&lt;=      &lt;=1000Mbps）</li>
-<li>数据传输可靠，误码率低；（百万分之一到万分之一）</li>
-<li>通常采用同轴电缆或双绞线作为传输介质，跨楼宇时使用光纤；</li>
-<li>拓扑结构简单。简介，大多采用总线、星型和环形等，系统容易配置和管理；（网络上的计算机一般多采用多路控制访问技术或令牌技术访问信道）</li>
-<li>网络的控制一般趋向于分布式，从而减少了对某个结点的依赖，避免并减少了一个结点故障对整个网络的影响；</li>
-<li>通常，网络归单一组织所拥有和使用，不受任何公共网络管理机构</li>
-</ol>
-</li>
-<li><p>城域网</p>
-</li>
-<li><p>广域网</p>
-</li>
-</ol>
-<h3 id="10-1-3-网络的拓扑结构"><a href="#10-1-3-网络的拓扑结构" class="headerlink" title="10.1.3 网络的拓扑结构"></a>10.1.3 网络的拓扑结构</h3><ol>
-<li>总线型结构</li>
-<li>星型结构</li>
-<li>环形结构</li>
-<li>树形结构</li>
-<li>分布式结构</li>
-</ol>
-<h3 id="10-1-4-ISO-OSI网络体系结构"><a href="#10-1-4-ISO-OSI网络体系结构" class="headerlink" title="10.1.4 ISO/OSI网络体系结构"></a>10.1.4 ISO/OSI网络体系结构</h3><h1 id="十一、标准化和软件知识产权基础问题"><a href="#十一、标准化和软件知识产权基础问题" class="headerlink" title="十一、标准化和软件知识产权基础问题"></a>十一、标准化和软件知识产权基础问题</h1><h1 id="十二、软件系统分析与设计"><a href="#十二、软件系统分析与设计" class="headerlink" title="十二、软件系统分析与设计"></a>十二、软件系统分析与设计</h1><script>
+                <h4 id="一、获取今天之前所有近半年的1号和15号的时间"><a href="#一、获取今天之前所有近半年的1号和15号的时间" class="headerlink" title="一、获取今天之前所有近半年的1号和15号的时间"></a>一、获取今天之前所有近半年的1号和15号的时间</h4><p>假如今天是2023年12月11号，获取今天之前所有近半年的1号和15号的时间，即：2023-12-01，2023-11-15，2023-11-01…</p>
+<pre><code>&lt;script&gt;
+    // 当前日期
+    const now = new Date();
+    // 当前年份
+    const thisYear = now.getFullYear();
+    // 当前月份
+    const month = now.getMonth() + 1;
+    // 当前日
+    const day = now.getDate() + 1;
+    // 当前年所有1号及15号（不包括超过当前日的）
+    let thisYearDate = [];
+    // 去年
+    let lastYearDate = [];
+    // 目标日期数组
+    let yearDate = []
+
+    for (let i = 0; i &lt; month; i++) {
+        const date = new Date(thisYear, i, 1);
+        if (date &lt;= now) {
+            date.setDate(2);
+            thisYearDate.push(date.toISOString().slice(0, 10))
+        }
+
+        const date15 = new Date(thisYear, i, 15);
+        if (date15 &lt;= now) {
+            date15.setDate(16);
+            thisYearDate.push(date15.toISOString().slice(0, 10))
+        }
+    }
+    if (thisYearDate.length &lt; 12) {
+        for (let i = 0; i &lt; 12; i++) {
+            const date = new Date(thisYear - 1, i, 1);
+            if (date &lt;= now) {
+                date.setDate(2);
+                lastYearDate.push(date.toISOString().slice(0, 10))
+            }
+            const date15 = new Date(thisYear - 1, i, 15);
+            if (date15 &lt;= now) {
+                date15.setDate(16);
+                lastYearDate.push(date15.toISOString().slice(0, 10))
+            }
+        }
+        yearDate = [...lastYearDate.slice(lastYearDate.length - (12 - thisYearDate.length), lastYearDate.length), ...
+            thisYearDate
+        ]
+    } else {
+        yearDate = thisYearDate.slice(thisYearDate.length - 12, thisYearDate.length)
+    }
+    console.log(yearDate)
+&lt;/script&gt;</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1016,9 +839,9 @@
                     <span class="reprint1-tip">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
                     </span>
-                    <a href="https://wcisay.github.io" class="b-link-green">Mr.Wang</a>
+                    <a href="https://wcisay.github.io" class="b-link-green">Mr.Wang的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2023/11/23/ruan-jian-she-ji-shi-jiao-cheng-zhi-shi-dian-zong-jie-geng-xin-zhong/" class="b-link-green">《软件设计师教程》知识点总结（更新中）</a>
+                    <a href="/2023/12/11/js-chu-li-shi-jian-xiang-guan-de-wen-ti/" class="b-link-green">js处理时间相关的问题</a>
                 </p>
             </div>
 
@@ -1040,81 +863,31 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/11/23/shu-ju-ku-xiang-guan-zhi-shi-dian-zheng-li-zhong/">
+                <a href="/2023/12/11/js-chu-li-shi-jian-xiang-guan-de-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="数据库相关知识点（整理中）">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="js处理时间相关的问题">
                         
-                        <span class="card-title">数据库相关知识点（整理中）</span>
+                        <span class="card-title">js处理时间相关的问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            主要内容包括常见面试题以及常用指令的汇总
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2023-11-23
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/数据库/" class="post-category" target="_blank">
-                                    数据库
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/MySQL/" target="_blank">
-                        <span class="chip bg-color">MySQL</span>
-                    </a>
-                    
-                    <a href="/tags/SQL-Server/" target="_blank">
-                        <span class="chip bg-color">SQL Server</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/11/23/javascript-shu-zu-yu-zi-fu-chuan-de-xiang-hu-zhuan-huan/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="JavaScript 数组与字符串的相互转换">
-                        
-                        <span class="card-title">JavaScript 数组与字符串的相互转换</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            JavaScript实现数组、字符串的相互转换
+                            一、获取今天之前所有近半年的1号和15号的时间假如今天是2023年12月11号，获取今天之前所有近半年的1号和15号的时间，即：2023-12-01，2023-11-15，2023-11-01…
+&lt;script&gt;
+    // 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-11-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-12-11
                             </span>
                         <span class="publish-author">
                             
@@ -1128,15 +901,53 @@
                         </span>
                     </div>
                 </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/12/05/docker-chang-yong-ming-ling/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="docker常用命令">
+                        
+                        <span class="card-title">docker常用命令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            docker常用命令（帮助命令、镜像命令、容器命令等）
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-12-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/docker/" class="post-category" target="_blank">
+                                    docker
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/" target="_blank">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
-                    
-                    <a href="/tags/Web基础/" target="_blank">
-                        <span class="chip bg-color">Web基础</span>
+                    <a href="/tags/docker/" target="_blank">
+                        <span class="chip bg-color">docker</span>
                     </a>
                     
                 </div>
@@ -1176,7 +987,7 @@
 
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
-            + '来源: Mr.Wang<br />'
+            + '来源: Mr.Wang的博客<br />'
             + '作者: wzm<br />'
             + '链接: <a href="' + url + '">' + url + '</a><br />'
             + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
@@ -1291,7 +1102,7 @@
             Copyright&copy; 2023 Wzm.
 
             <br>
-            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <span id="sitetime"></span><span class="my-face"></span>
             <br>
 
             
@@ -1311,7 +1122,7 @@
 
             
             &nbsp; | &nbsp;字数统计:&nbsp;
-            <span class="white-color">8.1k</span> 字
+            <span class="white-color">9.2k</span> 字
             
 
             
@@ -1374,7 +1185,7 @@
         seconds - 0-59之间的整数，做为date对象的秒数
         microseconds - 0-999之间的整数，做为date对象的毫秒数 */
 
-        var t1 = Date.UTC(2023, 11, 30, 59, 59, 59); //北京时间2019-8-1 00:00:00
+        var t1 = Date.UTC(2022, 5, 18, 59, 59, 59);
         var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
         var diff = t2 - t1;
         var diffYears = Math.floor(diff / years);
@@ -1383,9 +1194,9 @@
         var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
         var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
             minutes) / seconds);
-        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
             " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    }
     siteTime();
 </script>
 
@@ -1495,6 +1306,6 @@ $(function () {
     </script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 
 </html>

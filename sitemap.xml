@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wcisay.github.io/2023/12/11/js-chu-li-shi-jian-xiang-guan-de-wen-ti/</loc>
+    
+    <lastmod>2023-12-11T06:52:30.327Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wcisay.github.io/2023/03/01/iview-select-zu-jian-xiang-guan-wen-ti-zong-jie-hui-xian-mo-ren-zhi-deng/</loc>
+    
+    <lastmod>2023-12-11T06:43:59.890Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wcisay.github.io/2022/09/13/shi-yong-vue2-js-kuang-jia-fu-xie-hexo-de-hexo-theme-matery-zhu-ti/</loc>
+    
+    <lastmod>2023-12-11T06:30:15.529Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wcisay.github.io/2023/02/15/ruan-jian-she-ji-shi-jiao-cheng-zhi-shi-dian-zong-jie-geng-xin-zhong/</loc>
+    
+    <lastmod>2023-12-11T06:29:49.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wcisay.github.io/2023/07/11/shu-ju-ku-xiang-guan-zhi-shi-dian-zheng-li-zhong/</loc>
+    
+    <lastmod>2023-12-11T06:29:16.608Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wcisay.github.io/2022/10/31/javascript-shu-zu-yu-zi-fu-chuan-de-xiang-hu-zhuan-huan/</loc>
+    
+    <lastmod>2023-12-11T06:28:39.781Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wcisay.github.io/2023/12/05/docker-chang-yong-ming-ling/</loc>
     
     <lastmod>2023-12-05T07:47:11.233Z</lastmod>
@@ -16,14 +58,14 @@
   </url>
   
   <url>
-    <loc>https://wcisay.github.io/galleries/%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%874/index.html</loc>
+    <loc>https://wcisay.github.io/galleries/%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%873/index.html</loc>
     
     <lastmod>2023-12-04T01:06:02.122Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://wcisay.github.io/galleries/%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%873/index.html</loc>
+    <loc>https://wcisay.github.io/galleries/%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%874/index.html</loc>
     
     <lastmod>2023-12-04T01:06:02.122Z</lastmod>
     
@@ -37,14 +79,14 @@
   </url>
   
   <url>
-    <loc>https://wcisay.github.io/contact/index.html</loc>
+    <loc>https://wcisay.github.io/friends/index.html</loc>
     
     <lastmod>2023-12-04T01:06:02.120Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://wcisay.github.io/friends/index.html</loc>
+    <loc>https://wcisay.github.io/contact/index.html</loc>
     
     <lastmod>2023-12-04T01:06:02.120Z</lastmod>
     
@@ -79,35 +121,7 @@
   </url>
   
   <url>
-    <loc>https://wcisay.github.io/2023/11/23/shi-yong-vue2-js-kuang-jia-fu-xie-hexo-de-hexo-theme-matery-zhu-ti/</loc>
-    
-    <lastmod>2023-12-04T01:06:02.116Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wcisay.github.io/2023/11/23/shu-ju-ku-xiang-guan-zhi-shi-dian-zheng-li-zhong/</loc>
-    
-    <lastmod>2023-12-04T01:06:02.116Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wcisay.github.io/2023/11/23/ruan-jian-she-ji-shi-jiao-cheng-zhi-shi-dian-zong-jie-geng-xin-zhong/</loc>
-    
-    <lastmod>2023-12-04T01:06:02.115Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://wcisay.github.io/2023/11/14/git-xiang-guan/</loc>
-    
-    <lastmod>2023-12-04T01:06:02.114Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wcisay.github.io/2023/11/23/javascript-shu-zu-yu-zi-fu-chuan-de-xiang-hu-zhuan-huan/</loc>
     
     <lastmod>2023-12-04T01:06:02.114Z</lastmod>
     
