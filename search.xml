@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>常用网站、工具等推荐</title>
-      <link href="/2023/12/12/chang-yong-wang-zhan-gong-ju-deng-tui-jian/"/>
-      <url>/2023/12/12/chang-yong-wang-zhan-gong-ju-deng-tui-jian/</url>
-      
-        <content type="html"><![CDATA[<h4 id="压缩工具"><a href="#压缩工具" class="headerlink" title="压缩工具"></a>压缩工具</h4><ol><li><a href="https://tinypng.com/" target="_blank" rel="noopener">iLoveIMG | 图像文件在线编辑工具</a></li><li><a href="https://www.iloveimg.com/zh-cn" target="_blank" rel="noopener">TinyPNG – Compress WebP, PNG and JPEG images intelligently</a></li></ol><h4 id="IPV6相关"><a href="#IPV6相关" class="headerlink" title="IPV6相关"></a>IPV6相关</h4><ol><li><a href="https://www.china-ipv6.cn/#/checkTools" target="_blank" rel="noopener">国家IPv6发展监测平台</a></li><li><a href="https://ipw.cn/ipv6webcheck/" target="_blank" rel="noopener">IPv6网站测试|检测|检查 | IP查询(ipw.cn)</a></li></ol><h4 id="前端开发手册"><a href="#前端开发手册" class="headerlink" title="前端开发手册"></a>前端开发手册</h4><ol><li><a href="https://www.w3school.com.cn/tags/index.asp" target="_blank" rel="noopener">HTML 标签参考手册</a></li><li><a href="https://www.w3school.com.cn/cssref/index.asp" target="_blank" rel="noopener">CSS 参考手册</a></li></ol><h4 id="前端开源项目"><a href="#前端开源项目" class="headerlink" title="前端开源项目"></a>前端开源项目</h4><ol><li><p>新蜂商城</p><ol><li><a href="https://github.com/newbee-ltd/newbee-mall-vue-app" target="_blank" rel="noopener">Vue2 全家桶 + Vant 搭建大型单页面商城项目</a></li><li><a href="https://github.com/newbee-ltd/vue3-admin" target="_blank" rel="noopener">Vue 3 + Vite 2 + Vue-Router 4 + Element-Plus + Echarts 5 + Axios 开发的后台管理系统</a></li><li><a href="https://github.com/newbee-ltd/newbee-mall-vue3-app" target="_blank" rel="noopener">Vue3 全家桶 + Vant 搭建大型单页面商城项目，新蜂商城 Vue3.2 版本，技术栈为 Vue3.2 + Vue-Router4.x + Pinia + Vant4.x</a></li><li><a href="https://github.com/newbee-ltd/newbee-mall-api" target="_blank" rel="noopener">新蜂商城前后端分离版本-后端API源码</a></li></ol></li><li><p><a href="https://panjiachen.gitee.io/vue-element-admin-site/zh/" target="_blank" rel="noopener">vue-element-admin</a></p><ol><li><a href="https://panjiachen.github.io/vue-admin-template" target="_blank" rel="noopener">Vue Element Admin Demo 简易版</a></li><li><a href="https://panjiachen.github.io/vue-element-admin" target="_blank" rel="noopener">Vue Element Admin Demo</a></li></ol></li></ol><h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ol><li><a href="https://www.ilovepdf.com/zh-cn" target="_blank" rel="noopener">iLovePDF | 为PDF爱好者提供的PDF文件在线处理工具</a></li><li><a href="https://www.grabient.com/" target="_blank" rel="noopener">Grabient | 提供了很多很不错的渐变色方案</a></li><li><a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">jsdelivr | 一个免费开源的 CDN 解决方案</a></li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>js处理时间相关的问题</title>
       <link href="/2023/12/11/js-chu-li-shi-jian-xiang-guan-de-wen-ti/"/>
       <url>/2023/12/11/js-chu-li-shi-jian-xiang-guan-de-wen-ti/</url>
@@ -250,6 +237,33 @@
             <tag> Hexo </tag>
             
             <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>常用网站、工具等推荐</title>
+      <link href="/2022/07/31/chang-yong-wang-zhan-gong-ju-deng-tui-jian/"/>
+      <url>/2022/07/31/chang-yong-wang-zhan-gong-ju-deng-tui-jian/</url>
+      
+        <content type="html"><![CDATA[<h4 id="压缩工具"><a href="#压缩工具" class="headerlink" title="压缩工具"></a>压缩工具</h4><ol><li><a href="https://tinypng.com/" target="_blank" rel="noopener">iLoveIMG | 图像文件在线编辑工具</a></li><li><a href="https://www.iloveimg.com/zh-cn" target="_blank" rel="noopener">TinyPNG – Compress WebP, PNG and JPEG images intelligently</a></li></ol><h4 id="IPV6相关"><a href="#IPV6相关" class="headerlink" title="IPV6相关"></a>IPV6相关</h4><ol><li><a href="https://www.china-ipv6.cn/#/checkTools" target="_blank" rel="noopener">国家IPv6发展监测平台</a></li><li><a href="https://ipw.cn/ipv6webcheck/" target="_blank" rel="noopener">IPv6网站测试|检测|检查 | IP查询(ipw.cn)</a></li></ol><h4 id="前端开发手册"><a href="#前端开发手册" class="headerlink" title="前端开发手册"></a>前端开发手册</h4><ol><li><a href="https://www.w3school.com.cn/tags/index.asp" target="_blank" rel="noopener">HTML 标签参考手册</a></li><li><a href="https://www.w3school.com.cn/cssref/index.asp" target="_blank" rel="noopener">CSS 参考手册</a></li></ol><h4 id="前端开源项目"><a href="#前端开源项目" class="headerlink" title="前端开源项目"></a>前端开源项目</h4><ol><li><p>新蜂商城</p><ol><li><a href="https://github.com/newbee-ltd/newbee-mall-vue-app" target="_blank" rel="noopener">Vue2 全家桶 + Vant 搭建大型单页面商城项目</a></li><li><a href="https://github.com/newbee-ltd/vue3-admin" target="_blank" rel="noopener">Vue 3 + Vite 2 + Vue-Router 4 + Element-Plus + Echarts 5 + Axios 开发的后台管理系统</a></li><li><a href="https://github.com/newbee-ltd/newbee-mall-vue3-app" target="_blank" rel="noopener">Vue3 全家桶 + Vant 搭建大型单页面商城项目，新蜂商城 Vue3.2 版本，技术栈为 Vue3.2 + Vue-Router4.x + Pinia + Vant4.x</a></li><li><a href="https://github.com/newbee-ltd/newbee-mall-api" target="_blank" rel="noopener">新蜂商城前后端分离版本-后端API源码</a></li></ol></li><li><p><a href="https://panjiachen.gitee.io/vue-element-admin-site/zh/" target="_blank" rel="noopener">vue-element-admin</a></p><ol><li><a href="https://panjiachen.github.io/vue-admin-template" target="_blank" rel="noopener">Vue Element Admin Demo 简易版</a></li><li><a href="https://panjiachen.github.io/vue-element-admin" target="_blank" rel="noopener">Vue Element Admin Demo</a></li></ol></li></ol><h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ol><li><a href="https://www.ilovepdf.com/zh-cn" target="_blank" rel="noopener">iLovePDF | 为PDF爱好者提供的PDF文件在线处理工具</a></li><li><a href="https://www.grabient.com/" target="_blank" rel="noopener">Grabient | 提供了很多很不错的渐变色方案</a></li><li><a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">jsdelivr | 一个免费开源的 CDN 解决方案</a></li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 常用工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 开发手册 </tag>
+            
+            <tag> 压缩工具 </tag>
             
         </tags>
       

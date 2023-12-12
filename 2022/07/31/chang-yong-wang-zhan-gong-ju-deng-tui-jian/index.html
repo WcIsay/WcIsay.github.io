@@ -4,10 +4,16 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="放松一下, life,web,vue,实施,运维">
+    <meta name="keywords" content="常用网站、工具等推荐, life,web,vue,实施,运维">
     <meta name="baidu-site-verification" content="codeva-8TNTAyNUz5">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="放松一下 | Mr.Wangの博客">
+    <meta name="description" content="压缩工具
+iLoveIMG | 图像文件在线编辑工具
+TinyPNG – Compress WebP, PNG and JPEG images intelligently
+
+IPV6相关
+国家IPv6发展监测平台
+IPv6网站测试|检测|检">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>放松一下 | Mr.Wangの博客</title>
+    <title>常用网站、工具等推荐 | Mr.Wangの博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -552,187 +558,240 @@
 
 </header>
 
-    <style type="text/css">
-    /* don't remove. */
-    .about-cover {
-        height: 75vh;
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        常用网站、工具等推荐
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
     }
 </style>
-
-<div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                <!-- 
-                    Mr.Wangの博客
-                 -->
-                
-                    放松一下
-                
-            </div>
-
-            <div class="description center-align">
-                
-                    <!-- life,web,vue,实施,运维 -->
-                    <span id="jinrishici-sentence">正在加载今日诗词...</span>
-                
-            </div>
-            
-            
-        </div>
-    </div>
-</div>
-<script>
-// 每天切换 banner 图.  Switch banner image every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
-</script>
-
-
-    </div>
-</div>
-
-<main class="content">
-    <div id="aboutme" class="container about-container">
-        <div class="card">
-            <div class="card-content">
-
-                <div class="music-player">
-                    <div class="title center-align">
-                        <i class="fa fa-music"></i>&nbsp;&nbsp;听听音乐
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- shw2018 洪卫  modify 2019.08.15-->
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/开发手册/" target="_blank">
+                                <span class="chip bg-color">开发手册</span>
+                            </a>
+                        
+                            <a href="/tags/压缩工具/" target="_blank">
+                                <span class="chip bg-color">压缩工具</span>
+                            </a>
+                        
                     </div>
                     
+                </div>
+                <div class="col s5 right-align">
                     
-
-<link rel="stylesheet" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css">
-<div class="music-player">
-    
-    <div class="row">
-        
-        
-        <div class="col s12 ">
-            <div id="aplayer" class="music"></div>
-        </div>
-    </div>
-</div>
-
-<script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
-<script>
-    $(function () {
-        new APlayer({
-            container: document.getElementById('aplayer'),
-            fixed: 'false' === 'true',
-            autoplay: 'false' === 'true',
-            theme: '#542674',
-            loop: 'all',
-            order: 'list',
-            preload: 'auto',
-            volume: Number('0.7'),
-            listFolded: 'false' === 'true',
-            listMaxHeight: '197px',
-            audio: JSON.parse('[{"name":"三十二段留言","artist":"Vicky宣宣","url":"http://music.163.com/song/media/outer/url?id=1817160410.mp3","cover":"https://p2.music.126.net/VJvURwhahDjZNI5ppEll6Q==/109951165687836464.jpg?param=130y130","lrc":"/medias/music_lrcs/ssedly.lrc"},{"name":"请你吃个冰激凌","artist":"花粥","url":"http://music.163.com/song/media/outer/url?id=1357999885.mp3","cover":"https://p1.music.126.net/H6dt7IgvXNWhRM_w7XbcqQ==/109951163990575387.jpg?param=130y130"},{"name":"世间美好与你环环相扣","artist":"柏松","url":"http://music.163.com/song/media/outer/url?id=1363948882.mp3","cover":"https://p1.music.126.net/DK1_4sP_339o5rowMdPXdw==/109951164071024476.jpg?param=130y130"},{"name":"海盗船长2.0","artist":"花粥 / 风子","url":"http://music.163.com/song/media/outer/url?id=571601379.mp3","cover":"https://p1.music.126.net/OqfOJEOTevVEafeMRfpq5g==/109951163336170259.jpg?param=130y130"}]')
-        });
-    });
-</script>
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/常用工具/" class="post-category" target="_blank">
+                                常用工具
+                            </a>
+                        
+                    </div>
                     
+                </div>
+            </div>
+            
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-07-31
+                </div>
 
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        Wang Ziming
+                    
                 </div>
 
                 
-
-                
-                
-<div id="myGallery" class="my-gallery">
-    <div class="title center-align" data-aos="zoom-in-up">
-        <i class="fa fa-photo"></i>&nbsp;&nbsp;相册
-    </div>
-    <div class="row">
-        
-        
-        <div class="photo col s12 m6 l4" data-aos="fade-up">
-            <div class="img-item" data-src="/medias/featureimages/0.jpg">
-                <img src="/medias/featureimages/0.jpg" class="responsive-img">
-            </div>
-        </div>
-        
-        <div class="photo col s12 m6 l4" data-aos="fade-up">
-            <div class="img-item" data-src="/medias/featureimages/1.jpg">
-                <img src="/medias/featureimages/1.jpg" class="responsive-img">
-            </div>
-        </div>
-        
-        <div class="photo col s12 m6 l4" data-aos="fade-up">
-            <div class="img-item" data-src="/medias/featureimages/2.jpg">
-                <img src="/medias/featureimages/2.jpg" class="responsive-img">
-            </div>
-        </div>
-        
-        <div class="photo col s12 m6 l4" data-aos="fade-up">
-            <div class="img-item" data-src="/medias/featureimages/4.jpg">
-                <img src="/medias/featureimages/4.jpg" class="responsive-img">
-            </div>
-        </div>
-        
-        <div class="photo col s12 m6 l4" data-aos="fade-up">
-            <div class="img-item" data-src="/medias/featureimages/5.jpg">
-                <img src="/medias/featureimages/5.jpg" class="responsive-img">
-            </div>
-        </div>
-        
-        <div class="photo col s12 m6 l4" data-aos="fade-up">
-            <div class="img-item" data-src="/medias/featureimages/6.jpg">
-                <img src="/medias/featureimages/6.jpg" class="responsive-img">
-            </div>
-        </div>
-        
-        <div class="photo col s12 m6 l4" data-aos="fade-up">
-            <div class="img-item" data-src="/medias/featureimages/7.jpg">
-                <img src="/medias/featureimages/7.jpg" class="responsive-img">
-            </div>
-        </div>
-        
-        <div class="photo col s12 m6 l4" data-aos="fade-up">
-            <div class="img-item" data-src="/medias/featureimages/8.jpg">
-                <img src="/medias/featureimages/8.jpg" class="responsive-img">
-            </div>
-        </div>
-        
-        <div class="photo col s12 m6 l4" data-aos="fade-up">
-            <div class="img-item" data-src="/medias/featureimages/9.jpg">
-                <img src="/medias/featureimages/9.jpg" class="responsive-img">
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-<script>
-    $(function () {
-        let animateClass = 'animated pulse';
-        $('#myGallery .photo').hover(function () {
-            $(this).addClass(animateClass);
-        }, function () {
-            $(this).removeClass(animateClass);
-        });
-    });
-</script>
-                
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-content">
-                <div class="card-content article-card-content">
-                    <div class="title center-align" data-aos="zoom-in-up">
-                        <i class="fa fa-download"></i>&nbsp;&nbsp;资源共享
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        279
                     </div>
-                    <div id="articleContent" data-aos="fade-up">
-                        <h1 id="影音资源共享"><a href="#影音资源共享" class="headerlink" title="影音资源共享"></a>影音资源共享</h1><ul>
-<li><b>这里准备用来分享各类好玩的资源</b></li>
-<li><b>待更新……<b></b></b></li>
-</ul>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        1 分
+                    </div>
+                    
+                
+                
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h4 id="压缩工具"><a href="#压缩工具" class="headerlink" title="压缩工具"></a>压缩工具</h4><ol>
+<li><a href="https://tinypng.com/" target="_blank" rel="noopener">iLoveIMG | 图像文件在线编辑工具</a></li>
+<li><a href="https://www.iloveimg.com/zh-cn" target="_blank" rel="noopener">TinyPNG – Compress WebP, PNG and JPEG images intelligently</a></li>
+</ol>
+<h4 id="IPV6相关"><a href="#IPV6相关" class="headerlink" title="IPV6相关"></a>IPV6相关</h4><ol>
+<li><a href="https://www.china-ipv6.cn/#/checkTools" target="_blank" rel="noopener">国家IPv6发展监测平台</a></li>
+<li><a href="https://ipw.cn/ipv6webcheck/" target="_blank" rel="noopener">IPv6网站测试|检测|检查 | IP查询(ipw.cn)</a></li>
+</ol>
+<h4 id="前端开发手册"><a href="#前端开发手册" class="headerlink" title="前端开发手册"></a>前端开发手册</h4><ol>
+<li><a href="https://www.w3school.com.cn/tags/index.asp" target="_blank" rel="noopener">HTML 标签参考手册</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/index.asp" target="_blank" rel="noopener">CSS 参考手册</a></li>
+</ol>
+<h4 id="前端开源项目"><a href="#前端开源项目" class="headerlink" title="前端开源项目"></a>前端开源项目</h4><ol>
+<li><p>新蜂商城</p>
+<ol>
+<li><a href="https://github.com/newbee-ltd/newbee-mall-vue-app" target="_blank" rel="noopener">Vue2 全家桶 + Vant 搭建大型单页面商城项目</a></li>
+<li><a href="https://github.com/newbee-ltd/vue3-admin" target="_blank" rel="noopener">Vue 3 + Vite 2 + Vue-Router 4 + Element-Plus + Echarts 5 + Axios 开发的后台管理系统</a></li>
+<li><a href="https://github.com/newbee-ltd/newbee-mall-vue3-app" target="_blank" rel="noopener">Vue3 全家桶 + Vant 搭建大型单页面商城项目，新蜂商城 Vue3.2 版本，技术栈为 Vue3.2 + Vue-Router4.x + Pinia + Vant4.x</a></li>
+<li><a href="https://github.com/newbee-ltd/newbee-mall-api" target="_blank" rel="noopener">新蜂商城前后端分离版本-后端API源码</a></li>
+</ol>
+</li>
+<li><p><a href="https://panjiachen.gitee.io/vue-element-admin-site/zh/" target="_blank" rel="noopener">vue-element-admin</a></p>
+<ol>
+<li><a href="https://panjiachen.github.io/vue-admin-template" target="_blank" rel="noopener">Vue Element Admin Demo 简易版</a></li>
+<li><a href="https://panjiachen.github.io/vue-element-admin" target="_blank" rel="noopener">Vue Element Admin Demo</a></li>
+</ol>
+</li>
+</ol>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ol>
+<li><a href="https://www.ilovepdf.com/zh-cn" target="_blank" rel="noopener">iLovePDF | 为PDF爱好者提供的PDF文件在线处理工具</a></li>
+<li><a href="https://www.grabient.com/" target="_blank" rel="noopener">Grabient | 提供了很多很不错的渐变色方案</a></li>
+<li><a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">jsdelivr | 一个免费开源的 CDN 解决方案</a></li>
+</ol>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -752,14 +811,310 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             document.body.appendChild(img);
           });
       </script>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+            
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://wcisay.github.io" class="b-link-green">Mr.Wangの博客</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2022/07/31/chang-yong-wang-zhan-gong-ju-deng-tui-jian/" class="b-link-green">常用网站、工具等推荐</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/09/13/shi-yong-vue2-js-kuang-jia-fu-xie-hexo-de-hexo-theme-matery-zhu-ti/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="使用Vue2.js框架复写Hexo的hexo-theme-matery主题">
+                        
+                        <span class="card-title">使用Vue2.js框架复写Hexo的hexo-theme-matery主题</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一、前言二、项目基本配置[^主要包括框架、UI组件库的选型及相关插件的运用。]: 
+1、框架1.1    Vue2.js2、UI组件库2.1    AT UI2.2    iView UI2.3    Element UI3、插件3.1  
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2022-09-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Web开发/" class="post-category" target="_blank">
+                                    Web开发
+                                </a>
+                            
+                            
+                        </span>
                     </div>
                 </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue2-js/" target="_blank">
+                        <span class="chip bg-color">Vue2.js</span>
+                    </a>
+                    
+                    <a href="/tags/Hexo/" target="_blank">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
             </div>
         </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/07/31/chang-yong-wang-zhan-gong-ju-deng-tui-jian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="常用网站、工具等推荐">
+                        
+                        <span class="card-title">常用网站、工具等推荐</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            压缩工具
+iLoveIMG | 图像文件在线编辑工具
+TinyPNG – Compress WebP, PNG and JPEG images intelligently
+
+IPV6相关
+国家IPv6发展监测平台
+IPv6网站测试|检测|检
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-07-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/常用工具/" class="post-category" target="_blank">
+                                    常用工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/开发手册/" target="_blank">
+                        <span class="chip bg-color">开发手册</span>
+                    </a>
+                    
+                    <a href="/tags/压缩工具/" target="_blank">
+                        <span class="chip bg-color">压缩工具</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Mr.Wangの博客<br />'
+            + '作者: wzm<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
     </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
 </main>
+
+
     <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
