@@ -4,13 +4,16 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="数据库相关知识点（整理中）, life,web,vue,实施,运维">
+    <meta name="keywords" content="常用网站、工具等推荐, life,web,vue,实施,运维">
     <meta name="baidu-site-verification" content="codeva-8TNTAyNUz5">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="常用的聚合函数有哪五种？
-count()、sum()、avg()、min()、max()
-count()：求表的行数或者指定表中某个列的列值行数，null值被忽略
-select count(字段) from 表名 --得到该列值的非null">
+    <meta name="description" content="压缩工具
+iLoveIMG | 图像文件在线编辑工具
+TinyPNG – Compress WebP, PNG and JPEG images intelligently
+
+IPV6相关
+国家IPv6发展监测平台
+IPv6网站测试|检测|检">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +21,7 @@ select count(字段) from 表名 --得到该列值的非null">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>数据库相关知识点（整理中） | Mr.Wangの博客</title>
+    <title>常用网站、工具等推荐 | Mr.Wangの博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -572,13 +575,13 @@ select count(字段) from 表名 --得到该列值的非null">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        数据库相关知识点（整理中）
+                        常用网站、工具等推荐
                     </div>
                 </div>
             </div>
@@ -688,29 +691,12 @@ select count(字段) from 表名 --得到该列值的非null">
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/MySQL/" target="_blank">
-                                <span class="chip bg-color">MySQL</span>
-                            </a>
-                        
-                            <a href="/tags/SQL-Server/" target="_blank">
-                                <span class="chip bg-color">SQL Server</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/数据库/" class="post-category" target="_blank">
-                                数据库
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -718,13 +704,13 @@ select count(字段) from 表名 --得到该列值的非null">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-11
+                    2023-12-12
                 </div>
 
                 <div class="post-author info-break-policy">
                     <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
                     
-                        wzm
+                        Wang Ziming
                     
                 </div>
 
@@ -732,14 +718,14 @@ select count(字段) from 表名 --得到该列值的非null">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.1k
+                        279
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        1 分
                     </div>
                     
                 
@@ -756,92 +742,39 @@ select count(字段) from 表名 --得到该列值的非null">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>常用的聚合函数有哪五种？</p>
-<p>count()、sum()、avg()、min()、max()</p>
-<p>count()：求表的行数或者指定表中某个列的列值行数，null值被忽略</p>
-<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span>字段<span class="token punctuation">)</span> <span class="token keyword">from</span> 表名 <span class="token comment" spellcheck="true">--得到该列值的非null值的行数</span>
-
-<span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">from</span> 表名  <span class="token comment" spellcheck="true">--用于统计整个表的行数。任何行，只要有一行非null，则整个表的行数就会被统计上。全为null（不会出现该情况）则不被统计</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>sum()：返回指定数据的和，只能用于数字列，null值被忽略</p>
-<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">sum</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span> <span class="token keyword">from</span> emp   <span class="token comment" spellcheck="true">--求所有salary的总和</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>max()：返回一列中的最大值，null值被忽略</p>
-<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">max</span><span class="token punctuation">(</span>column_name<span class="token punctuation">)</span> <span class="token keyword">from</span> table_name<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>min()：返回一列中的最小值，null值被忽略</p>
-<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">max</span><span class="token punctuation">(</span>column_name<span class="token punctuation">)</span> <span class="token keyword">from</span> table_name<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>avg()：返回数值列的平均值，null值被忽略</p>
-<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">avg</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span> <span class="token keyword">as</span> avg_sal <span class="token keyword">from</span> emp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>使用聚合函数时要注意什么？</p>
-<ol>
-<li>聚合函数可用于任何有效的表达式</li>
-<li>聚合函数会忽略空值</li>
-<li>distinct关键字可以与聚合函数一起使用，这样可以在聚合函数的计算中排除重复项</li>
+                <h4 id="压缩工具"><a href="#压缩工具" class="headerlink" title="压缩工具"></a>压缩工具</h4><ol>
+<li><a href="https://tinypng.com/" target="_blank" rel="noopener">iLoveIMG | 图像文件在线编辑工具</a></li>
+<li><a href="https://www.iloveimg.com/zh-cn" target="_blank" rel="noopener">TinyPNG – Compress WebP, PNG and JPEG images intelligently</a></li>
 </ol>
-<p>修改某表某字段，不允许空值</p>
-<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> 表名
-<span class="token keyword">ALTER</span> <span class="token keyword">COLUMN</span> 修改字段名 字段数据类型 <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>ORDER BY，GROUP BY</p>
-<p>Oracle SQL语句组成：</p>
-<table>
-<thead>
-<tr>
-<th>数据定义语言（DDL）</th>
-<th>数据操作语言（DML）</th>
-<th>数据查询语言（DQL）</th>
-<th>事物控制语言（TCL）</th>
-<th>数据控制语言（DCL）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>CREATE（创建命令）、ALTER（修改）命令、DROP（删除）命令等</td>
-<td>INSERT（插入）命令、UPDATE（更新）命令、DELETE（删除）命令、SELECT…FOR UPDATE（查询）等</td>
-<td>基本查询语句、Order By子句、Group By子句等</td>
-<td>COMMIT（提交）命令、SAVEPOINT（保存点）命令、ROLLBACK（回滚）命令</td>
-<td>GRANT（授权）命令、REVOKE（撤销）命令</td>
-</tr>
-</tbody></table>
-<p> WHERE不能接聚合函数（MAX、MIN、COUNT、SUM、AVG等）;HAVING后可以接聚合函数；</p>
-<p> WHERE用在GROUP BY前，先过滤后分组；</p>
-<p> HAVING用在GROUP BY之后，先分组后过滤，且使用HAVING一定要用到GRUOP BY，但用到GROUP BY 不一定有HAVING。</p>
-<p>查询表的总行数，并命名为cnt</p>
-<p>select count(*) (as) cnt from 表名（as可加可不加）</p>
-<p>select count(主键或其他不为空的字段) (as) cnt from 表名（as可加可不加）</p>
-<p>distinct 搜索去重：select distinct [列名1，列名2，…] from [表名]</p>
-<p>检索所有列</p>
-<p>select * from 表名</p>
-<p>插入记录的方式汇总：</p>
-<ul>
-<li>普通插入（全字段）：INSERT INTO table_name VALUES (value1, value2, …)</li>
-<li>普通插入（限定字段）：INSERT INTO table_name (column1, column2, …) VALUES (value1, value2, …)</li>
-<li>多条一次性插入：INSERT INTO table_name (column1, column2, …) VALUES (value1_1, value1_2, …), (value2_1, value2_2, …), …</li>
-<li>从另一个表导入：INSERT INTO table_name SELECT * FROM table_name2 [WHERE key=value]</li>
-<li>带更新的插入：REPLACE INTO table_name VALUES (value1, value2, …) （注意这种原理是检测到主键或唯一性索引键重复就删除原记录后重新插入）</li>
-</ul>
-<p>修改记录的方式汇总：</p>
-<ul>
-<li>设置为新值：UPDATE table_name SET column_name=new_value [column_name2=new_value2][WHERE column_name3=value3]</li>
-<li>根据已有值替换：UPDATE table_name SET key1=replace(key1, ‘查找内容’, ‘替换成内容’) [WHERE column_name3=value3]</li>
-</ul>
-<p>删除记录的方式汇总：</p>
-<ul>
-<li>根据条件删除：DELETE FROM tb_name [WHERE options][ [ ORDER BY fields ] LIMIT n ]</li>
-<li>全部删除（表清空，包含自增计数器重置）：TRUNCATE tb_name</li>
-</ul>
-<p>时间差：</p>
-<ul>
-<li>TIMESTAMPDIFF(interval, time_start, time_end)可计算time_start-time_end的时间差，单位以指定的interval为准，常用可选：<ul>
-<li>SECOND 秒</li>
-<li>MINUTE 分钟（返回秒数差除以60的整数部分）</li>
-<li>HOUR 小时（返回秒数差除以3600的整数部分）</li>
-<li>DAY 天数（返回秒数差除以3600*24的整数部分）</li>
-<li>MONTH 月数</li>
-<li>YEAR 年数<br>关键词：substing,concat,upper</li>
-</ul>
+<h4 id="IPV6相关"><a href="#IPV6相关" class="headerlink" title="IPV6相关"></a>IPV6相关</h4><ol>
+<li><a href="https://www.china-ipv6.cn/#/checkTools" target="_blank" rel="noopener">国家IPv6发展监测平台</a></li>
+<li><a href="https://ipw.cn/ipv6webcheck/" target="_blank" rel="noopener">IPv6网站测试|检测|检查 | IP查询(ipw.cn)</a></li>
+</ol>
+<h4 id="前端开发手册"><a href="#前端开发手册" class="headerlink" title="前端开发手册"></a>前端开发手册</h4><ol>
+<li><a href="https://www.w3school.com.cn/tags/index.asp" target="_blank" rel="noopener">HTML 标签参考手册</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/index.asp" target="_blank" rel="noopener">CSS 参考手册</a></li>
+</ol>
+<h4 id="前端开源项目"><a href="#前端开源项目" class="headerlink" title="前端开源项目"></a>前端开源项目</h4><ol>
+<li><p>新蜂商城</p>
+<ol>
+<li><a href="https://github.com/newbee-ltd/newbee-mall-vue-app" target="_blank" rel="noopener">Vue2 全家桶 + Vant 搭建大型单页面商城项目</a></li>
+<li><a href="https://github.com/newbee-ltd/vue3-admin" target="_blank" rel="noopener">Vue 3 + Vite 2 + Vue-Router 4 + Element-Plus + Echarts 5 + Axios 开发的后台管理系统</a></li>
+<li><a href="https://github.com/newbee-ltd/newbee-mall-vue3-app" target="_blank" rel="noopener">Vue3 全家桶 + Vant 搭建大型单页面商城项目，新蜂商城 Vue3.2 版本，技术栈为 Vue3.2 + Vue-Router4.x + Pinia + Vant4.x</a></li>
+<li><a href="https://github.com/newbee-ltd/newbee-mall-api" target="_blank" rel="noopener">新蜂商城前后端分离版本-后端API源码</a></li>
+</ol>
 </li>
-</ul>
-<p>用法：</p>
-<p>字符串的截取：substring(字符串，起始位置，截取字符数）<br>字符串的拼接：concat(字符串1，字符串2，字符串3,…)<br>字母大写：upper(字符串）</p>
-<p>SQL语句书写顺序<br>select-&gt;distinct-&gt;from-&gt;join-&gt;on-&gt;where-&gt;group by-&gt;having-&gt;order by-&gt;limit<br>SQL语句执行顺序<br>from-&gt;on-&gt;join-&gt;where-&gt;group by（开始使用select中的别名，后面的语句中都可以使用别名）-&gt;sum、count、max、avg-&gt;having-&gt;select-&gt;distinct-&gt;order by-&gt;limit</p>
+<li><p><a href="https://panjiachen.gitee.io/vue-element-admin-site/zh/" target="_blank" rel="noopener">vue-element-admin</a></p>
+<ol>
+<li><a href="https://panjiachen.github.io/vue-admin-template" target="_blank" rel="noopener">Vue Element Admin Demo 简易版</a></li>
+<li><a href="https://panjiachen.github.io/vue-element-admin" target="_blank" rel="noopener">Vue Element Admin Demo</a></li>
+</ol>
+</li>
+</ol>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ol>
+<li><a href="https://www.ilovepdf.com/zh-cn" target="_blank" rel="noopener">iLovePDF | 为PDF爱好者提供的PDF文件在线处理工具</a></li>
+<li><a href="https://www.grabient.com/" target="_blank" rel="noopener">Grabient | 提供了很多很不错的渐变色方案</a></li>
+<li><a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">jsdelivr | 一个免费开源的 CDN 解决方案</a></li>
+</ol>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -886,7 +819,7 @@ select count(字段) from 表名 --得到该列值的非null">
                     </span>
                     <a href="https://wcisay.github.io" class="b-link-green">Mr.Wangの博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2023/07/11/shu-ju-ku-xiang-guan-zhi-shi-dian-zheng-li-zhong/" class="b-link-green">数据库相关知识点（整理中）</a>
+                    <a href="/2023/12/12/chang-yong-wang-zhan-gong-ju-deng-tui-jian/" class="b-link-green">常用网站、工具等推荐</a>
                 </p>
             </div>
 
@@ -908,49 +841,42 @@ select count(字段) from 表名 --得到该列值的非null">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/11/14/git-xiang-guan/">
+                <a href="/2023/12/12/chang-yong-wang-zhan-gong-ju-deng-tui-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Git相关">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="常用网站、工具等推荐">
                         
-                        <span class="card-title">Git相关</span>
+                        <span class="card-title">常用网站、工具等推荐</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            初次使用在github或者gitee新建一个仓库进入项目目录初始化（生成.git目录）：git init连接远程仓库：git remote add origin http://github.com/仓库地址所有文件加入暂存区：git add
+                            压缩工具
+iLoveIMG | 图像文件在线编辑工具
+TinyPNG – Compress WebP, PNG and JPEG images intelligently
+
+IPV6相关
+国家IPv6发展监测平台
+IPv6网站测试|检测|检
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2023-11-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-12-12
+                            </span>
                         <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/项目管理/" class="post-category" target="_blank">
-                                    项目管理
-                                </a>
-                            
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Git/" target="_blank">
-                        <span class="chip bg-color">Git</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -961,37 +887,32 @@ select count(字段) from 表名 --得到该列值的非null">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/03/01/iview-select-zu-jian-xiang-guan-wen-ti-zong-jie-hui-xian-mo-ren-zhi-deng/">
+                <a href="/2023/12/11/js-chu-li-shi-jian-xiang-guan-de-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="iView Select组件相关问题总结（回显、默认值等）">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="js处理时间相关的问题">
                         
-                        <span class="card-title">iView Select组件相关问题总结（回显、默认值等）</span>
+                        <span class="card-title">js处理时间相关的问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            项目场景：使用iView Select组件时，需要实现编辑修改原始数据的功能。实现步骤：
-通过选中权限ID查询其相应的数据，如权限等级、父权限、名称等；
-通过v-model将数据进行双向绑定，实现数据回显；
-修改后，提交。
-
-
-问题描述一级
+                            一、获取今天之前所有近半年的1号和15号的时间，用于折线图的展示假如今天是2023年12月11号，获取今天之前所有近半年的1号和15号的时间，即：2023-12-01，2023-11-15，2023-11-01…
+最直接的思路，获取到当前时
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-03-01
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-12-11
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Web开发/" class="post-category" target="_blank">
-                                    Web开发
+                            <a href="/categories/JavaScript/" class="post-category" target="_blank">
+                                    JavaScript
                                 </a>
                             
                             
@@ -1001,8 +922,12 @@ select count(字段) from 表名 --得到该列值的非null">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/iView/" target="_blank">
-                        <span class="chip bg-color">iView</span>
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/Web基础/" target="_blank">
+                        <span class="chip bg-color">Web基础</span>
                     </a>
                     
                 </div>
