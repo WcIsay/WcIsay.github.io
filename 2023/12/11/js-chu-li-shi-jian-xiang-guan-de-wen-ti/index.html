@@ -7,9 +7,8 @@
     <meta name="keywords" content="js处理时间相关的问题, life,web,vue,实施,运维">
     <meta name="baidu-site-verification" content="codeva-8TNTAyNUz5">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="一、获取今天之前所有近半年的1号和15号的时间假如今天是2023年12月11号，获取今天之前所有近半年的1号和15号的时间，即：2023-12-01，2023-11-15，2023-11-01…
-&amp;lt;script&amp;gt;
-    // ">
+    <meta name="description" content="一、获取今天之前所有近半年的1号和15号的时间，用于折线图的展示假如今天是2023年12月11号，获取今天之前所有近半年的1号和15号的时间，即：2023-12-01，2023-11-15，2023-11-01…
+最直接的思路，获取到当前时">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -687,9 +686,17 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/JavaScript/" target="_blank">
+                                <span class="chip bg-color">JavaScript</span>
+                            </a>
+                        
+                            <a href="/tags/Web基础/" target="_blank">
+                                <span class="chip bg-color">Web基础</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -723,14 +730,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        310
+                        1.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        6 分
                     </div>
                     
                 
@@ -747,57 +754,126 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="一、获取今天之前所有近半年的1号和15号的时间"><a href="#一、获取今天之前所有近半年的1号和15号的时间" class="headerlink" title="一、获取今天之前所有近半年的1号和15号的时间"></a>一、获取今天之前所有近半年的1号和15号的时间</h4><p>假如今天是2023年12月11号，获取今天之前所有近半年的1号和15号的时间，即：2023-12-01，2023-11-15，2023-11-01…</p>
-<pre><code>&lt;script&gt;
-    // 当前日期
-    const now = new Date();
-    // 当前年份
-    const thisYear = now.getFullYear();
-    // 当前月份
-    const month = now.getMonth() + 1;
-    // 当前日
-    const day = now.getDate() + 1;
-    // 当前年所有1号及15号（不包括超过当前日的）
-    let thisYearDate = [];
-    // 去年
-    let lastYearDate = [];
-    // 目标日期数组
-    let yearDate = []
+                <h4 id="一、获取今天之前所有近半年的1号和15号的时间，用于折线图的展示"><a href="#一、获取今天之前所有近半年的1号和15号的时间，用于折线图的展示" class="headerlink" title="一、获取今天之前所有近半年的1号和15号的时间，用于折线图的展示"></a>一、获取今天之前所有近半年的1号和15号的时间，用于折线图的展示</h4><p>假如今天是2023年12月11号，获取今天之前所有近半年的1号和15号的时间，即：2023-12-01，2023-11-15，2023-11-01…</p>
+<p>最直接的思路，获取到当前时间，去遍历今年以及去年的时间，考虑到如果时间早于6月15日时，今年满足条件的1号以及15号不及12个，以此取前一年满足条件的时间，而今年晚于6月15日后（包括6月15日），获取到今年的所有满足条件的时间后，截取数组即可。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token comment" spellcheck="true">// 当前日期</span>
+    <span class="token keyword">const</span> nowDate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">2023</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 当前年份</span>
+    <span class="token keyword">const</span> thisYear <span class="token operator">=</span> nowDate<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 当前月份</span>
+    <span class="token keyword">const</span> month <span class="token operator">=</span> nowDate<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 当前日</span>
+    <span class="token keyword">const</span> day <span class="token operator">=</span> nowDate<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 当前年所有1号及15号（不包括超过当前日的）</span>
+    <span class="token keyword">let</span> thisYearDate <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 去年</span>
+    <span class="token keyword">let</span> lastYearDate <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 目标日期数组</span>
+    <span class="token keyword">let</span> yearDate <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
 
-    for (let i = 0; i &lt; month; i++) {
-        const date = new Date(thisYear, i, 1);
-        if (date &lt;= now) {
-            date.setDate(2);
-            thisYearDate.push(date.toISOString().slice(0, 10))
-        }
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> month<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>thisYear<span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>date <span class="token operator">&lt;=</span> nowDate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            date<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            thisYearDate<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>date<span class="token punctuation">.</span><span class="token function">toISOString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
 
-        const date15 = new Date(thisYear, i, 15);
-        if (date15 &lt;= now) {
-            date15.setDate(16);
-            thisYearDate.push(date15.toISOString().slice(0, 10))
-        }
-    }
-    if (thisYearDate.length &lt; 12) {
-        for (let i = 0; i &lt; 12; i++) {
-            const date = new Date(thisYear - 1, i, 1);
-            if (date &lt;= now) {
-                date.setDate(2);
-                lastYearDate.push(date.toISOString().slice(0, 10))
-            }
-            const date15 = new Date(thisYear - 1, i, 15);
-            if (date15 &lt;= now) {
-                date15.setDate(16);
-                lastYearDate.push(date15.toISOString().slice(0, 10))
-            }
-        }
-        yearDate = [...lastYearDate.slice(lastYearDate.length - (12 - thisYearDate.length), lastYearDate.length), ...
+        <span class="token keyword">const</span> date15 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>thisYear<span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>date15 <span class="token operator">&lt;=</span> nowDate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            date15<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            thisYearDate<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>date15<span class="token punctuation">.</span><span class="token function">toISOString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>thisYearDate<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">12</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">12</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">const</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>thisYear <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>date <span class="token operator">&lt;=</span> nowDate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                date<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                lastYearDate<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>date<span class="token punctuation">.</span><span class="token function">toISOString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">const</span> date15 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>thisYear <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>date15 <span class="token operator">&lt;=</span> nowDate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                date15<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                lastYearDate<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>date15<span class="token punctuation">.</span><span class="token function">toISOString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        yearDate <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>lastYearDate<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>lastYearDate<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">12</span> <span class="token operator">-</span> thisYearDate<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">,</span> lastYearDate<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">...</span>thisYearDate<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        yearDate <span class="token operator">=</span> thisYearDate<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>thisYearDate<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">12</span><span class="token punctuation">,</span> thisYearDate<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>yearDate<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// ['2023-06-15', '2023-07-01', '2023-07-15', '2023-08-01', '2023-08-15', '2023-09-01', '2023-09-15', '2023-10-01', '2023-10-15', '2023-11-01', '2023-11-15', '2023-12-01']</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="为什么const-month-now-getMonth-1-这里的当前月份需要加一？"><a href="#为什么const-month-now-getMonth-1-这里的当前月份需要加一？" class="headerlink" title="为什么const month = now.getMonth() + 1;这里的当前月份需要加一？"></a>为什么<code>const month = now.getMonth() + 1;</code>这里的当前月份需要加一？</h6><p>因为 JavaScript 中的 Date 对象中的月份是从 0 开始计数的，即 0 表示一月，1 表示二月，以此类推，11 表示十二月。</p>
+<hr>
+<h6 id="date-toISOString-的作用？"><a href="#date-toISOString-的作用？" class="headerlink" title="date.toISOString()的作用？"></a><code>date.toISOString()</code>的作用？</h6><p>不使用这个方法的话，直接打印new Date()，结果是<code>Mon Dec 11 2023 15:42:28 GMT+0800 (中国标准时间)</code> ；使用toISOString() 方法返回一个符合 ISO 8601 标准的字符串表示日期和时间的格式，它将日期和时间转换为 UTC 时间，并以以下格式返回字符串：<code>YYYY-MM-DDTHH:mm:ss.sssZ</code> ，此时我们得到结果<code>'2023-12-11T07:44:12.173Z'</code> ，后截取字符串，得到<code>YYYY-MM-DD</code> 格式的时间。</p>
+<h4 id="二、那假定是柱状图呢？"><a href="#二、那假定是柱状图呢？" class="headerlink" title="二、那假定是柱状图呢？"></a>二、那假定是柱状图呢？</h4><p>柱状图往往是一个区间，因此还需对以上代码及数据进行一定的处理（此前获得的12个数据显然是不够，因此还需多取一个，此处我们依旧以取前不去后的原则去取）。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token comment" spellcheck="true">// 当前日期</span>
+    <span class="token keyword">const</span> nowDate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">2023</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 当前年份</span>
+    <span class="token keyword">const</span> thisYear <span class="token operator">=</span> nowDate<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 当前月份</span>
+    <span class="token keyword">const</span> month <span class="token operator">=</span> nowDate<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 当前日</span>
+    <span class="token keyword">const</span> day <span class="token operator">=</span> nowDate<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 当前年所有1号及15号（不包括超过当前日的）</span>
+    <span class="token keyword">let</span> thisYearDate <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 去年</span>
+    <span class="token keyword">let</span> lastYearDate <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 目标日期数组</span>
+    <span class="token keyword">let</span> yearDate <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> month<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>thisYear<span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>date <span class="token operator">&lt;=</span> nowDate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            date<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            thisYearDate<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>date<span class="token punctuation">.</span><span class="token function">toISOString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">const</span> date15 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>thisYear<span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>date15 <span class="token operator">&lt;=</span> nowDate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            date15<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            thisYearDate<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>date15<span class="token punctuation">.</span><span class="token function">toISOString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>thisYearDate<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">13</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">12</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">const</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>thisYear <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>date <span class="token operator">&lt;=</span> nowDate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                date<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                lastYearDate<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>date<span class="token punctuation">.</span><span class="token function">toISOString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">const</span> date15 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>thisYear <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>date15 <span class="token operator">&lt;=</span>
+                nowDate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                date15<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                lastYearDate<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>date15<span class="token punctuation">.</span><span class="token function">toISOString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        yearDate <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>lastYearDate<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>lastYearDate<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">13</span> <span class="token operator">-</span> thisYearDate<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">,</span> lastYearDate<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">...</span>
             thisYearDate
-        ]
-    } else {
-        yearDate = thisYearDate.slice(thisYearDate.length - 12, thisYearDate.length)
-    }
-    console.log(yearDate)
-&lt;/script&gt;</code></pre><script>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        yearDate <span class="token operator">=</span> thisYearDate<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>thisYearDate<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">13</span><span class="token punctuation">,</span> thisYearDate<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>yearDate<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// ['2023-06-15', '2023-07-01', '2023-07-15', '2023-08-01', '2023-08-15', '2023-09-01', '2023-09-15', '2023-10-01','2023-10-15', '2023-11-01', '2023-11-15', '2023-12-01', '2023-12-15']</span>
+    <span class="token keyword">const</span> formattedDates <span class="token operator">=</span> yearDate<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>date<span class="token punctuation">,</span> index<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">&lt;</span> yearDate<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>date<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">——</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>yearDate<span class="token punctuation">[</span>index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> date<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>formattedDates<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// ['2023-06-15——2023-07-01', '2023-07-01——2023-07-15', '2023-07-15——2023-08-01', '2023-08-01——2023-08-15','2023-08-15——2023-09-01', '2023-09-01——2023-09-15', '2023-09-15——2023-10-01', '2023-10-01——2023-10-15','2023-10-15——2023-11-01', '2023-11-01——2023-11-15', '2023-11-15——2023-12-01', '2023-12-01——2023-12-15', '2023-12-15']</span>
+    <span class="token comment" spellcheck="true">// 去掉最后一个不符合格式要求的，即'2023-12-15'，方法处理下来，这是一个单独的</span>
+    formattedDates<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>formattedDates<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// ['2023-06-15——2023-07-01', '2023-07-01——2023-07-15', '2023-07-15——2023-08-01', '2023-08-01——2023-08-15','2023-08-15——2023-09-01', '2023-09-01——2023-09-15', '2023-09-15——2023-10-01', '2023-10-01——2023-10-15','2023-10-15——2023-11-01', '2023-11-01——2023-11-15', '2023-11-15——2023-12-01', '2023-12-01——2023-12-15']</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="三、优化上述代码"><a href="#三、优化上述代码" class="headerlink" title="三、优化上述代码"></a>三、优化上述代码</h4><p>可对相关重复的代码进行方法的封装；采用<strong>Moment.js</strong>、<strong>Day.js</strong>等第三方库，更便于我们数据的处理。</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -880,9 +956,8 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、获取今天之前所有近半年的1号和15号的时间假如今天是2023年12月11号，获取今天之前所有近半年的1号和15号的时间，即：2023-12-01，2023-11-15，2023-11-01…
-&lt;script&gt;
-    // 
+                            一、获取今天之前所有近半年的1号和15号的时间，用于折线图的展示假如今天是2023年12月11号，获取今天之前所有近半年的1号和15号的时间，即：2023-12-01，2023-11-15，2023-11-01…
+最直接的思路，获取到当前时
                         
                     </div>
                     <div class="publish-info">
@@ -902,6 +977,18 @@
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/Web基础/" target="_blank">
+                        <span class="chip bg-color">Web基础</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -924,7 +1011,18 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            docker常用命令（帮助命令、镜像命令、容器命令等）
+                            帮助命令
+查看docker版本信息：docker version
+
+显示docker系统信息：docker info
+
+命令帮助：–help
+
+
+镜像命令
+列出本地主机上的镜像：docker images
+
+列出所有镜像：docker im
                         
                     </div>
                     <div class="publish-info">
@@ -1122,7 +1220,7 @@
 
             
             &nbsp; | &nbsp;字数统计:&nbsp;
-            <span class="white-color">9.2k</span> 字
+            <span class="white-color">10.1k</span> 字
             
 
             
@@ -1306,6 +1404,6 @@ $(function () {
     </script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 
 </html>

@@ -836,7 +836,11 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            服务器相关指令、容器及常用工具的汇总
+                            防火墙开启防火墙
+systemctl start firewalld.service
+查看防火墙状态（只打印防火墙的运行状态）
+firewall-cmd --state
+Result：running OR not running查看防火墙状
                         
                     </div>
                     <div class="publish-info">
@@ -893,7 +897,10 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            主要内容包括常见面试题以及常用指令的汇总
+                            常用的聚合函数有哪五种？
+count()、sum()、avg()、min()、max()
+count()：求表的行数或者指定表中某个列的列值行数，null值被忽略
+select count(字段) from 表名 --得到该列值的非null
                         
                     </div>
                     <div class="publish-info">
@@ -1095,7 +1102,7 @@
 
             
             &nbsp; | &nbsp;字数统计:&nbsp;
-            <span class="white-color">9.2k</span> 字
+            <span class="white-color">10.1k</span> 字
             
 
             
@@ -1279,6 +1286,6 @@ $(function () {
     </script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 
 </html>
