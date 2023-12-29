@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wcisay.github.io/"/>
-  <updated>2023-12-13T07:43:18.882Z</updated>
+  <updated>2023-12-29T02:26:25.288Z</updated>
   <id>https://wcisay.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hexo Aplayer歌词获取、生成、提取等</title>
-    <link href="https://wcisay.github.io/2023/12/13/hexo-aplayer-ge-ci-huo-qu-sheng-cheng-ti-qu-deng/"/>
-    <id>https://wcisay.github.io/2023/12/13/hexo-aplayer-ge-ci-huo-qu-sheng-cheng-ti-qu-deng/</id>
-    <published>2023-12-13T06:09:52.000Z</published>
-    <updated>2023-12-13T07:43:18.882Z</updated>
+    <title>每日电影推荐</title>
+    <link href="https://wcisay.github.io/2023/12/29/mei-ri-dian-ying-tui-jian/"/>
+    <id>https://wcisay.github.io/2023/12/29/mei-ri-dian-ying-tui-jian/</id>
+    <published>2023-12-29T02:25:23.000Z</published>
+    <updated>2023-12-29T02:26:25.288Z</updated>
     
     <summary type="html">
     
@@ -29,18 +29,37 @@
       
         
         
-          &lt;h4 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot; title=&quot;场景&quot;&gt;&lt;/a&gt;场景&lt;/h4&gt;&lt;p&gt;这个博客的搭建主要是从&lt;a href=&quot;https://sunhwee.com/&quot; target=&quot;_blank&quot;
+          &lt;hr&gt;
+&lt;hr&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.staticfile.org/element-ui/2.15.10/theme-chalk/index.css&quot;&gt;
+&lt;script
         
       
     
     </summary>
     
-      <category term="DOMO" scheme="https://wcisay.github.io/categories/DOMO/"/>
     
+  </entry>
+  
+  <entry>
+    <title>教书先生API实例</title>
+    <link href="https://wcisay.github.io/2023/12/28/jiao-shu-xian-sheng-api-shi-li/"/>
+    <id>https://wcisay.github.io/2023/12/28/jiao-shu-xian-sheng-api-shi-li/</id>
+    <published>2023-12-28T08:24:24.000Z</published>
+    <updated>2023-12-29T06:46:11.508Z</updated>
     
-      <category term="Python" scheme="https://wcisay.github.io/tags/Python/"/>
+    <summary type="html">
     
-      <category term="Aplayer" scheme="https://wcisay.github.io/tags/Aplayer/"/>
+      
+      
+        
+        
+          &lt;p&gt;以前学习的时候总喜欢找点开源的API进行学习，不过却一直没有遇见合适的，接口亦是如此，人也亦是如此！&lt;br&gt;&lt;a href=&quot;https://api.oioweb.cn/api/common/OneFilm&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
     
   </entry>
   
@@ -188,6 +207,34 @@
   </entry>
   
   <entry>
+    <title>Hexo Aplayer歌词获取、生成、提取等</title>
+    <link href="https://wcisay.github.io/2023/06/10/hexo-aplayer-ge-ci-huo-qu-sheng-cheng-ti-qu-deng/"/>
+    <id>https://wcisay.github.io/2023/06/10/hexo-aplayer-ge-ci-huo-qu-sheng-cheng-ti-qu-deng/</id>
+    <published>2023-06-10T06:09:52.000Z</published>
+    <updated>2023-12-14T06:38:39.071Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot; title=&quot;场景&quot;&gt;&lt;/a&gt;场景&lt;/h4&gt;&lt;p&gt;这个博客的搭建主要是从&lt;a href=&quot;https://sunhwee.com/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="DOMO" scheme="https://wcisay.github.io/categories/DOMO/"/>
+    
+    
+      <category term="Python" scheme="https://wcisay.github.io/tags/Python/"/>
+    
+      <category term="Aplayer" scheme="https://wcisay.github.io/tags/Aplayer/"/>
+    
+  </entry>
+  
+  <entry>
     <title>iView Select组件相关问题总结（回显、默认值等）</title>
     <link href="https://wcisay.github.io/2023/03/01/iview-select-zu-jian-xiang-guan-wen-ti-zong-jie-hui-xian-mo-ren-zhi-deng/"/>
     <id>https://wcisay.github.io/2023/03/01/iview-select-zu-jian-xiang-guan-wen-ti-zong-jie-hui-xian-mo-ren-zhi-deng/</id>
@@ -304,7 +351,7 @@
     <link href="https://wcisay.github.io/2022/07/31/chang-yong-wang-zhan-gong-ju-deng-tui-jian/"/>
     <id>https://wcisay.github.io/2022/07/31/chang-yong-wang-zhan-gong-ju-deng-tui-jian/</id>
     <published>2022-07-31T03:44:25.000Z</published>
-    <updated>2023-12-12T06:34:55.651Z</updated>
+    <updated>2023-12-28T09:25:53.827Z</updated>
     
     <summary type="html">
     
