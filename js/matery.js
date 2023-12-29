@@ -150,7 +150,7 @@ $(function () {
         }
     });
 
-    // 增加二级菜单功能 洪卫 shw2018 add 2019.09.17
+    // 增加二级菜单功能
     $(".nav-menu>li").hover(function(){
 		$(this).children('ul').stop(true,true).show();
 		$(this).addClass('nav-show').siblings('li').removeClass('nav-show');
