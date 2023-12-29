@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wcisay.github.io/"/>
-  <updated>2023-12-29T02:26:25.288Z</updated>
+  <updated>2023-12-29T08:02:06.156Z</updated>
   <id>https://wcisay.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://wcisay.github.io/2023/12/29/mei-ri-dian-ying-tui-jian/"/>
     <id>https://wcisay.github.io/2023/12/29/mei-ri-dian-ying-tui-jian/</id>
     <published>2023-12-29T02:25:23.000Z</published>
-    <updated>2023-12-29T02:26:25.288Z</updated>
+    <updated>2023-12-29T08:02:06.156Z</updated>
     
     <summary type="html">
     
@@ -38,6 +38,10 @@
     
     </summary>
     
+      <category term="日常" scheme="https://wcisay.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="电影推荐" scheme="https://wcisay.github.io/tags/%E7%94%B5%E5%BD%B1%E6%8E%A8%E8%8D%90/"/>
     
   </entry>
   
@@ -46,7 +50,7 @@
     <link href="https://wcisay.github.io/2023/12/28/jiao-shu-xian-sheng-api-shi-li/"/>
     <id>https://wcisay.github.io/2023/12/28/jiao-shu-xian-sheng-api-shi-li/</id>
     <published>2023-12-28T08:24:24.000Z</published>
-    <updated>2023-12-29T06:46:11.508Z</updated>
+    <updated>2023-12-29T07:55:37.389Z</updated>
     
     <summary type="html">
     
@@ -60,6 +64,14 @@
     
     </summary>
     
+      <category term="API" scheme="https://wcisay.github.io/categories/API/"/>
+    
+    
+      <category term="JavaScript" scheme="https://wcisay.github.io/tags/JavaScript/"/>
+    
+      <category term="API" scheme="https://wcisay.github.io/tags/API/"/>
+    
+      <category term="前端开发" scheme="https://wcisay.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
