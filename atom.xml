@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wcisay.github.io/"/>
-  <updated>2023-12-29T08:02:06.156Z</updated>
+  <updated>2024-01-08T01:16:51.924Z</updated>
   <id>https://wcisay.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JavaScript实现列表分页、查询等功能</title>
+    <link href="https://wcisay.github.io/2024/01/08/javascript-shi-xian-lie-biao-fen-ye-cha-xun-deng-gong-neng/"/>
+    <id>https://wcisay.github.io/2024/01/08/javascript-shi-xian-lie-biao-fen-ye-cha-xun-deng-gong-neng/</id>
+    <published>2024-01-08T01:05:53.000Z</published>
+    <updated>2024-01-08T01:16:51.924Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;场景一&quot;&gt;&lt;a href=&quot;#场景一&quot; class=&quot;headerlink&quot; title=&quot;场景一&quot;&gt;&lt;/a&gt;场景一&lt;/h4&gt;&lt;p&gt;​    某一天，后端开发同事说：这个列表的数据不是特别多，我一次传给你，你自己处理一下这些数据，OK不OK？&lt;/p&gt;
+&lt;h4
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://wcisay.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://wcisay.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>每日电影推荐</title>
     <link href="https://wcisay.github.io/2023/12/29/mei-ri-dian-ying-tui-jian/"/>
     <id>https://wcisay.github.io/2023/12/29/mei-ri-dian-ying-tui-jian/</id>
     <published>2023-12-29T02:25:23.000Z</published>
-    <updated>2023-12-29T08:02:06.156Z</updated>
+    <updated>2024-01-03T01:09:43.920Z</updated>
     
     <summary type="html">
     
@@ -305,7 +332,7 @@
     <link href="https://wcisay.github.io/2022/10/31/javascript-shu-zu-yu-zi-fu-chuan-de-xiang-hu-zhuan-huan/"/>
     <id>https://wcisay.github.io/2022/10/31/javascript-shu-zu-yu-zi-fu-chuan-de-xiang-hu-zhuan-huan/</id>
     <published>2022-10-31T00:00:00.000Z</published>
-    <updated>2023-12-12T02:12:16.833Z</updated>
+    <updated>2024-01-08T01:21:07.492Z</updated>
     
     <summary type="html">
     
@@ -313,7 +340,7 @@
       
         
         
-          &lt;h1 id=&quot;一、数组转字符串&quot;&gt;&lt;a href=&quot;#一、数组转字符串&quot; class=&quot;headerlink&quot; title=&quot;一、数组转字符串&quot;&gt;&lt;/a&gt;一、数组转字符串&lt;/h1&gt;&lt;h2 id=&quot;1、array-join-separator&quot;&gt;&lt;a
+          &lt;h4 id=&quot;一、数组转字符串&quot;&gt;&lt;a href=&quot;#一、数组转字符串&quot; class=&quot;headerlink&quot; title=&quot;一、数组转字符串&quot;&gt;&lt;/a&gt;一、数组转字符串&lt;/h4&gt;&lt;h5 id=&quot;1、array-join-separator&quot;&gt;&lt;a
         
       
     
@@ -363,7 +390,7 @@
     <link href="https://wcisay.github.io/2022/07/31/chang-yong-wang-zhan-gong-ju-deng-tui-jian/"/>
     <id>https://wcisay.github.io/2022/07/31/chang-yong-wang-zhan-gong-ju-deng-tui-jian/</id>
     <published>2022-07-31T03:44:25.000Z</published>
-    <updated>2023-12-28T09:25:53.827Z</updated>
+    <updated>2024-01-02T07:42:20.123Z</updated>
     
     <summary type="html">
     

@@ -14,10 +14,10 @@
 
   
 
-  axios.get(&#39;https://api.oioweb.cn/api/common/OneFilm&#39;)  
+  axios.get(&#39;https://api.oioweb.cn/api/common/OneFilm&#39;)
     .then(res =&gt; {
-      if(res.code == 200) {
-      ">
+      console.log(res)
+      if(res.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -176,120 +176,120 @@
     </li>
 </ul> -->
 
-<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
+<!-- 支持二级菜单特性  -->
 <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
 <ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+
     
-      <li class="hide-on-med-and-down nav-item" >
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fa fa-home"></i>
+      
+      <span>首页</span>
+    </a>
 
-        
-            <a href="/" class="waves-effect waves-light">
-              
-                <i class="fa fa-home"></i>
-              
-              <span>首页</span>
-            </a>
-
-            
-      </li>
     
-      <li class="hide-on-med-and-down nav-item" >
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
 
-        
-            <a href="/tags" class="waves-effect waves-light">
-              
-                <i class="fa fa-tags"></i>
-              
-              <span>标签</span>
-            </a>
-
-            
-      </li>
     
-      <li class="hide-on-med-and-down nav-item" >
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fa fa-tags"></i>
+      
+      <span>标签</span>
+    </a>
 
-        
-            <a href="/categories" class="waves-effect waves-light">
-              
-                <i class="fa fa-bookmark"></i>
-              
-              <span>分类</span>
-            </a>
-
-            
-      </li>
     
-      <li class="hide-on-med-and-down nav-item" >
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
 
-        
-            <a href="/archives" class="waves-effect waves-light">
-              
-                <i class="fa fa-archive"></i>
-              
-              <span>归档</span>
-            </a>
-
-            
-      </li>
     
-      <li class="hide-on-med-and-down nav-item" >
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fa fa-bookmark"></i>
+      
+      <span>分类</span>
+    </a>
 
-        
-            <a href="/AV" class="waves-effect waves-light">
-              
-                <i class="fa fa-music"></i>
-              
-              <span>视听</span>
-            </a>
-
-            
-      </li>
     
-      <li class="hide-on-med-and-down nav-item" >
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
 
-        
-            <a href="/galleries" class="waves-effect waves-light">
-              
-                <i class="fa fa-photo"></i>
-              
-              <span>相册</span>
-            </a>
-
-            
-      </li>
     
-      <li class="hide-on-med-and-down nav-item" >
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fa fa-archive"></i>
+      
+      <span>归档</span>
+    </a>
 
-        
-            <a href="/about" class="waves-effect waves-light">
-              
-                <i class="fa fa-user-circle-o"></i>
-              
-              <span>关于我</span>
-            </a>
-
-            
-      </li>
     
-      <li class="hide-on-med-and-down nav-item" >
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
 
-        
-            <a href="/friends" class="waves-effect waves-light">
-              
-                <i class="fa fa-address-book"></i>
-              
-              <span>友情链接</span>
-            </a>
-
-            
-      </li>
     
+    <a href="/AV" class="waves-effect waves-light">
+      
+      <i class="fa fa-music"></i>
+      
+      <span>视听</span>
+    </a>
 
-    <li>
-        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
-        </a>
-    </li>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/galleries" class="waves-effect waves-light">
+      
+      <i class="fa fa-photo"></i>
+      
+      <span>相册</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fa fa-user-circle-o"></i>
+      
+      <span>关于我</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fa fa-address-book"></i>
+      
+      <span>友情链接</span>
+    </a>
+
+    
+  </li>
+  
+
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+    </a>
+  </li>
 
 </ul>
 
@@ -384,7 +384,9 @@
         </li>
         
         
-        <li><div class="divider"></div></li>
+        <li>
+            <div class="divider"></div>
+        </li>
         <li>
             <a href="https://github.com/WcIsay/WcIsay.github.io" class="waves-effect waves-light" target="_blank">
                 <i class="fa fa-github-square fa-fw"></i>Fork Me
@@ -393,10 +395,10 @@
         
     </ul>
 
-   
-   
-<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
-<!-- <ul class="menu-list mobile-menu-list">
+
+
+    <!-- 支持二级菜单特性  -->
+    <!-- <ul class="menu-list mobile-menu-list">
     
         <li class="m-nav-item">
                 
@@ -498,7 +500,6 @@
     </ul> -->
 
 </div>
-
         </div>
 
         
@@ -687,8 +688,7 @@
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
-        <!-- shw2018 洪卫  modify 2019.08.15-->
-<!-- 文章内容详情 -->
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -697,9 +697,9 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/电影推荐/" target="_blank">
-                                <span class="chip bg-color">电影推荐</span>
-                            </a>
+                        <a href="/tags/电影推荐/" target="_blank">
+                            <span class="chip bg-color">电影推荐</span>
+                        </a>
                         
                     </div>
                     
@@ -709,15 +709,15 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/日常/" class="post-category" target="_blank">
-                                日常
-                            </a>
+                        <a href="/categories/日常/" class="post-category" target="_blank">
+                            日常
+                        </a>
                         
                     </div>
                     
                 </div>
             </div>
-            
+
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
@@ -727,31 +727,31 @@
                 <div class="post-author info-break-policy">
                     <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
                     
-                        Wang Ziming
+                    Wang Ziming
                     
                 </div>
 
                 
-                    
-                    <div class="info-break-policy">
-                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        88
-                    </div>
-                    
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    91
+                </div>
+                
 
-                    
-                    <div class="info-break-policy">
-                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
-                    </div>
-                    
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    1 分
+                </div>
                 
                 
+
                 
-                        <span id="busuanzi_container_site_pv" style='display:none'></span>
-                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv" ></span>
-    
+                <span id="busuanzi_container_site_pv" style='display:none'></span>
+                <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                <span id="busuanzi_value_page_pv"></span>
+
                 
 
             </div>
@@ -762,17 +762,20 @@
                 <hr>
 <hr>
 <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.15.10/theme-chalk/index.css">
-<script src="<https://cdn.staticfile.org/vue/2.7.10/vue.min.js>"></script>
+<script src="https://cdn.staticfile.org/vue/2.7.10/vue.min.js"></script>
 <script src="https://cdn.staticfile.org/element-ui/2.15.10/index.js"></script>
 <script src="https://cdn.staticfile.org/axios/1.5.0/axios.min.js"></script>  
-<script>
-  axios.get('https://api.oioweb.cn/api/common/OneFilm')  
+<script type="text/javascript">
+  axios.get('https://api.oioweb.cn/api/common/OneFilm')
     .then(res => {
-      if(res.code == 200) {
+      console.log(res)
+      if(res.data.code == 200) {
         const result = res.data.result
+        console.log(result)
+        document.getElementById('articleContent').innerHTML = ""
       } else {
-      }
-      document.getElementById('api-response').textContent = JSON.stringify(data, null, 2);  
+        console.log()
+      }  
     })  
     .catch(error => {  
       console.error(error);
@@ -797,7 +800,7 @@
           });
       </script>
             </div>
-            <hr/>
+            <hr />
 
             
 
@@ -812,7 +815,7 @@
 <script src="/libs/share/js/social-share.min.js"></script>
 
             
-            
+
             
             <div class="reprint1">
                 <p>
@@ -843,58 +846,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/12/29/mei-ri-dian-ying-tui-jian/">
+                <a href="/2024/01/08/javascript-shi-xian-lie-biao-fen-ye-cha-xun-deng-gong-neng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="每日电影推荐">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="JavaScript实现列表分页、查询等功能">
                         
-                        <span class="card-title">每日电影推荐</span>
+                        <span class="card-title">JavaScript实现列表分页、查询等功能</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-
-
-
-
-  
-
-  axios.get('https://api.oioweb.cn/api/common/OneFilm')  
-    .then(res => {
-      if(res.code == 200) {
-      
+                            场景一​    某一天，后端开发同事说：这个列表的数据不是特别多，我一次传给你，你自己处理一下这些数据，OK不OK？
+场景二​    项目经理：项目这里要做个列表页，不单独开发接口了，实现一下查询的功能就可以了。
+​    大头答：有获取数
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-12-29
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-08
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/日常/" class="post-category" target="_blank">
-                                    日常
+                            <a href="/categories/JavaScript/" class="post-category" target="_blank">
+                                    JavaScript
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/电影推荐/" target="_blank">
-                        <span class="chip bg-color">电影推荐</span>
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
@@ -987,17 +980,18 @@
         }
 
         var url = document.location.href;
-        newdiv.innerHTML += '<br />'
-            + '来源: Mr.Wangの博客<br />'
-            + '作者: wzm<br />'
-            + '链接: <a href="' + url + '">' + url + '</a><br />'
-            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+        newdiv.innerHTML += '<br />' +
+            '来源: Mr.Wangの博客<br />' +
+            '作者: wzm<br />' +
+            '链接: <a href="' + url + '">' + url + '</a><br />' +
+            '本文章著作权归作者所有，任何形式的转载都请注明出处。';
 
         selection.selectAllChildren(newdiv);
-        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+        window.setTimeout(function () {
+            bodyElement.removeChild(newdiv);
+        }, 200);
     });
 </script>
-
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -1123,7 +1117,7 @@
 
             
             &nbsp; | &nbsp;字数统计:&nbsp;
-            <span class="white-color">17.1k</span> 字
+            <span class="white-color">20.1k</span> 字
             
 
             
@@ -1307,6 +1301,6 @@ $(function () {
     </script>
     
 
-<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 
 </html>
