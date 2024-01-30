@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wcisay.github.io/"/>
-  <updated>2024-01-15T05:15:19.466Z</updated>
+  <updated>2024-01-16T08:49:38.363Z</updated>
   <id>https://wcisay.github.io/</id>
   
   <author>
@@ -17,11 +17,45 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Apache相关</title>
+    <link href="https://wcisay.github.io/2024/01/16/apache-xiang-guan/"/>
+    <id>https://wcisay.github.io/2024/01/16/apache-xiang-guan/</id>
+    <published>2024-01-16T08:25:57.000Z</published>
+    <updated>2024-01-16T08:49:38.363Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Apache版本更新&lt;/p&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) {
+        
+      
+    
+    </summary>
+    
+      <category term="服务器相关" scheme="https://wcisay.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="Apache" scheme="https://wcisay.github.io/tags/Apache/"/>
+    
+      <category term="Windows" scheme="https://wcisay.github.io/tags/Windows/"/>
+    
+      <category term="Linux" scheme="https://wcisay.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript实现列表分页、查询等功能</title>
     <link href="https://wcisay.github.io/2024/01/08/javascript-shi-xian-lie-biao-fen-ye-cha-xun-deng-gong-neng/"/>
     <id>https://wcisay.github.io/2024/01/08/javascript-shi-xian-lie-biao-fen-ye-cha-xun-deng-gong-neng/</id>
     <published>2024-01-08T01:05:53.000Z</published>
-    <updated>2024-01-15T05:15:19.466Z</updated>
+    <updated>2024-01-29T08:26:06.144Z</updated>
     
     <summary type="html">
     

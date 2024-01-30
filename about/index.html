@@ -490,6 +490,20 @@
     </ul> -->
 
 </div>
+
+<script>
+  fetch('https://api.oioweb.cn/api/weather/GetWeather') // 发送GET请求到服务器上的/api/data端点
+    .then(response => response.json()) // 将响应解析为JSON  
+    .then(data => {
+      // 在这里处理从服务器接收到的数据  
+      // data变量包含了服务器返回的数据
+      console.log(data)
+    })
+    .catch(error => {
+      // 在这里处理请求错误  
+      console.error('请求发生错误:', error);
+    });
+</script>
         </div>
 
         
@@ -603,21 +617,21 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/" target="_blank">14</a></span>
+    <span class="count"><a href="/" target="_blank">15</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories" target="_blank">12</a></span>
+    <span class="count"><a href="/categories" target="_blank">13</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags" target="_blank">21</a></span>
+    <span class="count"><a href="/tags" target="_blank">23</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -632,21 +646,21 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/" target="_blank">14</a></span>
+    <span class="count"><a href="/" target="_blank">15</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories" target="_blank">12</a></span>
+    <span class="count"><a href="/categories" target="_blank">13</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags" target="_blank">21</a></span>
+    <span class="count"><a href="/tags" target="_blank">23</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -775,7 +789,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,1,1,0,0,1,1,0,1,0,2,3,1],
+                data: [0,1,1,0,0,1,1,0,1,0,2,3,2],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -817,7 +831,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"项目管理","value":1},{"name":"JavaScript","value":3},{"name":"DOMO","value":1},{"name":"Web开发","value":2},{"name":"docker","value":1},{"name":"软考","value":1},{"name":"常用工具","value":1},{"name":"数据库","value":1},{"name":"日常","value":1},{"name":"API","value":1},{"name":"服务器","value":1},{"name":"技能提升","value":1}],
+                data: [{"name":"项目管理","value":1},{"name":"服务器相关","value":1},{"name":"JavaScript","value":3},{"name":"DOMO","value":1},{"name":"Web开发","value":2},{"name":"常用工具","value":1},{"name":"软考","value":1},{"name":"数据库","value":1},{"name":"docker","value":1},{"name":"API","value":1},{"name":"日常","value":1},{"name":"技能提升","value":1},{"name":"服务器","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -841,7 +855,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         xAxis: [
             {
                 type: 'category',
-                data: ["JavaScript","Web基础","Git","Python","Aplayer","iView","docker","软件设计师","开发手册","压缩工具"]
+                data: ["JavaScript","Linux","Web基础","Git","Apache","Windows","Python","Aplayer","iView","开发手册"]
             }
         ],
         yAxis: [
@@ -854,7 +868,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [4,2,1,1,1,1,1,1,1,1],
+                data: [4,2,2,1,1,1,1,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -966,6 +980,30 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
+            <a href="/tags/Apache/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Apache</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Windows/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Windows</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Linux/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Linux</span>
+            </a>
+            
+            
+            
+            
+            
+            <a href="/tags/Web基础/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Web基础</span>
+            </a>
+            
             
             
             <a href="/tags/Python/" target="_blank">
@@ -986,24 +1024,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/Web基础/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Web基础</span>
-            </a>
-            
-            
-            
-            <a href="/tags/docker/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">docker</span>
-            </a>
-            
-            
-            
-            <a href="/tags/软件设计师/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">软件设计师</span>
-            </a>
-            
-            
-            
             <a href="/tags/开发手册/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">开发手册</span>
             </a>
@@ -1012,18 +1032,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             <a href="/tags/压缩工具/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">压缩工具</span>
-            </a>
-            
-            
-            
-            <a href="/tags/MySQL/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">MySQL</span>
-            </a>
-            
-            
-            
-            <a href="/tags/SQL-Server/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">SQL Server</span>
             </a>
             
             
@@ -1046,8 +1054,26 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/电影推荐/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">电影推荐</span>
+            <a href="/tags/软件设计师/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">软件设计师</span>
+            </a>
+            
+            
+            
+            <a href="/tags/MySQL/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">MySQL</span>
+            </a>
+            
+            
+            
+            <a href="/tags/SQL-Server/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">SQL Server</span>
+            </a>
+            
+            
+            
+            <a href="/tags/docker/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">docker</span>
             </a>
             
             
@@ -1064,8 +1090,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/Linux/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Linux</span>
+            <a href="/tags/电影推荐/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">电影推荐</span>
             </a>
             
             
@@ -1135,8 +1161,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            Copyright&copy; 2023 Wzm.
-
+            Copyright&copy; 2024 Wzm.
+            <a href="https://beian.miit.gov.cn/">蜀ICP备2024046860号-1</a>
             <br>
             <span id="sitetime"></span><span class="my-face"></span>
             <br>
@@ -1158,7 +1184,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
             
             &nbsp; | &nbsp;字数统计:&nbsp;
-            <span class="white-color">20.3k</span> 字
+            <span class="white-color">20.4k</span> 字
             
 
             
@@ -1342,6 +1368,6 @@ $(function () {
     </script>
     
 
-<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 
 </html>

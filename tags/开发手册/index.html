@@ -490,6 +490,20 @@
     </ul> -->
 
 </div>
+
+<script>
+  fetch('https://api.oioweb.cn/api/weather/GetWeather') // 发送GET请求到服务器上的/api/data端点
+    .then(response => response.json()) // 将响应解析为JSON  
+    .then(data => {
+      // 在这里处理从服务器接收到的数据  
+      // data变量包含了服务器返回的数据
+      console.log(data)
+    })
+    .catch(error => {
+      // 在这里处理请求错误  
+      console.error('请求发生错误:', error);
+    });
+</script>
         </div>
 
         
@@ -609,38 +623,38 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
+                <a href="/tags/Apache/" title="Apache: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Apache" style="background-color: #F5EEF8;">Apache
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Windows/" title="Windows: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Windows" style="background-color: #D5F5E3;">Windows
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Linux/" title="Linux: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Linux" style="background-color: #E8F8F5;">Linux
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/JavaScript/" title="JavaScript: 4">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="JavaScript" style="background-color: #F5EEF8;">JavaScript
+                            data-tagname="JavaScript" style="background-color: #FEF9E7;">JavaScript
                         <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Python/" title="Python: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Python" style="background-color: #D5F5E3;">Python
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Aplayer/" title="Aplayer: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Aplayer" style="background-color: #E8F8F5;">Aplayer
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/iView/" title="iView: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="iView" style="background-color: #FEF9E7;">iView
-                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -654,19 +668,28 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/docker/" title="docker: 1">
+                <a href="/tags/Python/" title="Python: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="docker" style="background-color: #82E0AA;">docker
+                            data-tagname="Python" style="background-color: #82E0AA;">Python
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/软件设计师/" title="软件设计师: 1">
+                <a href="/tags/Aplayer/" title="Aplayer: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="软件设计师" style="background-color: #D7BDE2;">软件设计师
+                            data-tagname="Aplayer" style="background-color: #D7BDE2;">Aplayer
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/iView/" title="iView: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="iView" style="background-color: #A3E4D7;">iView
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -675,7 +698,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/tags/开发手册/" title="开发手册: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            data-tagname="开发手册" style="background-color: #A3E4D7;">开发手册
+                            data-tagname="开发手册" style="background-color: #85C1E9;">开发手册
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -684,25 +707,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/tags/压缩工具/" title="压缩工具: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="压缩工具" style="background-color: #85C1E9;">压缩工具
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/MySQL/" title="MySQL: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="MySQL" style="background-color: #F8C471;">MySQL
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/SQL-Server/" title="SQL Server: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="SQL Server" style="background-color: #F9E79F;">SQL Server
+                            data-tagname="压缩工具" style="background-color: #F8C471;">压缩工具
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -711,7 +716,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/tags/Vue2-js/" title="Vue2.js: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Vue2.js" style="background-color: #D5F5E3;">Vue2.js
+                            data-tagname="Vue2.js" style="background-color: #F9E79F;">Vue2.js
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -735,10 +740,37 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/电影推荐/" title="电影推荐: 1">
+                <a href="/tags/软件设计师/" title="软件设计师: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="电影推荐" style="background-color: #FEF9E7;">电影推荐
+                            data-tagname="软件设计师" style="background-color: #FEF9E7;">软件设计师
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/MySQL/" title="MySQL: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="MySQL" style="background-color: #F9EBEA;">MySQL
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/SQL-Server/" title="SQL Server: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="SQL Server" style="background-color: #A3E4D7;">SQL Server
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/docker/" title="docker: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="docker" style="background-color: #F8F9F9;">docker
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -762,10 +794,10 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/Linux/" title="Linux: 1">
+                <a href="/tags/电影推荐/" title="电影推荐: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Linux" style="background-color: #E8F8F5;">Linux
+                            data-tagname="电影推荐" style="background-color: #FEF9E7;">电影推荐
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -838,8 +870,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            Copyright&copy; 2023 Wzm.
-
+            Copyright&copy; 2024 Wzm.
+            <a href="https://beian.miit.gov.cn/">蜀ICP备2024046860号-1</a>
             <br>
             <span id="sitetime"></span><span class="my-face"></span>
             <br>
@@ -861,7 +893,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
             
             &nbsp; | &nbsp;字数统计:&nbsp;
-            <span class="white-color">20.3k</span> 字
+            <span class="white-color">20.4k</span> 字
             
 
             
@@ -1045,6 +1077,6 @@ $(function () {
     </script>
     
 
-<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 
 </html>
