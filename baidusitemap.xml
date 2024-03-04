@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://wcisay.github.io/2023/07/11/shu-ju-ku-xiang-guan-zhi-shi-dian-zheng-li-zhong/</loc>
+    <lastmod>2024-02-22</lastmod>
+  </url>  <url>
     <loc>https://wcisay.github.io/2024/01/08/javascript-shi-xian-lie-biao-fen-ye-cha-xun-deng-gong-neng/</loc>
     <lastmod>2024-01-29</lastmod>
   </url>  <url>
@@ -29,9 +32,6 @@
     <lastmod>2023-12-12</lastmod>
   </url>  <url>
     <loc>https://wcisay.github.io/2022/09/13/shi-yong-vue2-js-kuang-jia-fu-xie-hexo-de-hexo-theme-matery-zhu-ti/</loc>
-    <lastmod>2023-12-12</lastmod>
-  </url>  <url>
-    <loc>https://wcisay.github.io/2023/07/11/shu-ju-ku-xiang-guan-zhi-shi-dian-zheng-li-zhong/</loc>
     <lastmod>2023-12-12</lastmod>
   </url>  <url>
     <loc>https://wcisay.github.io/2023/12/05/docker-chang-yong-ming-ling/</loc>

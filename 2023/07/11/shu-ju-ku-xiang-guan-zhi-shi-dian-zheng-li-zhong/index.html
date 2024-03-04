@@ -7,10 +7,9 @@
     <meta name="keywords" content="数据库相关知识点（整理中）, life,web,vue,实施,运维">
     <meta name="baidu-site-verification" content="codeva-8TNTAyNUz5">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="常用的聚合函数有哪五种？
-count()、sum()、avg()、min()、max()
+    <meta name="description" content="常用的聚合函数有哪五种？count()、sum()、avg()、min()、max()
 count()：求表的行数或者指定表中某个列的列值行数，null值被忽略
-select count(字段) from 表名 --得到该列值的非null">
+select count(字段) from 表名 --得到该列值的非null值">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -746,14 +745,14 @@ select count(字段) from 表名 --得到该列值的非null">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    2.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    9 分
                 </div>
                 
                 
@@ -770,8 +769,7 @@ select count(字段) from 表名 --得到该列值的非null">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>常用的聚合函数有哪五种？</p>
-<p>count()、sum()、avg()、min()、max()</p>
+                <h4 id="常用的聚合函数有哪五种？"><a href="#常用的聚合函数有哪五种？" class="headerlink" title="常用的聚合函数有哪五种？"></a>常用的聚合函数有哪五种？</h4><p>count()、sum()、avg()、min()、max()</p>
 <p>count()：求表的行数或者指定表中某个列的列值行数，null值被忽略</p>
 <pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span>字段<span class="token punctuation">)</span> <span class="token keyword">from</span> 表名 <span class="token comment" spellcheck="true">--得到该列值的非null值的行数</span>
 
@@ -785,12 +783,141 @@ select count(字段) from 表名 --得到该列值的非null">
 <pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">max</span><span class="token punctuation">(</span>column_name<span class="token punctuation">)</span> <span class="token keyword">from</span> table_name<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>avg()：返回数值列的平均值，null值被忽略</p>
 <pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">avg</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span> <span class="token keyword">as</span> avg_sal <span class="token keyword">from</span> emp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>使用聚合函数时要注意什么？</p>
-<ol>
+<h5 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h5><ol>
 <li>聚合函数可用于任何有效的表达式</li>
 <li>聚合函数会忽略空值</li>
 <li>distinct关键字可以与聚合函数一起使用，这样可以在聚合函数的计算中排除重复项</li>
 </ol>
+<h4 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h4><table>
+<thead>
+<tr>
+<th>聚合函数</th>
+<th>描述</th>
+<th>实例</th>
+<th>MySQL</th>
+<th>SQL Server</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>AVG()</strong></td>
+<td>返回某列的平均值</td>
+<td>SELECT AVG(column_name) FROM table_name;</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>COUNT()</strong></td>
+<td>返回某列中的值的数量</td>
+<td>SELECT COUNT(column_name) FROM table_name;</td>
+<td>支持</td>
+<td>支持 COUNT() 函数，并且提供了额外的选项，如 COUNT_BIG() 用于处理大量数据</td>
+</tr>
+<tr>
+<td><strong>MAX()</strong></td>
+<td>返回某列中的最大值</td>
+<td>SELECT MAX(column_name) FROM table_name;</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>MIN()</strong></td>
+<td>返回某列中的最小值</td>
+<td>SELECT MIN(column_name) FROM table_name;</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>SUM()</strong></td>
+<td>返回某列值的总和</td>
+<td>SELECT SUM(column_name) FROM table_name;</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>GROUP_CONCAT()</strong></td>
+<td>在某些数据库系统（如 MySQL）中，将多个行的值组合成一个由分隔符分隔的字符串</td>
+<td>SELECT GROUP_CONCAT(column_name SEPARATOR ‘, ‘) FROM table_name;</td>
+<td>将多个行的值组合成一个字符串</td>
+<td>没有直接的 GROUP_CONCAT() 函数，可以使用 FOR XML PATH 来实现类似的功能。</td>
+</tr>
+<tr>
+<td><strong>STD() / STDDEV() / STDDEV_POP() / STDDEV_SAMP()</strong></td>
+<td>返回某列的总体或样本标准偏差</td>
+<td>SELECT STD(column_name) FROM table_name;</td>
+<td>STD() 和 STDDEV() 函数（它们是等价的）</td>
+<td>STDDEVP()（总体标准偏差）和 STDDEV()（样本标准偏差）</td>
+</tr>
+<tr>
+<td><strong>VAR_POP() / VARIANCE_POP()</strong></td>
+<td>返回某列的总体方差</td>
+<td>SELECT VAR_POP(column_name) FROM table_name;</td>
+<td>VAR_POP()</td>
+<td>VARP()（总体方差）</td>
+</tr>
+<tr>
+<td><strong>VAR_SAMP() / VARIANCE_SAMP()</strong></td>
+<td>返回某列的样本方差</td>
+<td>SELECT VAR_SAMP(column_name) FROM table_name</td>
+<td>VAR_SAMP()</td>
+<td>VAR()（样本方差）</td>
+</tr>
+<tr>
+<td><strong>COVAR_POP() / COVAR_SAMP()</strong></td>
+<td>返回两个列的协方差</td>
+<td>SELECT COVAR_POP(column1, column2) FROM table_name;</td>
+<td>不直接支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>CORRELATION()</strong></td>
+<td>返回两个列之间的相关系数</td>
+<td>SELECT CORRELATION(column1, column2) FROM table_name;</td>
+<td>不直接支持</td>
+<td>不直接支持</td>
+</tr>
+<tr>
+<td><strong>PERCENT_RANK()</strong></td>
+<td>返回相对于其他行的行的百分比排名</td>
+<td>SELECT PERCENT_RANK(column_name) OVER (ORDER BY column_name) FROM table_name;</td>
+<td>不直接支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>CUME_DIST()</strong></td>
+<td>返回相对位置的累积分布</td>
+<td>SELECT CUME_DIST(column_name) OVER (ORDER BY column_name) FROM table_name;</td>
+<td>不直接支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>NTILE()</strong></td>
+<td>将有序分区中的结果行分成指定数量的近似相等的排名组</td>
+<td>SELECT NTILE(4) OVER (ORDER BY column_name) FROM table_name;</td>
+<td>不直接支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>LEAD() / LAG()</strong></td>
+<td>返回指定偏移量的行的值，用于分析数据中的趋势</td>
+<td>SELECT LEAD(column_name, 1) OVER (ORDER BY column_name) FROM table_name;  SELECT LAG(column_name, 1) OVER (ORDER BY column_name) FROM table_name;</td>
+<td>从8.0 版本开始支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>FIRST_VALUE() / LAST_VALUE()</strong></td>
+<td>返回指定窗口帧中的第一个或最后一个值</td>
+<td>SELECT FIRST_VALUE(column_name) OVER (ORDER BY column_name) FROM table_name;  SELECT LAST_VALUE(column_name) OVER (ORDER BY column_name) FROM table_name;</td>
+<td>从 8.0 版本开始支持 FIRST_VALUE() 和 LAST_VALUE() 函数</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>GREATEST() / LEAST()</strong></td>
+<td>返回一组值中的最大值或最小值</td>
+<td>SELECT GREATEST(value1, value2, …) FROM table_name;  SELECT LEAST(value1, value2, …) FROM table_name;</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+</tbody></table>
 <p>修改某表某字段，不允许空值</p>
 <pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> 表名
 <span class="token keyword">ALTER</span> <span class="token keyword">COLUMN</span> 修改字段名 字段数据类型 <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -814,9 +941,9 @@ select count(字段) from 表名 --得到该列值的非null">
 <td>GRANT（授权）命令、REVOKE（撤销）命令</td>
 </tr>
 </tbody></table>
-<p> WHERE不能接聚合函数（MAX、MIN、COUNT、SUM、AVG等）;HAVING后可以接聚合函数；</p>
-<p> WHERE用在GROUP BY前，先过滤后分组；</p>
-<p> HAVING用在GROUP BY之后，先分组后过滤，且使用HAVING一定要用到GRUOP BY，但用到GROUP BY 不一定有HAVING。</p>
+<p>WHERE不能接聚合函数（MAX、MIN、COUNT、SUM、AVG等）;HAVING后可以接聚合函数；</p>
+<p>WHERE用在GROUP BY前，先过滤后分组；</p>
+<p>HAVING用在GROUP BY之后，先分组后过滤，且使用HAVING一定要用到GRUOP BY，但用到GROUP BY 不一定有HAVING。</p>
 <p>查询表的总行数，并命名为cnt</p>
 <p>select count(*) (as) cnt from 表名（as可加可不加）</p>
 <p>select count(主键或其他不为空的字段) (as) cnt from 表名（as可加可不加）</p>
@@ -855,7 +982,78 @@ select count(字段) from 表名 --得到该列值的非null">
 </ul>
 <p>用法：</p>
 <p>字符串的截取：substring(字符串，起始位置，截取字符数）<br>字符串的拼接：concat(字符串1，字符串2，字符串3,…)<br>字母大写：upper(字符串）</p>
-<p>SQL语句书写顺序<br>select-&gt;distinct-&gt;from-&gt;join-&gt;on-&gt;where-&gt;group by-&gt;having-&gt;order by-&gt;limit<br>SQL语句执行顺序<br>from-&gt;on-&gt;join-&gt;where-&gt;group by（开始使用select中的别名，后面的语句中都可以使用别名）-&gt;sum、count、max、avg-&gt;having-&gt;select-&gt;distinct-&gt;order by-&gt;limit</p>
+<h4 id="SQL语句书写顺序"><a href="#SQL语句书写顺序" class="headerlink" title="SQL语句书写顺序"></a>SQL语句书写顺序</h4><p>select-&gt;distinct-&gt;from-&gt;join-&gt;on-&gt;where-&gt;group by-&gt;having-&gt;order by-&gt;limit</p>
+<h4 id="SQL语句执行顺序"><a href="#SQL语句执行顺序" class="headerlink" title="SQL语句执行顺序"></a>SQL语句执行顺序</h4><p>from-&gt;on-&gt;join-&gt;where-&gt;group by（开始使用select中的别名，后面的语句中都可以使用别名）-&gt;sum、count、max、avg-&gt;having-&gt;select-&gt;distinct-&gt;order by-&gt;limit</p>
+<p><code>DATEDIFF()</code> 是 SQL 中的一个函数，用于计算两个日期之间的差异</p>
+<h4 id="DISTINCT关键字"><a href="#DISTINCT关键字" class="headerlink" title="DISTINCT关键字"></a>DISTINCT关键字</h4><p>当查询某个列时，使用 <code>DISTINCT</code> 可以确保结果集中该列的值是唯一的；也可以在查询多个列时使用 <code>DISTINCT</code>，此时 <code>DISTINCT</code> 会确保这些列的组合是唯一的。</p>
+<h5 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h5><ol>
+<li><strong>性能影响</strong>：使用 <code>DISTINCT</code> 可能会对查询性能产生影响，特别是在处理大型数据集时。因为数据库需要额外的工作来识别和消除重复的行。</li>
+<li><strong>NULL 值</strong>：<code>DISTINCT</code> 会将 <code>NULL</code> 值视为不同的值。也就是说，如果列中有多个 <code>NULL</code> 值，<code>DISTINCT</code> 会将它们全部返回。</li>
+<li><strong>与其他 SQL 语句结合</strong>：<code>DISTINCT</code> 可以与其他 SQL 语句（如 <code>ORDER BY</code>、<code>WHERE</code> 等）结合使用，以进一步定制查询结果。</li>
+<li><strong>不应用于聚合函数</strong>：虽然 <code>DISTINCT</code> 用于消除重复行，但它不应该与聚合函数（如 <code>SUM()</code>, <code>COUNT()</code>, <code>AVG()</code> 等）一起用于单个列，因为这会导致错误或不可预测的结果。</li>
+</ol>
+<p>SUBSTRING(column_name, start, length)：这将从列的值中提取一个子字符串，从指定的起始位置开始，直到指定的长度。</p>
+<p>UPPER(expression)：这会将字符串表达式转换为大写。</p>
+<p>LOWER(expression)：这会将字符串表达式转换为小写。</p>
+<p>CONCAT(string1, string2, …)：这会将两个或多个字符串连接成一个字符串。</p>
+<h4 id="SQL-语句主要区别"><a href="#SQL-语句主要区别" class="headerlink" title="SQL 语句主要区别"></a>SQL 语句主要区别</h4><table>
+<thead>
+<tr>
+<th></th>
+<th>MySQL</th>
+<th>SQL Server</th>
+<th>Oracle</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>字符串连接</strong></td>
+<td>使用 <code>CONCAT()</code> 函数</td>
+<td>使用 <code>+</code> 运算符或 <code>CONCAT()</code> 函数</td>
+<td>使用 `</td>
+</tr>
+<tr>
+<td><strong>自增字段</strong></td>
+<td>使用 <code>AUTO_INCREMENT</code> 关键字</td>
+<td>使用 <code>IDENTITY</code> 关键字</td>
+<td>使用序列（sequence）和触发器（trigger）</td>
+</tr>
+<tr>
+<td><strong>分页查询</strong></td>
+<td>使用 <code>LIMIT</code> 和 <code>OFFSET</code></td>
+<td>使用 <code>OFFSET</code> 和 <code>FETCH</code></td>
+<td>使用 <code>ROWNUM</code> 或 <code>FETCH</code> 和 <code>OFFSET</code>（在12c及更高版本中）</td>
+</tr>
+<tr>
+<td><strong>日期函数</strong></td>
+<td>使用 <code>DATE_FORMAT()</code>, <code>NOW()</code>, <code>DATEDIFF()</code> 等</td>
+<td>使用 <code>FORMAT()</code>, <code>GETDATE()</code>, <code>DATEDIFF()</code> 等</td>
+<td>使用 <code>TO_DATE()</code>, <code>SYSDATE</code>, <code>MONTHS_BETWEEN()</code> 等</td>
+</tr>
+<tr>
+<td><strong>变量</strong></td>
+<td>使用 <code>SET</code> 或 <code>SELECT ... INTO</code> 来定义变量</td>
+<td>使用 <code>DECLARE</code> 来定义变量，并使用 <code>SET</code> 或 <code>SELECT</code> 来赋值</td>
+<td>使用 <code>DECLARE</code> 来定义变量，并使用 <code>SELECT INTO</code> 来赋值</td>
+</tr>
+<tr>
+<td><strong>LIMIT 返回的行数</strong></td>
+<td>默认允许使用 <code>LIMIT</code> 返回大量行数</td>
+<td>在较早的版本中，<code>TOP</code> 有一个默认的行数限制（如 1000 行），但在较新的版本中这个限制已被移除</td>
+<td>没有内置的行数限制，但分页查询可能需要额外的逻辑</td>
+</tr>
+<tr>
+<td><strong>数据类型</strong></td>
+<td>使用 <code>TINYINT</code>, <code>MEDIUMINT</code>, <code>LONGTEXT</code> 等</td>
+<td>使用 <code>TINYINT</code>, <code>INT</code>, <code>VARCHAR(MAX)</code> 等</td>
+<td>使用 <code>NUMBER</code>, <code>VARCHAR2</code>, <code>CLOB</code></td>
+</tr>
+<tr>
+<td><strong>存储过程和函数</strong></td>
+<td>存储过程和函数的语法和调用方式在每种数据库系统中也有所不同</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1199,7 +1397,7 @@ select count(字段) from 表名 --得到该列值的非null">
 
             
             &nbsp; | &nbsp;字数统计:&nbsp;
-            <span class="white-color">20.4k</span> 字
+            <span class="white-color">21.6k</span> 字
             
 
             
@@ -1383,6 +1581,6 @@ $(function () {
     </script>
     
 
-<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 
 </html>
