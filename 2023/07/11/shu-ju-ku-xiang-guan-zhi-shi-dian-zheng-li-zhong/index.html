@@ -745,14 +745,14 @@ select count(字段) from 表名 --得到该列值的非null值">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    2.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    11 分
                 </div>
                 
                 
@@ -983,7 +983,7 @@ select count(字段) from 表名 --得到该列值的非null值">
 <p>用法：</p>
 <p>字符串的截取：substring(字符串，起始位置，截取字符数）<br>字符串的拼接：concat(字符串1，字符串2，字符串3,…)<br>字母大写：upper(字符串）</p>
 <h4 id="SQL语句书写顺序"><a href="#SQL语句书写顺序" class="headerlink" title="SQL语句书写顺序"></a>SQL语句书写顺序</h4><p>select-&gt;distinct-&gt;from-&gt;join-&gt;on-&gt;where-&gt;group by-&gt;having-&gt;order by-&gt;limit</p>
-<h4 id="SQL语句执行顺序"><a href="#SQL语句执行顺序" class="headerlink" title="SQL语句执行顺序"></a>SQL语句执行顺序</h4><p>from-&gt;on-&gt;join-&gt;where-&gt;group by（开始使用select中的别名，后面的语句中都可以使用别名）-&gt;sum、count、max、avg-&gt;having-&gt;select-&gt;distinct-&gt;order by-&gt;limit</p>
+<h4 id="SQL语句执行顺序"><a href="#SQL语句执行顺序" class="headerlink" title="SQL语句执行顺序"></a>SQL语句执行顺序</h4><p>from-&gt;on-&gt;join-&gt;where-&gt;group by（开始使用select中的别名，后面的语句中都可以使用别名）-&gt;sum、count、max、min、avg-&gt;having-&gt;select-&gt;distinct-&gt;order by-&gt;limit</p>
 <p><code>DATEDIFF()</code> 是 SQL 中的一个函数，用于计算两个日期之间的差异</p>
 <h4 id="DISTINCT关键字"><a href="#DISTINCT关键字" class="headerlink" title="DISTINCT关键字"></a>DISTINCT关键字</h4><p>当查询某个列时，使用 <code>DISTINCT</code> 可以确保结果集中该列的值是唯一的；也可以在查询多个列时使用 <code>DISTINCT</code>，此时 <code>DISTINCT</code> 会确保这些列的组合是唯一的。</p>
 <h5 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h5><ol>
@@ -1050,10 +1050,16 @@ select count(字段) from 表名 --得到该列值的非null值">
 <tr>
 <td><strong>存储过程和函数</strong></td>
 <td>存储过程和函数的语法和调用方式在每种数据库系统中也有所不同</td>
-<td></td>
-<td></td>
+<td>存储过程和函数的语法和调用方式在每种数据库系统中也有所不同</td>
+<td>存储过程和函数的语法和调用方式在每种数据库系统中也有所不同</td>
 </tr>
 </tbody></table>
+<h4 id="数据库的三个范式"><a href="#数据库的三个范式" class="headerlink" title="数据库的三个范式"></a>数据库的三个范式</h4><ol>
+<li><strong>第一范式（1NF）</strong>：要求数据库表中的每个字段都是原子性的，即不可再分。这意味着每个字段中不能包含多个值或重复的值。如果一个字段包含多个值，应该将其拆分为多个独立的字段。第一范式确保了数据的原子性，消除了数据的重复和冗余。</li>
+<li><strong>第二范式（2NF）</strong>：要求数据库表中的非主键字段必须完全依赖于主键。换句话说，非主键字段必须与主键直接相关，而不是间接相关。如果一个表中存在部分依赖关系，即某些字段只依赖于主键的一部分，就需要将这些字段拆分到另一个表中，以确保每个表都只包含相关的数据。第二范式消除了部分依赖，进一步减少了数据的冗余性。</li>
+<li><strong>第三范式（3NF）</strong>：要求数据库表中的非主键字段之间不能存在传递依赖关系。传递依赖是指非主键字段依赖于其他非主键字段。如果存在传递依赖，就需要将这些字段拆分到另一个表中，以消除冗余和数据不一致性。第三范式消除了传递依赖，使得数据结构更加清晰和稳定。</li>
+</ol>
+<p>这三个范式的设计目的是确保数据库的简洁性、结构明晰性以及数据的一致性。遵循这些范式可以提高数据库的性能和可维护性，减少数据的冗余和不一致性。然而，需要注意的是，在某些特定场景下，为了优化查询性能或其他原因，可能会选择违反这些范式。因此，在实际应用中，需要根据具体业务需求和数据特点来权衡和选择合适的设计方案。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1397,7 +1403,7 @@ select count(字段) from 表名 --得到该列值的非null值">
 
             
             &nbsp; | &nbsp;字数统计:&nbsp;
-            <span class="white-color">21.6k</span> 字
+            <span class="white-color">23.1k</span> 字
             
 
             

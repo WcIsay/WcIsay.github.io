@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wcisay.github.io/"/>
-  <updated>2024-01-16T08:49:38.363Z</updated>
+  <updated>2024-03-14T09:17:13.783Z</updated>
   <id>https://wcisay.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python将Excel数据写入数据库实例</title>
+    <link href="https://wcisay.github.io/2024/03/13/python-jiang-excel-shu-ju-xie-ru-shu-ju-ku-shi-li/"/>
+    <id>https://wcisay.github.io/2024/03/13/python-jiang-excel-shu-ju-xie-ru-shu-ju-ku-shi-li/</id>
+    <published>2024-03-13T09:26:55.000Z</published>
+    <updated>2024-03-14T09:17:13.783Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;一、引言&quot;&gt;&lt;a href=&quot;#一、引言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="实用DOMO" scheme="https://wcisay.github.io/categories/%E5%AE%9E%E7%94%A8DOMO/"/>
+    
+    
+      <category term="Python" scheme="https://wcisay.github.io/tags/Python/"/>
+    
+      <category term="MySQL" scheme="https://wcisay.github.io/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>Apache相关</title>
@@ -253,7 +281,7 @@
     <link href="https://wcisay.github.io/2023/07/11/shu-ju-ku-xiang-guan-zhi-shi-dian-zheng-li-zhong/"/>
     <id>https://wcisay.github.io/2023/07/11/shu-ju-ku-xiang-guan-zhi-shi-dian-zheng-li-zhong/</id>
     <published>2023-07-11T02:06:19.000Z</published>
-    <updated>2024-02-22T09:48:18.427Z</updated>
+    <updated>2024-03-04T03:47:55.504Z</updated>
     
     <summary type="html">
     
