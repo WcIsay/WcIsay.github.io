@@ -743,7 +743,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    947
+                    954
                 </div>
                 
 
@@ -777,6 +777,7 @@
 </ul>
 <h4 id="三、实现步骤"><a href="#三、实现步骤" class="headerlink" title="三、实现步骤"></a>三、实现步骤</h4><h5 id="3-1-环境准备"><a href="#3-1-环境准备" class="headerlink" title="3.1 环境准备"></a>3.1 环境准备</h5><pre class="line-numbers language-bash"><code class="language-bash">pip <span class="token function">install</span> openpyxl mysql-connector-python<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h5 id="3-2-Excel数据"><a href="#3-2-Excel数据" class="headerlink" title="3.2 Excel数据"></a>3.2 Excel数据</h5><p>假设有一个Excel文件<code>data.xlsx</code>（emmm…都不用假设了，就是汇总表格数据，需要的保留，不需要的删除，场景假设就是医生的诊断单），其中包含患者、医生和病因信息，需要分别写入到<code>patients</code>、<code>doctors</code>和<code>causes</code>三个表中。</p>
+<p><a href="/2024/03/13/python-jiang-excel-shu-ju-xie-ru-shu-ju-ku-shi-li/test.xlsx">待处理的Excel文件</a></p>
 <h5 id="3-3-数据库结构"><a href="#3-3-数据库结构" class="headerlink" title="3.3 数据库结构"></a>3.3 数据库结构</h5><ul>
 <li><p><code>Patients</code>表：包含患者ID和姓名。</p>
 <pre class="line-numbers language-mysql"><code class="language-mysql">DROP TABLE IF EXISTS `Patients`;
@@ -809,7 +810,7 @@ CREATE TABLE `Diagnoses`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 57 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="/QQ%E6%88%AA%E5%9B%BE20240314171129.png" alt="QQ截图20240314171129"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://www.wangziming.asia/2024/03/13/python-jiang-excel-shu-ju-xie-ru-shu-ju-ku-shi-li/QQ%E6%88%AA%E5%9B%BE20240314171129.png" alt="QQ截图20240314171129"></p>
 <h5 id="3-4-Python代码实现"><a href="#3-4-Python代码实现" class="headerlink" title="3.4 Python代码实现"></a>3.4 Python代码实现</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> mysql<span class="token punctuation">.</span>connector  
 <span class="token keyword">from</span> openpyxl <span class="token keyword">import</span> load_workbook  
 
