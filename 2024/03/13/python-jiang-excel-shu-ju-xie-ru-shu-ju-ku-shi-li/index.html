@@ -743,14 +743,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    954
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
                 
@@ -775,7 +775,8 @@
 <li><strong>事务处理</strong></li>
 <li><strong>关联表处理</strong></li>
 </ul>
-<h4 id="三、实现步骤"><a href="#三、实现步骤" class="headerlink" title="三、实现步骤"></a>三、实现步骤</h4><h5 id="3-1-环境准备"><a href="#3-1-环境准备" class="headerlink" title="3.1 环境准备"></a>3.1 环境准备</h5><pre class="line-numbers language-bash"><code class="language-bash">pip <span class="token function">install</span> openpyxl mysql-connector-python<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="三、实现步骤"><a href="#三、实现步骤" class="headerlink" title="三、实现步骤"></a>三、实现步骤</h4><h5 id="3-1-环境准备"><a href="#3-1-环境准备" class="headerlink" title="3.1 环境准备"></a>3.1 环境准备</h5><p><code>mysql-connector-python</code> 是 MySQL 官方提供的 Python 连接器和驱动。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">pip <span class="token function">install</span> openpyxl mysql-connector-python<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h5 id="3-2-Excel数据"><a href="#3-2-Excel数据" class="headerlink" title="3.2 Excel数据"></a>3.2 Excel数据</h5><p>假设有一个Excel文件<code>data.xlsx</code>（emmm…都不用假设了，就是汇总表格数据，需要的保留，不需要的删除，场景假设就是医生的诊断单），其中包含患者、医生和病因信息，需要分别写入到<code>patients</code>、<code>doctors</code>和<code>causes</code>三个表中。</p>
 <p><a href="/2024/03/13/python-jiang-excel-shu-ju-xie-ru-shu-ju-ku-shi-li/test.xlsx">待处理的Excel文件</a></p>
 <h5 id="3-3-数据库结构"><a href="#3-3-数据库结构" class="headerlink" title="3.3 数据库结构"></a>3.3 数据库结构</h5><ul>
@@ -810,7 +811,7 @@ CREATE TABLE `Diagnoses`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 57 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://www.wangziming.asia/2024/03/13/python-jiang-excel-shu-ju-xie-ru-shu-ju-ku-shi-li/QQ%E6%88%AA%E5%9B%BE20240314171129.png" alt="QQ截图20240314171129"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://www.wangziming.asia/2024/03/13/python-jiang-excel-shu-ju-xie-ru-shu-ju-ku-shi-li/QQ%E6%88%AA%E5%9B%BE20240314171129.png" alt="医生表、患者表、就诊记录表联系"></p>
 <h5 id="3-4-Python代码实现"><a href="#3-4-Python代码实现" class="headerlink" title="3.4 Python代码实现"></a>3.4 Python代码实现</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> mysql<span class="token punctuation">.</span>connector  
 <span class="token keyword">from</span> openpyxl <span class="token keyword">import</span> load_workbook  
 
@@ -896,7 +897,42 @@ inserted_doctors <span class="token operator">=</span> <span class="token punctu
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Database connection closed."</span><span class="token punctuation">)</span>
 
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"数据已成功写入数据库。"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="四、延伸"><a href="#四、延伸" class="headerlink" title="四、延伸"></a>四、延伸</h4><p>从特殊到一般…</p>
+<h4 id="四、延伸"><a href="#四、延伸" class="headerlink" title="四、延伸"></a>四、延伸</h4><p>使用<code>mysql-connector-python</code>还可以查询MySQL数据库的很多其他信息。</p>
+<ol>
+<li><h5 id="数据库连接"><a href="#数据库连接" class="headerlink" title="数据库连接"></a>数据库连接</h5><p>使用用户名、密码、主机名和端口号建立到 MySQL 服务器的连接。</p>
+<p>支持 SSL 连接，增强数据传输的安全性。</p>
+<p>可以配置连接池，用于管理多个数据库连接，提高性能。</p>
+</li>
+<li><h5 id="执行-SQL-查询"><a href="#执行-SQL-查询" class="headerlink" title="执行 SQL 查询"></a>执行 SQL 查询</h5><p>执行 SELECT 语句，从数据库中检索数据。</p>
+<p>执行 INSERT、UPDATE 和 DELETE 语句，修改数据库中的数据。</p>
+<p>执行 DDL（数据定义语言）语句，如 CREATE、ALTER 和 DROP，用于管理数据库结构。</p>
+</li>
+<li><h5 id="事务管理"><a href="#事务管理" class="headerlink" title="事务管理"></a>事务管理</h5><p>支持 ACID 属性的事务，确保数据的完整性和一致性。</p>
+<p>提供提交（commit）和回滚（rollback）操作，以控制事务的边界和结果。</p>
+</li>
+<li><h5 id="参数化查询"><a href="#参数化查询" class="headerlink" title="参数化查询"></a>参数化查询</h5><p>允许使用参数化查询，防止 SQL 注入攻击，提高查询的安全性。</p>
+<p>参数化查询也使得代码更加清晰和易于维护。</p>
+</li>
+<li><h5 id="结果集处理"><a href="#结果集处理" class="headerlink" title="结果集处理"></a>结果集处理</h5><p>将查询结果作为字典或元组的列表返回，方便 Python 代码处理。</p>
+<p>提供游标（cursor）对象，用于遍历和访问查询结果。</p>
+</li>
+<li><h5 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h5><p>提供异常处理机制，当连接失败、查询错误或发生其他数据库相关问题时，可以捕获和处理这些异常。</p>
+</li>
+<li><h5 id="批量操作"><a href="#批量操作" class="headerlink" title="批量操作"></a>批量操作</h5><p>支持批量插入、更新或删除操作，提高数据处理效率。</p>
+</li>
+<li><h5 id="存储过程和函数"><a href="#存储过程和函数" class="headerlink" title="存储过程和函数"></a>存储过程和函数</h5><p>调用 MySQL 中的存储过程和函数，执行预定义的数据库操作。</p>
+</li>
+<li><h5 id="复制和负载均衡"><a href="#复制和负载均衡" class="headerlink" title="复制和负载均衡"></a>复制和负载均衡</h5><p>支持连接到 MySQL 复制集，实现读写分离读取和负载均衡。</p>
+</li>
+<li><h5 id="二进制数据处理"><a href="#二进制数据处理" class="headerlink" title="二进制数据处理"></a>二进制数据处理</h5><p>可以处理二进制数据，如 BLOB 和 TEXT 类型字段，允许在 Python 和 MySQL 之间传输二进制数据。</p>
+</li>
+<li><h5 id="字符集和编码"><a href="#字符集和编码" class="headerlink" title="字符集和编码"></a>字符集和编码</h5><p>支持设置连接和查询的字符集和编码，确保字符数据的正确传输和处理。</p>
+</li>
+<li><h5 id="其他高级功能"><a href="#其他高级功能" class="headerlink" title="其他高级功能"></a>其他高级功能</h5><p>提供对预处理语句的支持，用于优化重复执行的查询。</p>
+<p>支持多种认证插件，如 Unix 套接字认证和 PAM 认证。</p>
+<p>允许配置连接的超时时间和重试策略。</p>
+</li>
+</ol>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1245,7 +1281,7 @@ inserted_doctors <span class="token operator">=</span> <span class="token punctu
 
             
             &nbsp; | &nbsp;字数统计:&nbsp;
-            <span class="white-color">23.8k</span> 字
+            <span class="white-color">24.4k</span> 字
             
 
             
@@ -1429,6 +1465,6 @@ $(function () {
     </script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 
 </html>
