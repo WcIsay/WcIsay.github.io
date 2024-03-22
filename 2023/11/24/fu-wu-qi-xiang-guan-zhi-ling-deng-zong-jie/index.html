@@ -7,11 +7,9 @@
     <meta name="keywords" content="服务器相关指令等总结, life,web,vue,实施,运维">
     <meta name="baidu-site-verification" content="codeva-8TNTAyNUz5">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="防火墙开启防火墙
-systemctl start firewalld.service
-查看防火墙状态（只打印防火墙的运行状态）
-firewall-cmd --state
-Result：running OR not running查看防火墙状">
+    <meta name="description" content="磁盘剩余量查看磁盘剩余量[root@wzm ~]# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vda1        40G  7.1G   31G  19% /">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -751,14 +749,14 @@ Result：running OR not running查看防火墙状">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
                 
@@ -775,24 +773,32 @@ Result：running OR not running查看防火墙状">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h5><p>开启防火墙</p>
-<pre class="line-numbers language-centos7.*"><code class="language-centos7.*">systemctl start firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>查看防火墙状态（只打印防火墙的运行状态）</p>
-<pre class="line-numbers language-centos7.*"><code class="language-centos7.*">firewall-cmd --state<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre><code>Result：running OR not running</code></pre><p>查看防火墙状态（打印详细信息）</p>
-<pre><code>systemctl status firewalld.service</code></pre><p>关闭防火墙</p>
-<pre class="line-numbers language-centos7.*"><code class="language-centos7.*">systemctl stop firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>重启防火墙</p>
-<pre class="line-numbers language-centos7.*"><code class="language-centos7.*">systemctl restart firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>开启指定端口</p>
-<pre><code>firewall-cmd --zone=public --add-port=443/tcp --permanent
+                <h4 id="磁盘剩余量"><a href="#磁盘剩余量" class="headerlink" title="磁盘剩余量"></a>磁盘剩余量</h4><h6 id="查看磁盘剩余量"><a href="#查看磁盘剩余量" class="headerlink" title="查看磁盘剩余量"></a>查看磁盘剩余量</h6><pre class="line-numbers language-shell"><code class="language-shell">[root@wzm ~]# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vda1        40G  7.1G   31G  19% /
+devtmpfs        868M     0  868M   0% /dev
+tmpfs           879M   16K  879M   1% /dev/shm
+tmpfs           879M  552K  878M   1% /run
+tmpfs           879M     0  879M   0% /sys/fs/cgroup
+tmpfs           176M     0  176M   0% /run/user/1002
+tmpfs           176M     0  176M   0% /run/user/0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="查看某个特定目录或文件夹的磁盘使用情况"><a href="#查看某个特定目录或文件夹的磁盘使用情况" class="headerlink" title="查看某个特定目录或文件夹的磁盘使用情况"></a>查看某个特定目录或文件夹的磁盘使用情况</h6><pre class="line-numbers language-shell"><code class="language-shell">[root@wzm usr]# du -sh .
+2.5G    .
+[root@wzm /]# du -sh usr
+2.5G    usr
+[root@wzm /]# du -sh home
+36K     home<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h4><h6 id="开启防火墙"><a href="#开启防火墙" class="headerlink" title="开启防火墙"></a>开启防火墙</h6><pre class="line-numbers language-centos7.*"><code class="language-centos7.*">systemctl start firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="查看防火墙状态（只打印防火墙的运行状态）"><a href="#查看防火墙状态（只打印防火墙的运行状态）" class="headerlink" title="查看防火墙状态（只打印防火墙的运行状态）"></a>查看防火墙状态（只打印防火墙的运行状态）</h6><pre class="line-numbers language-centos7.*"><code class="language-centos7.*">firewall-cmd --state<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>Result：running OR not running</code></pre><h6 id="查看防火墙状态（打印详细信息）"><a href="#查看防火墙状态（打印详细信息）" class="headerlink" title="查看防火墙状态（打印详细信息）"></a>查看防火墙状态（打印详细信息）</h6><pre><code>systemctl status firewalld.service</code></pre><h6 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h6><pre class="line-numbers language-centos7.*"><code class="language-centos7.*">systemctl stop firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="重启防火墙"><a href="#重启防火墙" class="headerlink" title="重启防火墙"></a>重启防火墙</h6><pre class="line-numbers language-centos7.*"><code class="language-centos7.*">systemctl restart firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="开启指定端口"><a href="#开启指定端口" class="headerlink" title="开启指定端口"></a>开启指定端口</h6><pre><code>firewall-cmd --zone=public --add-port=443/tcp --permanent
 
 –zone=public 表示作用域为公共的
 
 –add-port=443/tcp 添加 tcp 协议的端口端口号为 443
 
-–permanent 永久生效，如果没有此参数，则只能维持当前 服 务生命周期内，重新启动后失效；</code></pre><p>查看已开放端口</p>
-<pre><code>firewall-cmd --list-ports</code></pre><h5 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h5><h6 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h6><p>查看是否已经安装MySQL</p>
+–permanent 永久生效，如果没有此参数，则只能维持当前 服 务生命周期内，重新启动后失效；</code></pre><h6 id="查看已开放端口"><a href="#查看已开放端口" class="headerlink" title="查看已开放端口"></a>查看已开放端口</h6><pre><code>firewall-cmd --list-ports</code></pre><h4 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h4><h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p>查看是否已经安装MySQL</p>
 <pre><code>rpm -qa | grep mysql</code></pre><p>rpm -e 文件名</p>
 <p>下载官方MySQL包</p>
 <pre><code>wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm</code></pre><p>安装MySQL包</p>
@@ -801,7 +807,7 @@ Result：running OR not running查看防火墙状">
 <pre><code>systemctl start mysqld.service</code></pre><p>查看MySQL运行状态</p>
 <pre><code>service mysqld status</code></pre><p>查看初始密码</p>
 <pre><code>grep 'password' /var/log/mysqld.log</code></pre><p>进入数据库</p>
-<pre><code>mysql -u root -p</code></pre><h5 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h5><h6 id="安装Tomcat"><a href="#安装Tomcat" class="headerlink" title="安装Tomcat"></a>安装Tomcat</h6><ol>
+<pre><code>mysql -u root -p</code></pre><h4 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h4><h5 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h5><ol>
 <li><p>下载要求版本的Tomcat</p>
 </li>
 <li><p>创建目标目录，在目标目录下进行解压操作</p>
@@ -812,9 +818,9 @@ Result：running OR not running查看防火墙状">
 <li><p>查看Tomcat是否启动</p>
 <pre><code>ps -ef |grep tomcat</code></pre></li>
 </ol>
-<h6 id="重启Tomcat"><a href="#重启Tomcat" class="headerlink" title="重启Tomcat"></a>重启Tomcat</h6><ol>
+<h5 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h5><ol>
 <li><p>进入Tomcat的bin文件夹</p>
-<pre><code>cd /home/jstide/ecm/apache-tomcat-8.5.38/bin</code></pre></li>
+<pre><code>cd /apache-tomcat/bin</code></pre></li>
 <li><p>关闭Tomcat服务器</p>
 <pre><code>./shutdown.sh</code></pre></li>
 <li><p>查看Tomcat是否已关闭</p>
@@ -825,10 +831,11 @@ Result：running OR not running查看防火墙状">
 <pre><code>ps -ef | grep tomcat</code></pre></li>
 <li><p>启动Tomcat</p>
 <pre><code>./startup.sh</code></pre></li>
-<li><p>打开服务日志</p>
-<pre><code>tail -f ../logs/catalina.out</code></pre></li>
+<li><p>进入日志文件夹，打开服务日志</p>
+<pre><code>cd logs
+tail -f ../logs/catalina.out</code></pre></li>
 </ol>
-<h5 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h5><p>HTTP和反向代理web服务器</p>
+<h4 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h4><p>HTTP和反向代理web服务器</p>
 <pre class="line-numbers language-nginx"><code class="language-nginx"><span class="token keyword">user</span> nginx<span class="token punctuation">;</span>
 <span class="token keyword">worker_processes</span> auto<span class="token punctuation">;</span>
 <span class="token keyword">error_log</span> <span class="token operator">/</span>var<span class="token operator">/</span>log<span class="token operator">/</span>nginx<span class="token operator">/</span>error<span class="token punctuation">.</span>log<span class="token punctuation">;</span>
@@ -958,7 +965,7 @@ Result：running OR not running查看防火墙状">
 <p>每个指令块以分号(;)结尾</p>
 <p>反向代理</p>
 <p>负载均衡</p>
-<h5 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h5><script>
+<h4 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h4><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1299,7 +1306,7 @@ Result：running OR not running查看防火墙状">
 
             
             &nbsp; | &nbsp;字数统计:&nbsp;
-            <span class="white-color">26.7k</span> 字
+            <span class="white-color">26.8k</span> 字
             
 
             
