@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Mr.Wangの博客</title>
+  
+  <subtitle>Mr.Wangの博客</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://wcisay.github.io/"/>
+  <updated>2025-04-22T17:39:25.393Z</updated>
+  <id>https://wcisay.github.io/</id>
+  
+  <author>
+    <name>wzm</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实施运维相关</title>
+    <link href="https://wcisay.github.io/2025/01/01/shi-shi-yun-wei-xiang-guan/"/>
+    <id>https://wcisay.github.io/2025/01/01/shi-shi-yun-wei-xiang-guan/</id>
+    <published>2024-12-31T16:43:24.000Z</published>
+    <updated>2025-04-22T17:39:25.393Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h1&gt;&lt;h2 id=&quot;操作系统&quot;&gt;&lt;a href=&quot;#操作系统&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL主从复制</title>
+    <link href="https://wcisay.github.io/2024/04/23/mysql-zhu-cong-fu-zhi/"/>
+    <id>https://wcisay.github.io/2024/04/23/mysql-zhu-cong-fu-zhi/</id>
+    <published>2024-04-23T05:40:23.000Z</published>
+    <updated>2025-04-22T18:01:22.127Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;以下是 MySQL 主从复制（Master-Slave Replication）的配置步骤，分为 &lt;strong&gt;主库配置&lt;/strong&gt; 和 &lt;strong&gt;从库配置&lt;/strong&gt; 两部分：&lt;/p&gt;
+&lt;h5 id=&quot;MySQL主从复制&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="MySQL" scheme="https://wcisay.github.io/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="https://wcisay.github.io/tags/MySQL/"/>
+    
+      <category term="数据库" scheme="https://wcisay.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python将Excel数据写入数据库实例</title>
+    <link href="https://wcisay.github.io/2024/03/13/python-jiang-excel-shu-ju-xie-ru-shu-ju-ku-shi-li/"/>
+    <id>https://wcisay.github.io/2024/03/13/python-jiang-excel-shu-ju-xie-ru-shu-ju-ku-shi-li/</id>
+    <published>2024-03-13T09:26:55.000Z</published>
+    <updated>2025-04-19T15:55:25.033Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;一、引言&quot;&gt;&lt;a href=&quot;#一、引言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="实用DOMO" scheme="https://wcisay.github.io/categories/%E5%AE%9E%E7%94%A8DOMO/"/>
+    
+    
+      <category term="Python" scheme="https://wcisay.github.io/tags/Python/"/>
+    
+      <category term="MySQL" scheme="https://wcisay.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Apache相关</title>
+    <link href="https://wcisay.github.io/2024/01/16/apache-xiang-guan/"/>
+    <id>https://wcisay.github.io/2024/01/16/apache-xiang-guan/</id>
+    <published>2024-01-16T08:25:57.000Z</published>
+    <updated>2025-04-19T15:55:25.032Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Apache版本更新&lt;/p&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) {
+        
+      
+    
+    </summary>
+    
+      <category term="服务器相关" scheme="https://wcisay.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="Apache" scheme="https://wcisay.github.io/tags/Apache/"/>
+    
+      <category term="Windows" scheme="https://wcisay.github.io/tags/Windows/"/>
+    
+      <category term="Linux" scheme="https://wcisay.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript实现列表分页、查询等功能</title>
+    <link href="https://wcisay.github.io/2024/01/08/javascript-shi-xian-lie-biao-fen-ye-cha-xun-deng-gong-neng/"/>
+    <id>https://wcisay.github.io/2024/01/08/javascript-shi-xian-lie-biao-fen-ye-cha-xun-deng-gong-neng/</id>
+    <published>2024-01-08T01:05:53.000Z</published>
+    <updated>2025-04-19T15:55:25.032Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;场景一&quot;&gt;&lt;a href=&quot;#场景一&quot; class=&quot;headerlink&quot; title=&quot;场景一&quot;&gt;&lt;/a&gt;场景一&lt;/h4&gt;&lt;p&gt;​    某一天，后端开发同事说：这个列表的数据不是特别多，我一次传给你，你自己处理一下这些数据，OK不OK？&lt;/p&gt;
+&lt;h4
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://wcisay.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://wcisay.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>每日电影推荐</title>
+    <link href="https://wcisay.github.io/2023/12/29/mei-ri-dian-ying-tui-jian/"/>
+    <id>https://wcisay.github.io/2023/12/29/mei-ri-dian-ying-tui-jian/</id>
+    <published>2023-12-29T02:25:23.000Z</published>
+    <updated>2025-04-19T15:55:25.036Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;hr&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.staticfile.org/element-ui/2.15.10/theme-chalk/index.css&quot;&gt;
+&lt;script
+        
+      
+    
+    </summary>
+    
+      <category term="日常" scheme="https://wcisay.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="电影推荐" scheme="https://wcisay.github.io/tags/%E7%94%B5%E5%BD%B1%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js处理时间相关的问题</title>
+    <link href="https://wcisay.github.io/2023/12/11/js-chu-li-shi-jian-xiang-guan-de-wen-ti/"/>
+    <id>https://wcisay.github.io/2023/12/11/js-chu-li-shi-jian-xiang-guan-de-wen-ti/</id>
+    <published>2023-12-11T06:46:20.000Z</published>
+    <updated>2025-04-19T15:55:25.034Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;一、获取今天之前所有近半年的1号和15号的时间，用于折线图的展示&quot;&gt;&lt;a href=&quot;#一、获取今天之前所有近半年的1号和15号的时间，用于折线图的展示&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://wcisay.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://wcisay.github.io/tags/JavaScript/"/>
+    
+      <category term="Web基础" scheme="https://wcisay.github.io/tags/Web%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker常用命令</title>
+    <link href="https://wcisay.github.io/2023/12/05/docker-chang-yong-ming-ling/"/>
+    <id>https://wcisay.github.io/2023/12/05/docker-chang-yong-ming-ling/</id>
+    <published>2023-12-05T05:34:06.000Z</published>
+    <updated>2025-04-19T15:55:25.033Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h5 id=&quot;帮助命令&quot;&gt;&lt;a href=&quot;#帮助命令&quot; class=&quot;headerlink&quot; title=&quot;帮助命令&quot;&gt;&lt;/a&gt;帮助命令&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;查看docker版本信息：&lt;strong&gt;docker
+        
+      
+    
+    </summary>
+    
+      <category term="docker" scheme="https://wcisay.github.io/categories/docker/"/>
+    
+    
+      <category term="docker" scheme="https://wcisay.github.io/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>服务器相关指令等总结</title>
+    <link href="https://wcisay.github.io/2023/11/24/fu-wu-qi-xiang-guan-zhi-ling-deng-zong-jie/"/>
+    <id>https://wcisay.github.io/2023/11/24/fu-wu-qi-xiang-guan-zhi-ling-deng-zong-jie/</id>
+    <published>2023-11-24T02:28:57.000Z</published>
+    <updated>2025-04-19T15:55:25.035Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;磁盘剩余量&quot;&gt;&lt;a href=&quot;#磁盘剩余量&quot; class=&quot;headerlink&quot; title=&quot;磁盘剩余量&quot;&gt;&lt;/a&gt;磁盘剩余量&lt;/h4&gt;&lt;h6 id=&quot;查看磁盘剩余量&quot;&gt;&lt;a href=&quot;#查看磁盘剩余量&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="服务器" scheme="https://wcisay.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="Linux" scheme="https://wcisay.github.io/tags/Linux/"/>
+    
+      <category term="Nginx" scheme="https://wcisay.github.io/tags/Nginx/"/>
+    
+      <category term="Docker" scheme="https://wcisay.github.io/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git相关</title>
+    <link href="https://wcisay.github.io/2023/11/14/git-xiang-guan/"/>
+    <id>https://wcisay.github.io/2023/11/14/git-xiang-guan/</id>
+    <published>2023-11-14T02:54:03.000Z</published>
+    <updated>2025-04-19T15:55:25.032Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h5 id=&quot;初次使用&quot;&gt;&lt;a href=&quot;#初次使用&quot; class=&quot;headerlink&quot; title=&quot;初次使用&quot;&gt;&lt;/a&gt;初次使用&lt;/h5&gt;&lt;p&gt;在github或者gitee新建一个仓库&lt;br&gt;进入项目目录&lt;br&gt;初始化（生成.git目录）：git
+        
+      
+    
+    </summary>
+    
+      <category term="项目管理" scheme="https://wcisay.github.io/categories/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
+    
+    
+      <category term="Git" scheme="https://wcisay.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>教书先生API实例</title>
+    <link href="https://wcisay.github.io/2023/09/28/jiao-shu-xian-sheng-api-shi-li/"/>
+    <id>https://wcisay.github.io/2023/09/28/jiao-shu-xian-sheng-api-shi-li/</id>
+    <published>2023-09-28T08:24:24.000Z</published>
+    <updated>2025-04-19T15:55:25.035Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;以前学习的时候总喜欢找点开源的API进行学习，不过却一直没有遇见合适的，接口亦是如此，人也亦是如此！&lt;br&gt;&lt;a href=&quot;https://api.oioweb.cn/api/common/OneFilm&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="API" scheme="https://wcisay.github.io/categories/API/"/>
+    
+    
+      <category term="JavaScript" scheme="https://wcisay.github.io/tags/JavaScript/"/>
+    
+      <category term="API" scheme="https://wcisay.github.io/tags/API/"/>
+    
+      <category term="前端开发" scheme="https://wcisay.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库相关知识点（整理中）</title>
+    <link href="https://wcisay.github.io/2023/07/11/shu-ju-ku-xiang-guan-zhi-shi-dian-zheng-li-zhong/"/>
+    <id>https://wcisay.github.io/2023/07/11/shu-ju-ku-xiang-guan-zhi-shi-dian-zheng-li-zhong/</id>
+    <published>2023-07-11T02:06:19.000Z</published>
+    <updated>2025-04-19T15:55:25.035Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;常用的聚合函数有哪五种？&quot;&gt;&lt;a href=&quot;#常用的聚合函数有哪五种？&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="数据库" scheme="https://wcisay.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MySQL" scheme="https://wcisay.github.io/tags/MySQL/"/>
+    
+      <category term="SQL Server" scheme="https://wcisay.github.io/tags/SQL-Server/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo Aplayer歌词获取、生成、提取等</title>
+    <link href="https://wcisay.github.io/2023/06/10/hexo-aplayer-ge-ci-huo-qu-sheng-cheng-ti-qu-deng/"/>
+    <id>https://wcisay.github.io/2023/06/10/hexo-aplayer-ge-ci-huo-qu-sheng-cheng-ti-qu-deng/</id>
+    <published>2023-06-10T06:09:52.000Z</published>
+    <updated>2025-04-19T15:55:25.032Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot; title=&quot;场景&quot;&gt;&lt;/a&gt;场景&lt;/h4&gt;&lt;p&gt;这个博客的搭建主要是从&lt;a href=&quot;https://sunhwee.com/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="DOMO" scheme="https://wcisay.github.io/categories/DOMO/"/>
+    
+    
+      <category term="Python" scheme="https://wcisay.github.io/tags/Python/"/>
+    
+      <category term="Aplayer" scheme="https://wcisay.github.io/tags/Aplayer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iView Select组件相关问题总结（回显、默认值等）</title>
+    <link href="https://wcisay.github.io/2023/03/01/iview-select-zu-jian-xiang-guan-wen-ti-zong-jie-hui-xian-mo-ren-zhi-deng/"/>
+    <id>https://wcisay.github.io/2023/03/01/iview-select-zu-jian-xiang-guan-wen-ti-zong-jie-hui-xian-mo-ren-zhi-deng/</id>
+    <published>2023-03-01T06:33:21.000Z</published>
+    <updated>2025-04-19T15:55:25.034Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;项目场景：&quot;&gt;&lt;a href=&quot;#项目场景：&quot; class=&quot;headerlink&quot; title=&quot;项目场景：&quot;&gt;&lt;/a&gt;项目场景：&lt;/h1&gt;&lt;h3 id=&quot;使用iView-Select组件时，需要实现编辑修改原始数据的功能。&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Web开发" scheme="https://wcisay.github.io/categories/Web%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="iView" scheme="https://wcisay.github.io/tags/iView/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《软件设计师教程》知识点总结（更新中）</title>
+    <link href="https://wcisay.github.io/2023/02/15/ruan-jian-she-ji-shi-jiao-cheng-zhi-shi-dian-zong-jie-geng-xin-zhong/"/>
+    <id>https://wcisay.github.io/2023/02/15/ruan-jian-she-ji-shi-jiao-cheng-zhi-shi-dian-zong-jie-geng-xin-zhong/</id>
+    <published>2023-02-15T02:02:58.000Z</published>
+    <updated>2025-04-19T15:55:25.034Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、计算机系统知识&quot;&gt;&lt;a href=&quot;#一、计算机系统知识&quot; class=&quot;headerlink&quot; title=&quot;一、计算机系统知识&quot;&gt;&lt;/a&gt;一、计算机系统知识&lt;/h1&gt;&lt;h2 id=&quot;1-1-计算机系统的基础知识&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="软考" scheme="https://wcisay.github.io/categories/%E8%BD%AF%E8%80%83/"/>
+    
+      <category term="技能提升" scheme="https://wcisay.github.io/categories/%E8%BD%AF%E8%80%83/%E6%8A%80%E8%83%BD%E6%8F%90%E5%8D%87/"/>
+    
+    
+      <category term="软件设计师" scheme="https://wcisay.github.io/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 数组与字符串的相互转换</title>
+    <link href="https://wcisay.github.io/2022/10/31/javascript-shu-zu-yu-zi-fu-chuan-de-xiang-hu-zhuan-huan/"/>
+    <id>https://wcisay.github.io/2022/10/31/javascript-shu-zu-yu-zi-fu-chuan-de-xiang-hu-zhuan-huan/</id>
+    <published>2022-10-31T00:00:00.000Z</published>
+    <updated>2025-04-19T15:55:25.032Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;一、数组转字符串&quot;&gt;&lt;a href=&quot;#一、数组转字符串&quot; class=&quot;headerlink&quot; title=&quot;一、数组转字符串&quot;&gt;&lt;/a&gt;一、数组转字符串&lt;/h4&gt;&lt;h5 id=&quot;1、array-join-separator&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://wcisay.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://wcisay.github.io/tags/JavaScript/"/>
+    
+      <category term="Web基础" scheme="https://wcisay.github.io/tags/Web%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Vue2.js框架复写Hexo的hexo-theme-matery主题</title>
+    <link href="https://wcisay.github.io/2022/09/13/shi-yong-vue2-js-kuang-jia-fu-xie-hexo-de-hexo-theme-matery-zhu-ti/"/>
+    <id>https://wcisay.github.io/2022/09/13/shi-yong-vue2-js-kuang-jia-fu-xie-hexo-de-hexo-theme-matery-zhu-ti/</id>
+    <published>2022-09-13T02:40:50.000Z</published>
+    <updated>2025-04-19T15:55:25.034Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h3&gt;&lt;h3 id=&quot;二、项目基本配置&quot;&gt;&lt;a href=&quot;#二、项目基本配置&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Web开发" scheme="https://wcisay.github.io/categories/Web%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Vue2.js" scheme="https://wcisay.github.io/tags/Vue2-js/"/>
+    
+      <category term="Hexo" scheme="https://wcisay.github.io/tags/Hexo/"/>
+    
+      <category term="Java" scheme="https://wcisay.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用网站、工具等推荐</title>
+    <link href="https://wcisay.github.io/2022/07/31/chang-yong-wang-zhan-gong-ju-deng-tui-jian/"/>
+    <id>https://wcisay.github.io/2022/07/31/chang-yong-wang-zhan-gong-ju-deng-tui-jian/</id>
+    <published>2022-07-31T03:44:25.000Z</published>
+    <updated>2025-04-19T15:55:25.035Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;压缩工具&quot;&gt;&lt;a href=&quot;#压缩工具&quot; class=&quot;headerlink&quot; title=&quot;压缩工具&quot;&gt;&lt;/a&gt;压缩工具&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://tinypng.com/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="常用工具" scheme="https://wcisay.github.io/categories/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="开发手册" scheme="https://wcisay.github.io/tags/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/"/>
+    
+      <category term="压缩工具" scheme="https://wcisay.github.io/tags/%E5%8E%8B%E7%BC%A9%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+</feed>

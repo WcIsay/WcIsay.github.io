@@ -1,0 +1,1592 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="数据库相关知识点（整理中）, life,web,vue,实施,运维">
+    <meta name="baidu-site-verification" content="codeva-8TNTAyNUz5">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="常用的聚合函数有哪五种？count()、sum()、avg()、min()、max()
+count()：求表的行数或者指定表中某个列的列值行数，null值被忽略
+select count(字段) from 表名 --得到该列值的非null值">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>数据库相关知识点（整理中） | Mr.Wangの博客</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <style type="text/css">
+        code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+            
+    </style>
+
+    <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+    <script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            } else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.jpg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Mr.Wangの博客</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/AV" class="waves-effect waves-light">
+            
+            <i class="fa fa-music"></i>
+            
+            <span>视听</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>相册</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fa fa-home"></i>
+      
+      <span>首页</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fa fa-tags"></i>
+      
+      <span>标签</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fa fa-bookmark"></i>
+      
+      <span>分类</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fa fa-archive"></i>
+      
+      <span>归档</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/AV" class="waves-effect waves-light">
+      
+      <i class="fa fa-music"></i>
+      
+      <span>视听</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/galleries" class="waves-effect waves-light">
+      
+      <i class="fa fa-photo"></i>
+      
+      <span>相册</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fa fa-user-circle-o"></i>
+      
+      <span>关于我</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fa fa-address-book"></i>
+      
+      <span>友情链接</span>
+    </a>
+
+    
+  </li>
+  
+
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+    </a>
+  </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.jpg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Mr.Wangの博客</div>
+        <div class="logo-desc">
+            
+            life,web,vue,实施,运维
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/AV" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-music"></i>
+                
+                视听
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                相册
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li>
+            <a href="https://github.com/WcIsay/WcIsay.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+
+
+    <!-- 支持二级菜单特性  -->
+    <!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        归档
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/AV" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-music"></i>
+                        
+                        视听
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/galleries" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-photo"></i>
+                        
+                        相册
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/WcIsay/WcIsay.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+<script>
+  fetch('https://api.oioweb.cn/api/weather/GetWeather') // 发送GET请求到服务器上的/api/data端点
+    .then(response => response.json()) // 将响应解析为JSON  
+    .then(data => {
+      // 在这里处理从服务器接收到的数据  
+      // data变量包含了服务器返回的数据
+      console.log(data)
+    })
+    .catch(error => {
+      // 在这里处理请求错误  
+      console.error('请求发生错误:', error);
+    });
+</script>
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/WcIsay/WcIsay.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        数据库相关知识点（整理中）
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/MySQL/" target="_blank">
+                            <span class="chip bg-color">MySQL</span>
+                        </a>
+                        
+                        <a href="/tags/SQL-Server/" target="_blank">
+                            <span class="chip bg-color">SQL Server</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/数据库/" class="post-category" target="_blank">
+                            数据库
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-07-11
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    wzm
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+                
+
+                
+                <span id="busuanzi_container_site_pv" style='display:none'></span>
+                <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                <span id="busuanzi_value_page_pv"></span>
+
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h4 id="常用的聚合函数有哪五种？"><a href="#常用的聚合函数有哪五种？" class="headerlink" title="常用的聚合函数有哪五种？"></a>常用的聚合函数有哪五种？</h4><p>count()、sum()、avg()、min()、max()</p>
+<p>count()：求表的行数或者指定表中某个列的列值行数，null值被忽略</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span>字段<span class="token punctuation">)</span> <span class="token keyword">from</span> 表名 <span class="token comment" spellcheck="true">--得到该列值的非null值的行数</span>
+
+<span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">from</span> 表名  <span class="token comment" spellcheck="true">--用于统计整个表的行数。任何行，只要有一行非null，则整个表的行数就会被统计上。全为null（不会出现该情况）则不被统计</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>sum()：返回指定数据的和，只能用于数字列，null值被忽略</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">sum</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span> <span class="token keyword">from</span> emp   <span class="token comment" spellcheck="true">--求所有salary的总和</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>max()：返回一列中的最大值，null值被忽略</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">max</span><span class="token punctuation">(</span>column_name<span class="token punctuation">)</span> <span class="token keyword">from</span> table_name<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>min()：返回一列中的最小值，null值被忽略</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">max</span><span class="token punctuation">(</span>column_name<span class="token punctuation">)</span> <span class="token keyword">from</span> table_name<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>avg()：返回数值列的平均值，null值被忽略</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">avg</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span> <span class="token keyword">as</span> avg_sal <span class="token keyword">from</span> emp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h5><ol>
+<li>聚合函数可用于任何有效的表达式</li>
+<li>聚合函数会忽略空值</li>
+<li>distinct关键字可以与聚合函数一起使用，这样可以在聚合函数的计算中排除重复项</li>
+</ol>
+<h4 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h4><table>
+<thead>
+<tr>
+<th>聚合函数</th>
+<th>描述</th>
+<th>实例</th>
+<th>MySQL</th>
+<th>SQL Server</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>AVG()</strong></td>
+<td>返回某列的平均值</td>
+<td>SELECT AVG(column_name) FROM table_name;</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>COUNT()</strong></td>
+<td>返回某列中的值的数量</td>
+<td>SELECT COUNT(column_name) FROM table_name;</td>
+<td>支持</td>
+<td>支持 COUNT() 函数，并且提供了额外的选项，如 COUNT_BIG() 用于处理大量数据</td>
+</tr>
+<tr>
+<td><strong>MAX()</strong></td>
+<td>返回某列中的最大值</td>
+<td>SELECT MAX(column_name) FROM table_name;</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>MIN()</strong></td>
+<td>返回某列中的最小值</td>
+<td>SELECT MIN(column_name) FROM table_name;</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>SUM()</strong></td>
+<td>返回某列值的总和</td>
+<td>SELECT SUM(column_name) FROM table_name;</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>GROUP_CONCAT()</strong></td>
+<td>在某些数据库系统（如 MySQL）中，将多个行的值组合成一个由分隔符分隔的字符串</td>
+<td>SELECT GROUP_CONCAT(column_name SEPARATOR ‘, ‘) FROM table_name;</td>
+<td>将多个行的值组合成一个字符串</td>
+<td>没有直接的 GROUP_CONCAT() 函数，可以使用 FOR XML PATH 来实现类似的功能。</td>
+</tr>
+<tr>
+<td><strong>STD() / STDDEV() / STDDEV_POP() / STDDEV_SAMP()</strong></td>
+<td>返回某列的总体或样本标准偏差</td>
+<td>SELECT STD(column_name) FROM table_name;</td>
+<td>STD() 和 STDDEV() 函数（它们是等价的）</td>
+<td>STDDEVP()（总体标准偏差）和 STDDEV()（样本标准偏差）</td>
+</tr>
+<tr>
+<td><strong>VAR_POP() / VARIANCE_POP()</strong></td>
+<td>返回某列的总体方差</td>
+<td>SELECT VAR_POP(column_name) FROM table_name;</td>
+<td>VAR_POP()</td>
+<td>VARP()（总体方差）</td>
+</tr>
+<tr>
+<td><strong>VAR_SAMP() / VARIANCE_SAMP()</strong></td>
+<td>返回某列的样本方差</td>
+<td>SELECT VAR_SAMP(column_name) FROM table_name</td>
+<td>VAR_SAMP()</td>
+<td>VAR()（样本方差）</td>
+</tr>
+<tr>
+<td><strong>COVAR_POP() / COVAR_SAMP()</strong></td>
+<td>返回两个列的协方差</td>
+<td>SELECT COVAR_POP(column1, column2) FROM table_name;</td>
+<td>不直接支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>CORRELATION()</strong></td>
+<td>返回两个列之间的相关系数</td>
+<td>SELECT CORRELATION(column1, column2) FROM table_name;</td>
+<td>不直接支持</td>
+<td>不直接支持</td>
+</tr>
+<tr>
+<td><strong>PERCENT_RANK()</strong></td>
+<td>返回相对于其他行的行的百分比排名</td>
+<td>SELECT PERCENT_RANK(column_name) OVER (ORDER BY column_name) FROM table_name;</td>
+<td>不直接支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>CUME_DIST()</strong></td>
+<td>返回相对位置的累积分布</td>
+<td>SELECT CUME_DIST(column_name) OVER (ORDER BY column_name) FROM table_name;</td>
+<td>不直接支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>NTILE()</strong></td>
+<td>将有序分区中的结果行分成指定数量的近似相等的排名组</td>
+<td>SELECT NTILE(4) OVER (ORDER BY column_name) FROM table_name;</td>
+<td>不直接支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>LEAD() / LAG()</strong></td>
+<td>返回指定偏移量的行的值，用于分析数据中的趋势</td>
+<td>SELECT LEAD(column_name, 1) OVER (ORDER BY column_name) FROM table_name;  SELECT LAG(column_name, 1) OVER (ORDER BY column_name) FROM table_name;</td>
+<td>从8.0 版本开始支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>FIRST_VALUE() / LAST_VALUE()</strong></td>
+<td>返回指定窗口帧中的第一个或最后一个值</td>
+<td>SELECT FIRST_VALUE(column_name) OVER (ORDER BY column_name) FROM table_name;  SELECT LAST_VALUE(column_name) OVER (ORDER BY column_name) FROM table_name;</td>
+<td>从 8.0 版本开始支持 FIRST_VALUE() 和 LAST_VALUE() 函数</td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>GREATEST() / LEAST()</strong></td>
+<td>返回一组值中的最大值或最小值</td>
+<td>SELECT GREATEST(value1, value2, …) FROM table_name;  SELECT LEAST(value1, value2, …) FROM table_name;</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+</tbody></table>
+<p>修改某表某字段，不允许空值</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> 表名
+<span class="token keyword">ALTER</span> <span class="token keyword">COLUMN</span> 修改字段名 字段数据类型 <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>ORDER BY，GROUP BY</p>
+<p>Oracle SQL语句组成：</p>
+<table>
+<thead>
+<tr>
+<th>数据定义语言（DDL）</th>
+<th>数据操作语言（DML）</th>
+<th>数据查询语言（DQL）</th>
+<th>事物控制语言（TCL）</th>
+<th>数据控制语言（DCL）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CREATE（创建命令）、ALTER（修改）命令、DROP（删除）命令等</td>
+<td>INSERT（插入）命令、UPDATE（更新）命令、DELETE（删除）命令、SELECT…FOR UPDATE（查询）等</td>
+<td>基本查询语句、Order By子句、Group By子句等</td>
+<td>COMMIT（提交）命令、SAVEPOINT（保存点）命令、ROLLBACK（回滚）命令</td>
+<td>GRANT（授权）命令、REVOKE（撤销）命令</td>
+</tr>
+</tbody></table>
+<p>WHERE不能接聚合函数（MAX、MIN、COUNT、SUM、AVG等）;HAVING后可以接聚合函数；</p>
+<p>WHERE用在GROUP BY前，先过滤后分组；</p>
+<p>HAVING用在GROUP BY之后，先分组后过滤，且使用HAVING一定要用到GRUOP BY，但用到GROUP BY 不一定有HAVING。</p>
+<p>查询表的总行数，并命名为cnt</p>
+<p>select count(*) (as) cnt from 表名（as可加可不加）</p>
+<p>select count(主键或其他不为空的字段) (as) cnt from 表名（as可加可不加）</p>
+<p>distinct 搜索去重：select distinct [列名1，列名2，…] from [表名]</p>
+<p>检索所有列</p>
+<p>select * from 表名</p>
+<p>插入记录的方式汇总：</p>
+<ul>
+<li>普通插入（全字段）：INSERT INTO table_name VALUES (value1, value2, …)</li>
+<li>普通插入（限定字段）：INSERT INTO table_name (column1, column2, …) VALUES (value1, value2, …)</li>
+<li>多条一次性插入：INSERT INTO table_name (column1, column2, …) VALUES (value1_1, value1_2, …), (value2_1, value2_2, …), …</li>
+<li>从另一个表导入：INSERT INTO table_name SELECT * FROM table_name2 [WHERE key=value]</li>
+<li>带更新的插入：REPLACE INTO table_name VALUES (value1, value2, …) （注意这种原理是检测到主键或唯一性索引键重复就删除原记录后重新插入）</li>
+</ul>
+<p>修改记录的方式汇总：</p>
+<ul>
+<li>设置为新值：UPDATE table_name SET column_name=new_value [column_name2=new_value2][WHERE column_name3=value3]</li>
+<li>根据已有值替换：UPDATE table_name SET key1=replace(key1, ‘查找内容’, ‘替换成内容’) [WHERE column_name3=value3]</li>
+</ul>
+<p>删除记录的方式汇总：</p>
+<ul>
+<li>根据条件删除：DELETE FROM tb_name [WHERE options][ [ ORDER BY fields ] LIMIT n ]</li>
+<li>全部删除（表清空，包含自增计数器重置）：TRUNCATE tb_name</li>
+</ul>
+<p>时间差：</p>
+<ul>
+<li>TIMESTAMPDIFF(interval, time_start, time_end)可计算time_start-time_end的时间差，单位以指定的interval为准，常用可选：<ul>
+<li>SECOND 秒</li>
+<li>MINUTE 分钟（返回秒数差除以60的整数部分）</li>
+<li>HOUR 小时（返回秒数差除以3600的整数部分）</li>
+<li>DAY 天数（返回秒数差除以3600*24的整数部分）</li>
+<li>MONTH 月数</li>
+<li>YEAR 年数<br>关键词：substing,concat,upper</li>
+</ul>
+</li>
+</ul>
+<p>用法：</p>
+<p>字符串的截取：substring(字符串，起始位置，截取字符数）<br>字符串的拼接：concat(字符串1，字符串2，字符串3,…)<br>字母大写：upper(字符串）</p>
+<h4 id="SQL语句书写顺序"><a href="#SQL语句书写顺序" class="headerlink" title="SQL语句书写顺序"></a>SQL语句书写顺序</h4><p>select-&gt;distinct-&gt;from-&gt;join-&gt;on-&gt;where-&gt;group by-&gt;having-&gt;order by-&gt;limit</p>
+<h4 id="SQL语句执行顺序"><a href="#SQL语句执行顺序" class="headerlink" title="SQL语句执行顺序"></a>SQL语句执行顺序</h4><p>from-&gt;on-&gt;join-&gt;where-&gt;group by（开始使用select中的别名，后面的语句中都可以使用别名）-&gt;sum、count、max、min、avg-&gt;having-&gt;select-&gt;distinct-&gt;order by-&gt;limit</p>
+<p><code>DATEDIFF()</code> 是 SQL 中的一个函数，用于计算两个日期之间的差异</p>
+<h4 id="DISTINCT关键字"><a href="#DISTINCT关键字" class="headerlink" title="DISTINCT关键字"></a>DISTINCT关键字</h4><p>当查询某个列时，使用 <code>DISTINCT</code> 可以确保结果集中该列的值是唯一的；也可以在查询多个列时使用 <code>DISTINCT</code>，此时 <code>DISTINCT</code> 会确保这些列的组合是唯一的。</p>
+<h5 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h5><ol>
+<li><strong>性能影响</strong>：使用 <code>DISTINCT</code> 可能会对查询性能产生影响，特别是在处理大型数据集时。因为数据库需要额外的工作来识别和消除重复的行。</li>
+<li><strong>NULL 值</strong>：<code>DISTINCT</code> 会将 <code>NULL</code> 值视为不同的值。也就是说，如果列中有多个 <code>NULL</code> 值，<code>DISTINCT</code> 会将它们全部返回。</li>
+<li><strong>与其他 SQL 语句结合</strong>：<code>DISTINCT</code> 可以与其他 SQL 语句（如 <code>ORDER BY</code>、<code>WHERE</code> 等）结合使用，以进一步定制查询结果。</li>
+<li><strong>不应用于聚合函数</strong>：虽然 <code>DISTINCT</code> 用于消除重复行，但它不应该与聚合函数（如 <code>SUM()</code>, <code>COUNT()</code>, <code>AVG()</code> 等）一起用于单个列，因为这会导致错误或不可预测的结果。</li>
+</ol>
+<p>SUBSTRING(column_name, start, length)：这将从列的值中提取一个子字符串，从指定的起始位置开始，直到指定的长度。</p>
+<p>UPPER(expression)：这会将字符串表达式转换为大写。</p>
+<p>LOWER(expression)：这会将字符串表达式转换为小写。</p>
+<p>CONCAT(string1, string2, …)：这会将两个或多个字符串连接成一个字符串。</p>
+<h4 id="SQL-语句主要区别"><a href="#SQL-语句主要区别" class="headerlink" title="SQL 语句主要区别"></a>SQL 语句主要区别</h4><table>
+<thead>
+<tr>
+<th></th>
+<th>MySQL</th>
+<th>SQL Server</th>
+<th>Oracle</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>字符串连接</strong></td>
+<td>使用 <code>CONCAT()</code> 函数</td>
+<td>使用 <code>+</code> 运算符或 <code>CONCAT()</code> 函数</td>
+<td>使用 `</td>
+</tr>
+<tr>
+<td><strong>自增字段</strong></td>
+<td>使用 <code>AUTO_INCREMENT</code> 关键字</td>
+<td>使用 <code>IDENTITY</code> 关键字</td>
+<td>使用序列（sequence）和触发器（trigger）</td>
+</tr>
+<tr>
+<td><strong>分页查询</strong></td>
+<td>使用 <code>LIMIT</code> 和 <code>OFFSET</code></td>
+<td>使用 <code>OFFSET</code> 和 <code>FETCH</code></td>
+<td>使用 <code>ROWNUM</code> 或 <code>FETCH</code> 和 <code>OFFSET</code>（在12c及更高版本中）</td>
+</tr>
+<tr>
+<td><strong>日期函数</strong></td>
+<td>使用 <code>DATE_FORMAT()</code>, <code>NOW()</code>, <code>DATEDIFF()</code> 等</td>
+<td>使用 <code>FORMAT()</code>, <code>GETDATE()</code>, <code>DATEDIFF()</code> 等</td>
+<td>使用 <code>TO_DATE()</code>, <code>SYSDATE</code>, <code>MONTHS_BETWEEN()</code> 等</td>
+</tr>
+<tr>
+<td><strong>变量</strong></td>
+<td>使用 <code>SET</code> 或 <code>SELECT ... INTO</code> 来定义变量</td>
+<td>使用 <code>DECLARE</code> 来定义变量，并使用 <code>SET</code> 或 <code>SELECT</code> 来赋值</td>
+<td>使用 <code>DECLARE</code> 来定义变量，并使用 <code>SELECT INTO</code> 来赋值</td>
+</tr>
+<tr>
+<td><strong>LIMIT 返回的行数</strong></td>
+<td>默认允许使用 <code>LIMIT</code> 返回大量行数</td>
+<td>在较早的版本中，<code>TOP</code> 有一个默认的行数限制（如 1000 行），但在较新的版本中这个限制已被移除</td>
+<td>没有内置的行数限制，但分页查询可能需要额外的逻辑</td>
+</tr>
+<tr>
+<td><strong>数据类型</strong></td>
+<td>使用 <code>TINYINT</code>, <code>MEDIUMINT</code>, <code>LONGTEXT</code> 等</td>
+<td>使用 <code>TINYINT</code>, <code>INT</code>, <code>VARCHAR(MAX)</code> 等</td>
+<td>使用 <code>NUMBER</code>, <code>VARCHAR2</code>, <code>CLOB</code></td>
+</tr>
+<tr>
+<td><strong>存储过程和函数</strong></td>
+<td>存储过程和函数的语法和调用方式在每种数据库系统中也有所不同</td>
+<td>存储过程和函数的语法和调用方式在每种数据库系统中也有所不同</td>
+<td>存储过程和函数的语法和调用方式在每种数据库系统中也有所不同</td>
+</tr>
+</tbody></table>
+<h4 id="数据库的三个范式"><a href="#数据库的三个范式" class="headerlink" title="数据库的三个范式"></a>数据库的三个范式</h4><ol>
+<li><strong>第一范式（1NF）</strong>：要求数据库表中的每个字段都是原子性的，即不可再分。这意味着每个字段中不能包含多个值或重复的值。如果一个字段包含多个值，应该将其拆分为多个独立的字段。第一范式确保了数据的原子性，消除了数据的重复和冗余。</li>
+<li><strong>第二范式（2NF）</strong>：要求数据库表中的非主键字段必须完全依赖于主键。换句话说，非主键字段必须与主键直接相关，而不是间接相关。如果一个表中存在部分依赖关系，即某些字段只依赖于主键的一部分，就需要将这些字段拆分到另一个表中，以确保每个表都只包含相关的数据。第二范式消除了部分依赖，进一步减少了数据的冗余性。</li>
+<li><strong>第三范式（3NF）</strong>：要求数据库表中的非主键字段之间不能存在传递依赖关系。传递依赖是指非主键字段依赖于其他非主键字段。如果存在传递依赖，就需要将这些字段拆分到另一个表中，以消除冗余和数据不一致性。第三范式消除了传递依赖，使得数据结构更加清晰和稳定。</li>
+</ol>
+<p>这三个范式的设计目的是确保数据库的简洁性、结构明晰性以及数据的一致性。遵循这些范式可以提高数据库的性能和可维护性，减少数据的冗余和不一致性。然而，需要注意的是，在某些特定场景下，为了优化查询性能或其他原因，可能会选择违反这些范式。因此，在实际应用中，需要根据具体业务需求和数据特点来权衡和选择合适的设计方案。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr />
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://wcisay.github.io" class="b-link-green">Mr.Wangの博客</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2023/07/11/shu-ju-ku-xiang-guan-zhi-shi-dian-zheng-li-zhong/" class="b-link-green">数据库相关知识点（整理中）</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/09/28/jiao-shu-xian-sheng-api-shi-li/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="教书先生API实例">
+                        
+                        <span class="card-title">教书先生API实例</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            以前学习的时候总喜欢找点开源的API进行学习，不过却一直没有遇见合适的，接口亦是如此，人也亦是如此！教书先生API你值得拥有，提供了很多免费的API，且不会有跨域等问题，相当稳定，给大佬大赞！！！！！
+文章主要对跟博客搭建比较契合的相关接口
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2023-09-28
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/API/" class="post-category" target="_blank">
+                                    API
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/API/" target="_blank">
+                        <span class="chip bg-color">API</span>
+                    </a>
+                    
+                    <a href="/tags/前端开发/" target="_blank">
+                        <span class="chip bg-color">前端开发</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/06/10/hexo-aplayer-ge-ci-huo-qu-sheng-cheng-ti-qu-deng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Hexo Aplayer歌词获取、生成、提取等">
+                        
+                        <span class="card-title">Hexo Aplayer歌词获取、生成、提取等</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            运用Python将文件夹中的.txt文件生成相对应的.lrc文件
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-06-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/DOMO/" class="post-category" target="_blank">
+                                    DOMO
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/Aplayer/" target="_blank">
+                        <span class="chip bg-color">Aplayer</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />' +
+            '来源: Mr.Wangの博客<br />' +
+            '作者: wzm<br />' +
+            '链接: <a href="' + url + '">' + url + '</a><br />' +
+            '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {
+            bodyElement.removeChild(newdiv);
+        }, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 2024 Wzm.
+            <a href="https://beian.miit.gov.cn/">蜀ICP备2024046860号-1</a>
+            <br>
+            <span id="sitetime"></span><span class="my-face"></span>
+            <br>
+
+            
+
+            
+            
+            <span id="busuanzi_container_site_pv" style='display:none'></span>
+            总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+            
+
+            
+            <span id="busuanzi_container_site_uv" style='display:none'></span>
+            人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+            
+
+            
+
+            
+            &nbsp; | &nbsp;字数统计:&nbsp;
+            <span class="white-color">34.4k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=2954510949@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=2954510949&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2022, 5, 18, 59, 59, 59);
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }
+    siteTime();
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.bootcss.com/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+    <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+    <script src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    
+    <script src="/libs/others/clicklove.js"></script>
+    
+
+    
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    <script type="text/javascript">
+        var OriginTitile = document.title,
+            st;
+        document.addEventListener("visibilitychange", function () {
+            document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                    document.title = OriginTitile
+                }, 3e3))
+        })
+    </script>
+
+    <!-- 鼠标点击烟花爆炸效果 -->
+    
+
+    <!-- 背景雪花飘落特效 -->
+    
+    <script type="text/javascript">
+        //只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+        }
+    </script>
+    
+
+    <!-- 鼠标点击文字特效 -->
+    
+    <script src="/js/wenzi.js" type="text/javascript"></script>
+    
+
+    <!-- 背景雪花飘落特效 -->
+    
+
+    <!-- 在线聊天工具 -->
+    
+
+    <!-- 背景 canvas-nest -->
+    
+    <script type="text/javascript">
+        var windowWidth = $(window).width();
+        if (windowWidth > 992) {
+            document.write(
+                '<script type="text/javascript" color="0,0,255" pointColor="0,0,255" opacity= "0.8" zIndex="--1" count="150"src="/libs/background/canvas-nest.js"><\/script>'
+                );
+        }
+    </script>
+    
+
+    <!-- 背景静止彩带 -->
+    
+
+    <!-- 背景动态彩带 -->
+    
+    <script type="text/javascript">
+        var windowWidth = $(window).width();
+        if (windowWidth > 992) {
+            document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+        }
+    </script>
+    
+
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+
+</html>

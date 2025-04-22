@@ -1,0 +1,2151 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="教书先生API实例, life,web,vue,实施,运维">
+    <meta name="baidu-site-verification" content="codeva-8TNTAyNUz5">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="以前学习的时候总喜欢找点开源的API进行学习，不过却一直没有遇见合适的，接口亦是如此，人也亦是如此！教书先生API你值得拥有，提供了很多免费的API，且不会有跨域等问题，相当稳定，给大佬大赞！！！！！
+文章主要对跟博客搭建比较契合的相关接口">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>教书先生API实例 | Mr.Wangの博客</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <style type="text/css">
+        code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+            
+    </style>
+
+    <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+    <script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            } else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.jpg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Mr.Wangの博客</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/AV" class="waves-effect waves-light">
+            
+            <i class="fa fa-music"></i>
+            
+            <span>视听</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>相册</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fa fa-home"></i>
+      
+      <span>首页</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fa fa-tags"></i>
+      
+      <span>标签</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fa fa-bookmark"></i>
+      
+      <span>分类</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fa fa-archive"></i>
+      
+      <span>归档</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/AV" class="waves-effect waves-light">
+      
+      <i class="fa fa-music"></i>
+      
+      <span>视听</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/galleries" class="waves-effect waves-light">
+      
+      <i class="fa fa-photo"></i>
+      
+      <span>相册</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fa fa-user-circle-o"></i>
+      
+      <span>关于我</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fa fa-address-book"></i>
+      
+      <span>友情链接</span>
+    </a>
+
+    
+  </li>
+  
+
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+    </a>
+  </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.jpg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Mr.Wangの博客</div>
+        <div class="logo-desc">
+            
+            life,web,vue,实施,运维
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/AV" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-music"></i>
+                
+                视听
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                相册
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li>
+            <a href="https://github.com/WcIsay/WcIsay.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+
+
+    <!-- 支持二级菜单特性  -->
+    <!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        归档
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/AV" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-music"></i>
+                        
+                        视听
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/galleries" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-photo"></i>
+                        
+                        相册
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/WcIsay/WcIsay.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+<script>
+  fetch('https://api.oioweb.cn/api/weather/GetWeather') // 发送GET请求到服务器上的/api/data端点
+    .then(response => response.json()) // 将响应解析为JSON  
+    .then(data => {
+      // 在这里处理从服务器接收到的数据  
+      // data变量包含了服务器返回的数据
+      console.log(data)
+    })
+    .catch(error => {
+      // 在这里处理请求错误  
+      console.error('请求发生错误:', error);
+    });
+</script>
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/WcIsay/WcIsay.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        教书先生API实例
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/JavaScript/" target="_blank">
+                            <span class="chip bg-color">JavaScript</span>
+                        </a>
+                        
+                        <a href="/tags/API/" target="_blank">
+                            <span class="chip bg-color">API</span>
+                        </a>
+                        
+                        <a href="/tags/前端开发/" target="_blank">
+                            <span class="chip bg-color">前端开发</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/API/" class="post-category" target="_blank">
+                            API
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-09-28
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    Wang Ziming
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    27 分
+                </div>
+                
+                
+
+                
+                <span id="busuanzi_container_site_pv" style='display:none'></span>
+                <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                <span id="busuanzi_value_page_pv"></span>
+
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>以前学习的时候总喜欢找点开源的API进行学习，不过却一直没有遇见合适的，接口亦是如此，人也亦是如此！<br><a href="https://api.oioweb.cn/api/common/OneFilm" target="_blank" rel="noopener">教书先生API</a>你值得拥有，提供了很多免费的API，且不会有跨域等问题，相当稳定，给大佬大赞！！！！！</p>
+<p>文章主要对跟博客搭建比较契合的相关接口进行了说明。其中“响应数据实例”即是通过请求动态生成的数据，F12也可以在控制台看到相关响应的数据。</p>
+<h4 id="每日推荐一部电影"><a href="#每日推荐一部电影" class="headerlink" title="每日推荐一部电影"></a><a href="https://api.oioweb.cn/api/common/OneFilm" target="_blank" rel="noopener">每日推荐一部电影</a></h4><p>每日推荐一部电影</p>
+<h5 id="接口地址"><a href="#接口地址" class="headerlink" title="接口地址"></a>接口地址</h5><p> <a href="https://api.oioweb.cn/api/common/OneFilm" target="_blank" rel="noopener">https://api.oioweb.cn/api/common/OneFilm</a></p>
+<h5 id="返回格式"><a href="#返回格式" class="headerlink" title="返回格式"></a>返回格式</h5><p>JSON</p>
+<h5 id="请求方式"><a href="#请求方式" class="headerlink" title="请求方式"></a>请求方式</h5><p>GET</p>
+<h5 id="请求示例"><a href="#请求示例" class="headerlink" title="请求示例"></a>请求示例</h5><p> <a href="https://api.oioweb.cn/api/common/OneFilm" target="_blank" rel="noopener">https://api.oioweb.cn/api/common/OneFilm</a></p>
+<h5 id="请求参数说明"><a href="#请求参数说明" class="headerlink" title="请求参数说明"></a>请求参数说明</h5><p>无</p>
+<h5 id="返回参数说明"><a href="#返回参数说明" class="headerlink" title="返回参数说明"></a>返回参数说明</h5><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>date</td>
+<td>number</td>
+<td>当前数据日期</td>
+</tr>
+<tr>
+<td>mov_area</td>
+<td>string</td>
+<td>电影地区</td>
+</tr>
+<tr>
+<td>mov_director</td>
+<td>string</td>
+<td>导演</td>
+</tr>
+<tr>
+<td>mov_intro</td>
+<td>string</td>
+<td>电影描述</td>
+</tr>
+<tr>
+<td>mov_link</td>
+<td>string</td>
+<td>豆瓣链接</td>
+</tr>
+<tr>
+<td>mov_pic</td>
+<td>string</td>
+<td>电影封面</td>
+</tr>
+<tr>
+<td>mov_rating</td>
+<td>number</td>
+<td>电影评分</td>
+</tr>
+<tr>
+<td>mov_text</td>
+<td>string</td>
+<td>电影描述</td>
+</tr>
+<tr>
+<td>mov_title</td>
+<td>string</td>
+<td>电影名称</td>
+</tr>
+<tr>
+<td>mov_type</td>
+<td>object</td>
+<td>电影类型</td>
+</tr>
+<tr>
+<td>mov_year</td>
+<td>string</td>
+<td>电影年份</td>
+</tr>
+</tbody></table>
+<h5 id="返回示例"><a href="#返回示例" class="headerlink" title="返回示例"></a>返回示例</h5><pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"code"</span><span class="token operator">:</span><span class="token number">200</span><span class="token punctuation">,</span>
+    <span class="token property">"result"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token property">"date"</span><span class="token operator">:</span><span class="token string">"20230917"</span><span class="token punctuation">,</span>
+        <span class="token property">"mov_area"</span><span class="token operator">:</span><span class="token string">"法国"</span><span class="token punctuation">,</span>
+        <span class="token property">"mov_director"</span><span class="token operator">:</span><span class="token string">"奥黛丽·迪万"</span><span class="token punctuation">,</span>
+        <span class="token property">"mov_intro"</span><span class="token operator">:</span><span class="token string">"上个世纪60年代，法国禁止堕胎。高中女孩安娜因为一次放纵而不小心怀孕，因非法堕胎而面临的法律和生命危险，以及牺牲在学业和未来之间做出选择，寻求各种办法偷偷堕胎的故事。"</span><span class="token punctuation">,</span>
+        <span class="token property">"mov_link"</span><span class="token operator">:</span><span class="token string">"https://movie.douban.com/subject/35318021/"</span><span class="token punctuation">,</span>
+        <span class="token property">"mov_pic"</span><span class="token operator">:</span><span class="token string">"https://files.codelife.cc/itab/movieCalendar/c-2023032335318021.webp?x-oss-process=image/resize,
+        limit_0,
+        m_fill,
+        w_400/quality,
+        q_90/format,
+        webp"</span><span class="token punctuation">,</span>
+        <span class="token property">"poster_url"</span><span class="token operator">:</span><span class="token string">"https://files.codelife.cc/itab/movieCalendar/p-2023032335318021.webp?x-oss-process=image/resize,
+        limit_0,
+        m_fill,
+        w_273,
+        h_405/quality,
+        q_80/format,
+        webp"</span><span class="token punctuation">,</span>
+        <span class="token property">"mov_rating"</span><span class="token operator">:</span><span class="token string">"8.1"</span><span class="token punctuation">,</span>
+        <span class="token property">"mov_text"</span><span class="token operator">:</span><span class="token string">"漫长的一天里她端坐在镜前，梳理着她的金色长发。我或许会说，我们的悲剧正处在高潮时刻。"</span><span class="token punctuation">,</span>
+        <span class="token property">"mov_title"</span><span class="token operator">:</span><span class="token string">"正发生"</span><span class="token punctuation">,</span>
+        <span class="token property">"mov_type"</span><span class="token operator">:</span><span class="token punctuation">[</span>
+            <span class="token string">"剧情"</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"mov_year"</span><span class="token operator">:</span><span class="token string">"2021"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"msg"</span><span class="token operator">:</span><span class="token string">"success"</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="响应数据实例"><a href="#响应数据实例" class="headerlink" title="响应数据实例"></a>响应数据实例</h5><pre class="line-numbers language-json"><code class="language-json"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<hr>
+<hr>
+<script src="https://cdn.staticfile.org/axios/1.5.0/axios.min.js"></script>  
+<script type="text/javascript">
+  axios.get('https://api.oioweb.cn/api/common/OneFilm')  
+  .then(res => {
+    if(res.data.code == 200) {
+      const result = res.data.result
+      console.log("每日推荐一部电影")
+      console.log(result)
+      var languageJsonNum = document.querySelectorAll(".language-json")
+      languageJsonNum[3].textContent = JSON.stringify(result, null, 2)
+    } else {
+      console.log("请求失败！")
+    }
+  })  
+  .catch(error => {  
+    console.error(error);
+  }); 
+</script>
+
+<hr>
+<hr>
+<h4 id="每日一句英文"><a href="#每日一句英文" class="headerlink" title="每日一句英文"></a><a href="https://api.oioweb.cn/doc/common/OneDayEnglish" target="_blank" rel="noopener">每日一句英文</a></h4><p>每日一句英文，新的一天行动起来吧</p>
+<h5 id="接口地址-1"><a href="#接口地址-1" class="headerlink" title="接口地址"></a>接口地址</h5><p> <a href="https://api.oioweb.cn/api/common/OneDayEnglish" target="_blank" rel="noopener">https://api.oioweb.cn/api/common/OneDayEnglish</a></p>
+<h5 id="返回格式-1"><a href="#返回格式-1" class="headerlink" title="返回格式"></a>返回格式</h5><p>JSON</p>
+<h5 id="请求方式-1"><a href="#请求方式-1" class="headerlink" title="请求方式"></a>请求方式</h5><p> GET</p>
+<h5 id="请求示例-1"><a href="#请求示例-1" class="headerlink" title="请求示例"></a>请求示例</h5><p><a href="https://api.oioweb.cn/api/common/OneDayEnglish" target="_blank" rel="noopener">https://api.oioweb.cn/api/common/OneDayEnglish</a></p>
+<h5 id="请求参数说明-1"><a href="#请求参数说明-1" class="headerlink" title="请求参数说明"></a>请求参数说明</h5><p>无</p>
+<h5 id="返回参数说明-1"><a href="#返回参数说明-1" class="headerlink" title="返回参数说明"></a>返回参数说明</h5><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tts</td>
+<td>string</td>
+<td>英文语音链接</td>
+</tr>
+<tr>
+<td>content</td>
+<td>string</td>
+<td>英文内容</td>
+</tr>
+<tr>
+<td>note</td>
+<td>string</td>
+<td>中文意译</td>
+</tr>
+<tr>
+<td>dateline</td>
+<td>string</td>
+<td>事件</td>
+</tr>
+<tr>
+<td>img</td>
+<td>string</td>
+<td>分享图片</td>
+</tr>
+</tbody></table>
+<h5 id="返回实例"><a href="#返回实例" class="headerlink" title="返回实例"></a>返回实例</h5><pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"code"</span><span class="token operator">:</span><span class="token number">200</span><span class="token punctuation">,</span>
+    <span class="token property">"result"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token property">"tts"</span><span class="token operator">:</span><span class="token string">"https://staticedu-wps.cache.iciba.com/audio/36ecdfb303d3f8ea263d565ec0c59d4d.mp3"</span><span class="token punctuation">,</span>
+        <span class="token property">"content"</span><span class="token operator">:</span><span class="token string">"I will greet this day with love in my heart."</span><span class="token punctuation">,</span>
+        <span class="token property">"note"</span><span class="token operator">:</span><span class="token string">"我要用全身心的爱来迎接今天。"</span><span class="token punctuation">,</span>
+        <span class="token property">"dateline"</span><span class="token operator">:</span><span class="token string">"2023-04-12"</span><span class="token punctuation">,</span>
+        <span class="token property">"img"</span><span class="token operator">:</span><span class="token string">"https://staticedu-wps.cache.iciba.com/image/d97e0e2f64ee073ed7181ac29b29b64a.png"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"msg"</span><span class="token operator">:</span><span class="token string">"success"</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="响应数据实例-1"><a href="#响应数据实例-1" class="headerlink" title="响应数据实例"></a>响应数据实例</h5><pre class="line-numbers language-json"><code class="language-json"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<hr>
+<script type="text/javascript">
+  axios.get('https://api.oioweb.cn/api/common/OneDayEnglish')  
+  .then(res => {
+    if(res.data.code == 200) {
+      const result = res.data.result
+      console.log("每日一句英文")
+      console.log(result)
+      var languageJsonNum = document.querySelectorAll(".language-json")
+      languageJsonNum[6].textContent = JSON.stringify(result, null, 2)
+    } else {
+      console.log("请求失败！")
+    } 
+  })  
+  .catch(error => {  
+    console.error(error); 
+  });  
+</script>
+
+<hr>
+<hr>
+<h4 id="历史上的今天"><a href="#历史上的今天" class="headerlink" title="历史上的今天"></a><a href="https://api.oioweb.cn/doc/common/history" target="_blank" rel="noopener">历史上的今天</a></h4><p>历史上的今天都发生了哪些大事</p>
+<h5 id="接口地址-2"><a href="#接口地址-2" class="headerlink" title="接口地址"></a>接口地址</h5><p><a href="https://api.oioweb.cn/api/common/history" target="_blank" rel="noopener">https://api.oioweb.cn/api/common/history</a></p>
+<h5 id="返回格式-2"><a href="#返回格式-2" class="headerlink" title="返回格式"></a>返回格式</h5><p> JSON</p>
+<h5 id="请求方式-2"><a href="#请求方式-2" class="headerlink" title="请求方式"></a>请求方式</h5><p> GET</p>
+<h5 id="请求示例-2"><a href="#请求示例-2" class="headerlink" title="请求示例"></a>请求示例</h5><p> <a href="https://api.oioweb.cn/api/common/history" target="_blank" rel="noopener">https://api.oioweb.cn/api/common/history</a></p>
+<h5 id="请求参数说明-2"><a href="#请求参数说明-2" class="headerlink" title="请求参数说明"></a>请求参数说明</h5><p>无</p>
+<h5 id="返回示例-1"><a href="#返回示例-1" class="headerlink" title="返回示例"></a>返回示例</h5><pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"code"</span><span class="token operator">:</span><span class="token number">200</span><span class="token punctuation">,</span>
+    <span class="token property">"result"</span><span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"year"</span><span class="token operator">:</span><span class="token string">"-565"</span><span class="token punctuation">,</span>
+            <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"印度&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E9%87%8A%E8%BF%A6%E7%89%9F%E5%B0%BC\">释迦牟尼&lt;/a>出生"</span><span class="token punctuation">,</span>
+            <span class="token property">"desc"</span><span class="token operator">:</span><span class="token string">"释迦牟尼，佛教创始人。姓乔答摩，名悉达多。“释迦牟尼”是佛教徒对他的尊称。释迦，种族名，意为“能”；牟尼，亦译为“文”，是尊称，意为“仁”、“儒”、“忍”、“寂”。合为“能仁”、“能儒”、“能忍”、“能寂”等，意即释迦族的“圣人”。"</span><span class="token punctuation">,</span>
+            <span class="token property">"link"</span><span class="token operator">:</span><span class="token string">"https://baike.baidu.com/item/%E9%87%8A%E8%BF%A6%E7%89%9F%E5%B0%BC/120396"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"year"</span><span class="token operator">:</span><span class="token string">"1818"</span><span class="token punctuation">,</span>
+            <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"丹麦国王&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E5%85%8B%E9%87%8C%E6%96%AF%E8%92%82%E5%AE%89%E4%B9%9D%E4%B8%96\">克里斯蒂安九世&lt;/a>出生"</span><span class="token punctuation">,</span>
+            <span class="token property">"desc"</span><span class="token operator">:</span><span class="token string">"克里斯蒂安九世（Christian Ⅸ，1818年4月8日－1906年1月29日），丹麦国王（1863年—1906年在位）。是&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E5%85%8B%E9%87%8C%E6%96%AF%E8%92%82%E5%AE%89%E4%B8%89%E4%B8%96\">克里斯蒂安三世&lt;/a>国王的九世"</span><span class="token punctuation">,</span>
+            <span class="token property">"link"</span><span class="token operator">:</span><span class="token string">"https://baike.baidu.com/item/%E5%85%8B%E9%87%8C%E6%96%AF%E8%92%82%E5%AE%89%E4%B9%9D%E4%B8%96"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"year"</span><span class="token operator">:</span><span class="token string">"1896"</span><span class="token punctuation">,</span>
+            <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6\">交通大学&lt;/a>(&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E8%A5%BF%E5%AE%89%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6\">西安交通大学&lt;/a>和&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6\">上海交通大学&lt;/a>的前身)建校"</span><span class="token punctuation">,</span>
+            <span class="token property">"desc"</span><span class="token operator">:</span><span class="token string">"交通大学，成立于1921年，是一所历史悠久，以工科，管理科见长的综合性高等著名学府。前身是1896年成立的&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E5%8D%97%E6%B4%8B%E5%85%AC%E5%AD%A6\">南洋公学&lt;/a>（今&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6\">上海交通"</span><span class="token punctuation">,</span>
+            <span class="token property">"link"</span><span class="token operator">:</span><span class="token string">"https://baike.baidu.com/item/%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"year"</span><span class="token operator">:</span><span class="token string">"1929"</span><span class="token punctuation">,</span>
+            <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"中国探月工程总设计师&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E5%AD%99%E5%AE%B6%E6%A0%8B\">孙家栋&lt;/a>出生"</span><span class="token punctuation">,</span>
+            <span class="token property">"desc"</span><span class="token operator">:</span><span class="token string">"孙家栋，男，1929年生，辽宁瓦房店市市人。是&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E8%BF%90%E8%BD%BD%E7%81%AB%E7%AE%AD\">运载火箭&lt;/a>与卫星技术专家、&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E4%B8%AD%E5%9B%BD%E7%A7%91%E5%AD%A6%E9%99%A2\">中国科学院&lt;/a>院士、国家宇航科学院院士、&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E8%A5%BF%E5%AE%89%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6\">西安电子科技大学&lt;/a>"</span><span class="token punctuation">,</span>
+            <span class="token property">"link"</span><span class="token operator">:</span><span class="token string">"https://baike.baidu.com/item/%E5%AD%99%E5%AE%B6%E6%A0%8B"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"year"</span><span class="token operator">:</span><span class="token string">"1938"</span><span class="token punctuation">,</span>
+            <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"前联合国秘书长&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E7%A7%91%E8%8F%B2%C2%B7%E5%AE%89%E5%8D%97\">科菲·安南&lt;/a>出生"</span><span class="token punctuation">,</span>
+            <span class="token property">"desc"</span><span class="token operator">:</span><span class="token string">"科菲·&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E5%AE%89%E5%8D%97\">安南&lt;/a>标准名是科菲·阿塔·安南（Kofi Atta Annan，1938年4月8日－），&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E5%8A%A0%E7%BA%B3\">加纳&lt;/a>&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E5%BA%93%E9%A9%AC%E8%A5%BF\">库马西&lt;/a>人，&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E8%81%94%E5%90%88%E5%9B%BD\">联合国&lt;/a>第七任&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E7%A7%98%E4%B9%A6%E9%95%BF\">秘书长&lt;/a>。他是一对双胞胎之"</span><span class="token punctuation">,</span>
+            <span class="token property">"link"</span><span class="token operator">:</span><span class="token string">"https://baike.baidu.com/item/%E7%A7%91%E8%8F%B2%C2%B7%E5%AE%89%E5%8D%97"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"year"</span><span class="token operator">:</span><span class="token string">"1939"</span><span class="token punctuation">,</span>
+            <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"意大利入侵&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E9%98%BF%E5%B0%94%E5%B7%B4%E5%B0%BC%E4%BA%9A\">阿尔巴尼亚&lt;/a>"</span><span class="token punctuation">,</span>
+            <span class="token property">"desc"</span><span class="token operator">:</span><span class="token string">"阿尔巴尼亚位于东&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E5%8D%97%E6%AC%A7\">南欧&lt;/a>&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E5%B7%B4%E5%B0%94%E5%B9%B2%E5%8D%8A%E5%B2%9B\">巴尔干半岛&lt;/a>西岸，北接&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E5%A1%9E%E5%B0%94%E7%BB%B4%E4%BA%9A\">塞尔维亚&lt;/a>与&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E9%BB%91%E5%B1%B1\">黑山&lt;/a>，东北与&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E9%A9%AC%E5%85%B6%E9%A1%BF\">马其顿&lt;/a>相连，东南邻&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E5%B8%8C%E8%85%8A\">希腊&lt;/a>，西濒&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E4%BA%9A%E5%BE%97%E9%87%8C%E4%BA%9A%E6%B5%B7\">亚得里亚海&lt;/a>和&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E4%BC%8A%E5%A5%A5%E5%B0%BC%E4%BA%9A%E6%B5%B7\">伊奥尼亚海&lt;/a>，隔&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E5%A5%A5%E7%89%B9%E6%9C%97%E6%89%98%E6%B5%B7%E5%B3%A1\">奥"</span><span class="token punctuation">,</span>
+            <span class="token property">"link"</span><span class="token operator">:</span><span class="token string">"https://baike.baidu.com/item/%E9%98%BF%E5%B0%94%E5%B7%B4%E5%B0%BC%E4%BA%9A"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"year"</span><span class="token operator">:</span><span class="token string">"1946"</span><span class="token punctuation">,</span>
+            <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E5%9B%BD%E9%99%85%E8%81%94%E7%9B%9F\">国际联盟&lt;/a>决定自行解散，财产移交联合国"</span><span class="token punctuation">,</span>
+            <span class="token property">"desc"</span><span class="token operator">:</span><span class="token string">"国际联盟，简称国联，是《&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E5%87%A1%E5%B0%94%E8%B5%9B%E6%9D%A1%E7%BA%A6\">凡尔赛条约&lt;/a>》签订后组成的国际组织，于1934年9月28日至1935年2月23日的最高峰时期，国联曾拥有58个会"</span><span class="token punctuation">,</span>
+            <span class="token property">"link"</span><span class="token operator">:</span><span class="token string">"https://baike.baidu.com/item/%E5%9B%BD%E9%99%85%E8%81%94%E7%9B%9F"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"year"</span><span class="token operator">:</span><span class="token string">"1946"</span><span class="token punctuation">,</span>
+            <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"香港电影演员、导演&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E9%BB%84%E7%99%BE%E9%B8%A3\">黄百鸣&lt;/a>出生"</span><span class="token punctuation">,</span>
+            <span class="token property">"desc"</span><span class="token operator">:</span><span class="token string">"黄百鸣，香港电影从业员，曾任&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E6%96%B0%E8%89%BA%E5%9F%8E%E5%BD%B1%E4%B8%9A%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8\">新艺城影业有限公司&lt;/a>电影&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E7%9B%91%E5%88%B6\">监制&lt;/a>、&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E7%BC%96%E5%89%A7\">编剧&lt;/a>、&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E6%BC%94%E5%91%98\">演员&lt;/a>。黄百鸣是香港响当当的一位人物，他以编剧身份进入香港&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E6%BC%94%E8%89%BA%E5%9C%88\">"</span><span class="token punctuation">,</span>
+            <span class="token property">"link"</span><span class="token operator">:</span><span class="token string">"https://baike.baidu.com/item/%E9%BB%84%E7%99%BE%E9%B8%A3"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"year"</span><span class="token operator">:</span><span class="token string">"1946"</span><span class="token punctuation">,</span>
+            <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"“四·八”空难"</span><span class="token punctuation">,</span>
+            <span class="token property">"desc"</span><span class="token operator">:</span><span class="token string">"1946年4月8日 出席重庆国共谈判与政治协商会议的中共代表回延安向党中央报告和请示工作，途中由于气候恶劣，能见度极差，飞机与地面失去联系，迷失方向。下午2时左右，在兴县黑茶山，飞机撞到山峰上，同行人员17人不幸全部遇难，史称“四八”空难。"</span><span class="token punctuation">,</span>
+            <span class="token property">"link"</span><span class="token operator">:</span><span class="token string">"https://baike.baidu.com/item/%E9%BB%91%E8%8C%B6%E5%B1%B1%E7%A9%BA%E9%9A%BE"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"year"</span><span class="token operator">:</span><span class="token string">"1947"</span><span class="token punctuation">,</span>
+            <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"汽车时代的开创者美国人&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E4%BA%A8%E5%88%A9%C2%B7%E7%A6%8F%E7%89%B9/532854\">亨利·福特&lt;/a>逝世"</span><span class="token punctuation">,</span>
+            <span class="token property">"desc"</span><span class="token operator">:</span><span class="token string">"亨利·福特（HenryFord，1863年7月30日—1947年4月8日），&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E7%BE%8E%E5%9B%BD\">美国&lt;/a>汽车工程师与企业家，&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E7%A6%8F%E7%89%B9%E6%B1%BD%E8%BD%A6%E5%85%AC%E5%8F%B8\">福特汽车公司&lt;/a>的建立者。他也是世界上第一位使"</span><span class="token punctuation">,</span>
+            <span class="token property">"link"</span><span class="token operator">:</span><span class="token string">"https://baike.baidu.com/item/%E4%BA%A8%E5%88%A9%C2%B7%E7%A6%8F%E7%89%B9/532854"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"year"</span><span class="token operator">:</span><span class="token string">"1968"</span><span class="token punctuation">,</span>
+            <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"黄梅戏表演艺术家&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E4%B8%A5%E5%87%A4%E8%8B%B1/5344\">严凤英&lt;/a>被迫害致死"</span><span class="token punctuation">,</span>
+            <span class="token property">"desc"</span><span class="token operator">:</span><span class="token string">"严凤英，原名严鸿六，安徽省安庆市宜秀区罗岭镇黄梅村人，中国著名&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E9%BB%84%E6%A2%85%E6%88%8F\">黄梅戏&lt;/a>表演艺术家，中国黄梅戏传承发展重要的开拓者和贡献者"</span><span class="token punctuation">,</span>
+            <span class="token property">"link"</span><span class="token operator">:</span><span class="token string">"https://baike.baidu.com/item/%E4%B8%A5%E5%87%A4%E8%8B%B1/5344"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"year"</span><span class="token operator">:</span><span class="token string">"1973"</span><span class="token punctuation">,</span>
+            <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"西班牙画家、雕塑家&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E5%B7%B4%E5%8B%83%E7%BD%97%C2%B7%E9%B2%81%E4%BC%8A%E6%96%AF%C2%B7%E6%AF%95%E5%8A%A0%E7%B4%A2\">巴伯罗·毕加索&lt;/a>逝世"</span><span class="token punctuation">,</span>
+            <span class="token property">"desc"</span><span class="token operator">:</span><span class="token string">"毕加索，&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E8%A5%BF%E7%8F%AD%E7%89%99\">西班牙&lt;/a>&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E7%94%BB%E5%AE%B6\">画家&lt;/a>、&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E9%9B%95%E5%A1%91%E5%AE%B6\">雕塑家&lt;/a>。&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E6%B3%95%E5%9B%BD\">法国&lt;/a>共产党党员。是&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E7%8E%B0%E4%BB%A3%E8%89%BA%E6%9C%AF\">现代艺术&lt;/a>的创始人，西方现代派&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E7%BB%98%E7%94%BB\">绘画&lt;/a>的主要代表。他于1907年创作的&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E3%80%8A%E4%BA%9A%E5%A8%81%E5%86%9C%E5%B0%91%E5%A5%B3%E3%80%8B\">《亚威农少女"</span><span class="token punctuation">,</span>
+            <span class="token property">"link"</span><span class="token operator">:</span><span class="token string">"https://baike.baidu.com/item/%E5%B7%B4%E5%8B%83%E7%BD%97%C2%B7%E9%B2%81%E4%BC%8A%E6%96%AF%C2%B7%E6%AF%95%E5%8A%A0%E7%B4%A2"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"year"</span><span class="token operator">:</span><span class="token string">"1984"</span><span class="token punctuation">,</span>
+            <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E8%B6%85%E6%B5%81\">超流&lt;/a>的发现者之一&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E5%BD%BC%E5%BE%97%C2%B7%E5%8D%A1%E7%9A%AE%E6%9F%A5\">彼得·卡皮查&lt;/a>逝世"</span><span class="token punctuation">,</span>
+            <span class="token property">"desc"</span><span class="token operator">:</span><span class="token string">"彼得·卡皮查（Пётр Леонидович Капица，&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/1894%E5%B9%B4\">1894年&lt;/a>&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/7%E6%9C%889%E6%97%A5\">7月9日&lt;/a>－&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/1984%E5%B9%B4\">1984年&lt;/a>&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/4%E6%9C%888%E6%97%A5\">4月8日&lt;/a>），&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E8%8B%8F%E8%81%94\">苏联&lt;/a>著名&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E7%89%A9%E7%90%86%E5%AD%A6%E5%AE%B6\">物理学家&lt;/a>，&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E8%B6%85%E6%B5%81%E4%BD%93\">超流体&lt;/a>的发现者"</span><span class="token punctuation">,</span>
+            <span class="token property">"link"</span><span class="token operator">:</span><span class="token string">"https://baike.baidu.com/item/%E5%BD%BC%E5%BE%97%C2%B7%E5%8D%A1%E7%9A%AE%E6%9F%A5"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"year"</span><span class="token operator">:</span><span class="token string">"1993"</span><span class="token punctuation">,</span>
+            <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"世界上跨径最大的斜拉桥——上海&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E6%9D%A8%E6%B5%A6%E5%A4%A7%E6%A1%A5\">杨浦大桥&lt;/a>合拢"</span><span class="token punctuation">,</span>
+            <span class="token property">"desc"</span><span class="token operator">:</span><span class="token string">"杨浦大桥是&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E4%B8%8A%E6%B5%B7\">上海&lt;/a>的一座跨越&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E9%BB%84%E6%B5%A6%E6%B1%9F\">黄浦江&lt;/a>的&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E4%B8%AD%E5%9B%BD\">中国&lt;/a>自行设计、建造的双塔双索面迭合梁&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E6%96%9C%E6%8B%89%E6%A1%A5\">斜拉桥&lt;/a>。杨浦大桥于1991年4月29日动工，1993年9月15日"</span><span class="token punctuation">,</span>
+            <span class="token property">"link"</span><span class="token operator">:</span><span class="token string">"https://baike.baidu.com/item/%E6%9D%A8%E6%B5%A6%E5%A4%A7%E6%A1%A5"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"year"</span><span class="token operator">:</span><span class="token string">"1994"</span><span class="token punctuation">,</span>
+            <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E4%B8%96%E7%95%8C%E5%8D%AB%E7%94%9F%E7%BB%84%E7%BB%87\">世界卫生组织&lt;/a>宣布&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E8%84%8A%E9%AB%93%E7%81%B0%E8%B4%A8%E7%82%8E\">脊髓灰质炎&lt;/a>已基本绝迹"</span><span class="token punctuation">,</span>
+            <span class="token property">"desc"</span><span class="token operator">:</span><span class="token string">"脊髓灰质炎是急性传染病，由病毒侵入血液循环系统引起，部分病毒可侵入神经系统。患者多为一至六岁儿童，主要症状是发热，全身"</span><span class="token punctuation">,</span>
+            <span class="token property">"link"</span><span class="token operator">:</span><span class="token string">"https://baike.baidu.com/item/%E8%84%8A%E9%AB%93%E7%81%B0%E8%B4%A8%E7%82%8E"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"year"</span><span class="token operator">:</span><span class="token string">"2013"</span><span class="token punctuation">,</span>
+            <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"英国前首相&lt;a target=\"_blank\" href=\"https://baike.baidu.com/item/%E7%8E%9B%E6%A0%BC%E4%B8%BD%E7%89%B9%C2%B7%E5%B8%8C%E5%B0%94%E8%BE%BE%C2%B7%E6%92%92%E5%88%87%E5%B0%94\">撒切尔夫人&lt;/a>逝世"</span><span class="token punctuation">,</span>
+            <span class="token property">"desc"</span><span class="token operator">:</span><span class="token string">"撒切尔夫人是英国著名右翼政治家，是至今为止英国唯一一位女首相，被苏联媒体称为“铁娘子”。她成功复苏英国经济，但也让英国社会付出了沉重的代价，犯罪率大幅上升，社会分级日趋严重。"</span><span class="token punctuation">,</span>
+            <span class="token property">"link"</span><span class="token operator">:</span><span class="token string">"https://baike.baidu.com/item/%E7%8E%9B%E6%A0%BC%E4%B8%BD%E7%89%B9%C2%B7%E5%B8%8C%E5%B0%94%E8%BE%BE%C2%B7%E6%92%92%E5%88%87%E5%B0%94"</span><span class="token punctuation">,</span>
+            <span class="token property">"image"</span><span class="token operator">:</span><span class="token string">"https://baike.bdimg.com/cms/rc/r/image/2014-09-08/838a5a02371ce465f5187854d19f4ab9_360_212.jpg"</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"msg"</span><span class="token operator">:</span><span class="token string">"success"</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="响应数据实例-2"><a href="#响应数据实例-2" class="headerlink" title="响应数据实例"></a>响应数据实例</h5><pre class="line-numbers language-json"><code class="language-json"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<hr>
+<script type="text/javascript">
+  axios.get('https://api.oioweb.cn/api/common/history')  
+  .then(res => {
+    if(res.data.code == 200) {
+      const result = res.data
+      console.log("历史上的今天")
+      console.log(result)
+      var languageJsonNum = document.querySelectorAll(".language-json")
+      languageJsonNum[10].textContent = JSON.stringify(result, null, 2)
+    } else {
+      console.log("请求失败！")
+    }
+  })  
+  .catch(error => {  
+    console.error(error);
+  });  
+</script>
+
+<hr>
+<hr>
+<h4 id="天气信息查询"><a href="#天气信息查询" class="headerlink" title="天气信息查询"></a><a href="https://api.oioweb.cn/doc/weather/GetWeather" target="_blank" rel="noopener">天气信息查询</a></h4><p>查询当地天气信息以及未来天气</p>
+<h5 id="接口地址-3"><a href="#接口地址-3" class="headerlink" title="接口地址"></a>接口地址</h5><p> <a href="https://api.oioweb.cn/api/weather/GetWeather" target="_blank" rel="noopener">https://api.oioweb.cn/api/weather/GetWeather</a></p>
+<h5 id="返回格式-3"><a href="#返回格式-3" class="headerlink" title="返回格式"></a>返回格式</h5><p> JSON</p>
+<h5 id="请求方式-3"><a href="#请求方式-3" class="headerlink" title="请求方式"></a>请求方式</h5><p> GET</p>
+<h5 id="请求示例-3"><a href="#请求示例-3" class="headerlink" title="请求示例"></a>请求示例</h5><p> <a href="https://api.oioweb.cn/api/weather/GetWeather" target="_blank" rel="noopener">https://api.oioweb.cn/api/weather/GetWeather</a></p>
+<h5 id="请求参数说明-3"><a href="#请求参数说明-3" class="headerlink" title="请求参数说明"></a>请求参数说明</h5><p>无</p>
+<h5 id="返回参数说明-2"><a href="#返回参数说明-2" class="headerlink" title="返回参数说明"></a>返回参数说明</h5><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>city.country</td>
+<td>string</td>
+<td>国家</td>
+</tr>
+<tr>
+<td>city.economize</td>
+<td>string</td>
+<td>省</td>
+</tr>
+<tr>
+<td>city.city_name</td>
+<td>string</td>
+<td>市</td>
+</tr>
+<tr>
+<td>condition</td>
+<td>object</td>
+<td>当天天气</td>
+</tr>
+<tr>
+<td>condition.humidity</td>
+<td>string</td>
+<td>湿度</td>
+</tr>
+<tr>
+<td>condition.pressure</td>
+<td>string</td>
+<td>气压-单位：百帕</td>
+</tr>
+<tr>
+<td>condition.sunRise</td>
+<td>string</td>
+<td>日出时间</td>
+</tr>
+<tr>
+<td>condition.sunSet</td>
+<td>string</td>
+<td>日落时间</td>
+</tr>
+<tr>
+<td>condition.realFeel</td>
+<td>string</td>
+<td>体感温度-单位：摄氏度</td>
+</tr>
+<tr>
+<td>condition.temp</td>
+<td>string</td>
+<td>实时温度-单位：摄氏度</td>
+</tr>
+<tr>
+<td>condition.tips</td>
+<td>string</td>
+<td>天气提示</td>
+</tr>
+<tr>
+<td>condition.update_time</td>
+<td>string</td>
+<td>更新时间</td>
+</tr>
+<tr>
+<td>condition.windLevel</td>
+<td>string</td>
+<td>风力等级</td>
+</tr>
+<tr>
+<td>condition.condition</td>
+<td>string</td>
+<td>天气状况</td>
+</tr>
+<tr>
+<td>condition.windSpeed</td>
+<td>string</td>
+<td>风速</td>
+</tr>
+<tr>
+<td>condition.windDir</td>
+<td>string</td>
+<td>风向</td>
+</tr>
+<tr>
+<td>condition.windDegrees</td>
+<td>string</td>
+<td>风向角度</td>
+</tr>
+<tr>
+<td>condition.uvi</td>
+<td>string</td>
+<td>紫外线强度</td>
+</tr>
+<tr>
+<td>condition.vis</td>
+<td>string</td>
+<td>能见度</td>
+</tr>
+<tr>
+<td>forecast</td>
+<td>object</td>
+<td>未来天气情况</td>
+</tr>
+<tr>
+<td>forecast.conditionDay</td>
+<td>string</td>
+<td>白天天气现象</td>
+</tr>
+<tr>
+<td>forecast.conditionNight</td>
+<td>string</td>
+<td>夜间天气现象</td>
+</tr>
+<tr>
+<td>forecast.humidity</td>
+<td>string</td>
+<td>湿度</td>
+</tr>
+<tr>
+<td>forecast.moonphase</td>
+<td>string</td>
+<td>月相</td>
+</tr>
+<tr>
+<td>forecast.moonrise</td>
+<td>string</td>
+<td>月出</td>
+</tr>
+<tr>
+<td>forecast.moonset</td>
+<td>string</td>
+<td>月落</td>
+</tr>
+<tr>
+<td>forecast.pop</td>
+<td>string</td>
+<td>降水概率</td>
+</tr>
+<tr>
+<td>forecast.predictDate</td>
+<td>string</td>
+<td>预报日期</td>
+</tr>
+<tr>
+<td>forecast.qpf</td>
+<td>string</td>
+<td>未来一天降水预报</td>
+</tr>
+<tr>
+<td>forecast.sunrise</td>
+<td>string</td>
+<td>日出时间</td>
+</tr>
+<tr>
+<td>forecast.sunset</td>
+<td>string</td>
+<td>日落时间</td>
+</tr>
+<tr>
+<td>forecast.tempDay</td>
+<td>string</td>
+<td>白天温度（最高温）</td>
+</tr>
+<tr>
+<td>forecast.tempNight</td>
+<td>string</td>
+<td>夜间温度（最低温）</td>
+</tr>
+<tr>
+<td>forecast.updatetime</td>
+<td>string</td>
+<td>更新时间</td>
+</tr>
+<tr>
+<td>forecast.uvi</td>
+<td>string</td>
+<td>紫外线强度</td>
+</tr>
+<tr>
+<td>forecast.windDegreesDay</td>
+<td>string</td>
+<td>白天风向角度</td>
+</tr>
+<tr>
+<td>forecast.windDegreesNight</td>
+<td>string</td>
+<td>夜间风向角度</td>
+</tr>
+<tr>
+<td>forecast.windDirDay</td>
+<td>string</td>
+<td>白天风向</td>
+</tr>
+<tr>
+<td>forecast.windDirNight</td>
+<td>string</td>
+<td>夜间风向</td>
+</tr>
+<tr>
+<td>forecast.windLevelDay</td>
+<td>object</td>
+<td>白天风级</td>
+</tr>
+<tr>
+<td>forecast.windLevelNight</td>
+<td>string</td>
+<td>夜间风级</td>
+</tr>
+<tr>
+<td>forecast.windSpeedDay</td>
+<td>string</td>
+<td>白天风速</td>
+</tr>
+<tr>
+<td>forecast.windSpeedNight</td>
+<td>string</td>
+<td>夜间风速</td>
+</tr>
+</tbody></table>
+<h5 id="返回实例-1"><a href="#返回实例-1" class="headerlink" title="返回实例"></a>返回实例</h5><pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"code"</span><span class="token operator">:</span><span class="token number">200</span><span class="token punctuation">,</span>
+    <span class="token property">"result"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token property">"city"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+            <span class="token property">"cityId"</span><span class="token operator">:</span><span class="token number">379</span><span class="token punctuation">,</span>
+            <span class="token property">"counname"</span><span class="token operator">:</span><span class="token string">"中国"</span><span class="token punctuation">,</span>
+            <span class="token property">"ianatimezone"</span><span class="token operator">:</span><span class="token string">"Asia/Shanghai"</span><span class="token punctuation">,</span>
+            <span class="token property">"name"</span><span class="token operator">:</span><span class="token string">"郑州市"</span><span class="token punctuation">,</span>
+            <span class="token property">"pname"</span><span class="token operator">:</span><span class="token string">"河南省"</span><span class="token punctuation">,</span>
+            <span class="token property">"secondaryname"</span><span class="token operator">:</span><span class="token string">"河南省"</span><span class="token punctuation">,</span>
+            <span class="token property">"timezone"</span><span class="token operator">:</span><span class="token string">"8"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">"condition"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+            <span class="token property">"condition"</span><span class="token operator">:</span><span class="token string">"阴"</span><span class="token punctuation">,</span>
+            <span class="token property">"conditionId"</span><span class="token operator">:</span><span class="token string">"85"</span><span class="token punctuation">,</span>
+            <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"85"</span><span class="token punctuation">,</span>
+            <span class="token property">"icon"</span><span class="token operator">:</span><span class="token string">"2"</span><span class="token punctuation">,</span>
+            <span class="token property">"pressure"</span><span class="token operator">:</span><span class="token string">"1001"</span><span class="token punctuation">,</span>
+            <span class="token property">"realFeel"</span><span class="token operator">:</span><span class="token string">"19"</span><span class="token punctuation">,</span>
+            <span class="token property">"sunRise"</span><span class="token operator">:</span><span class="token string">"2023-05-28 05:15:00"</span><span class="token punctuation">,</span>
+            <span class="token property">"sunSet"</span><span class="token operator">:</span><span class="token string">"2023-05-28 19:30:00"</span><span class="token punctuation">,</span>
+            <span class="token property">"temp"</span><span class="token operator">:</span><span class="token string">"19"</span><span class="token punctuation">,</span>
+            <span class="token property">"tips"</span><span class="token operator">:</span><span class="token string">"略微偏凉，还是蛮舒适的。"</span><span class="token punctuation">,</span>
+            <span class="token property">"updatetime"</span><span class="token operator">:</span><span class="token string">"2023-05-28 23:15:08"</span><span class="token punctuation">,</span>
+            <span class="token property">"uvi"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span>
+            <span class="token property">"vis"</span><span class="token operator">:</span><span class="token string">"8700"</span><span class="token punctuation">,</span>
+            <span class="token property">"windDegrees"</span><span class="token operator">:</span><span class="token string">"0"</span><span class="token punctuation">,</span>
+            <span class="token property">"windDir"</span><span class="token operator">:</span><span class="token string">"北风"</span><span class="token punctuation">,</span>
+            <span class="token property">"windLevel"</span><span class="token operator">:</span><span class="token string">"3"</span><span class="token punctuation">,</span>
+            <span class="token property">"windSpeed"</span><span class="token operator">:</span><span class="token string">"3.81"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">"forecast"</span><span class="token operator">:</span><span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">"conditionDay"</span><span class="token operator">:</span><span class="token string">"小雨"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionIdDay"</span><span class="token operator">:</span><span class="token string">"7"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionIdNight"</span><span class="token operator">:</span><span class="token string">"7"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionNight"</span><span class="token operator">:</span><span class="token string">"小雨"</span><span class="token punctuation">,</span>
+                <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"88"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonphase"</span><span class="token operator">:</span><span class="token string">"First"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonrise"</span><span class="token operator">:</span><span class="token string">"2023-05-27 11:40:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonset"</span><span class="token operator">:</span><span class="token string">"2023-05-27 00:54:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"pop"</span><span class="token operator">:</span><span class="token string">"60"</span><span class="token punctuation">,</span>
+                <span class="token property">"predictDate"</span><span class="token operator">:</span><span class="token string">"2023-05-27"</span><span class="token punctuation">,</span>
+                <span class="token property">"qpf"</span><span class="token operator">:</span><span class="token string">"4.3"</span><span class="token punctuation">,</span>
+                <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"2023-05-27 05:15:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"sunset"</span><span class="token operator">:</span><span class="token string">"2023-05-27 19:30:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"tempDay"</span><span class="token operator">:</span><span class="token string">"21"</span><span class="token punctuation">,</span>
+                <span class="token property">"tempNight"</span><span class="token operator">:</span><span class="token string">"18"</span><span class="token punctuation">,</span>
+                <span class="token property">"updatetime"</span><span class="token operator">:</span><span class="token string">"2023-05-27 23:08:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"uvi"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDegreesDay"</span><span class="token operator">:</span><span class="token string">"45"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDegreesNight"</span><span class="token operator">:</span><span class="token string">"45"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDirDay"</span><span class="token operator">:</span><span class="token string">"东北风"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDirNight"</span><span class="token operator">:</span><span class="token string">"东北风"</span><span class="token punctuation">,</span>
+                <span class="token property">"windLevelDay"</span><span class="token operator">:</span><span class="token string">"3-4"</span><span class="token punctuation">,</span>
+                <span class="token property">"windLevelNight"</span><span class="token operator">:</span><span class="token string">"3-4"</span><span class="token punctuation">,</span>
+                <span class="token property">"windSpeedDay"</span><span class="token operator">:</span><span class="token string">"5.6"</span><span class="token punctuation">,</span>
+                <span class="token property">"windSpeedNight"</span><span class="token operator">:</span><span class="token string">"5.6"</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">"conditionDay"</span><span class="token operator">:</span><span class="token string">"小雨"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionIdDay"</span><span class="token operator">:</span><span class="token string">"7"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionIdNight"</span><span class="token operator">:</span><span class="token string">"7"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionNight"</span><span class="token operator">:</span><span class="token string">"小雨"</span><span class="token punctuation">,</span>
+                <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"82"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonphase"</span><span class="token operator">:</span><span class="token string">"WaxingGibbous"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonrise"</span><span class="token operator">:</span><span class="token string">"2023-05-28 12:38:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonset"</span><span class="token operator">:</span><span class="token string">"2023-05-28 01:22:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"pop"</span><span class="token operator">:</span><span class="token string">"60"</span><span class="token punctuation">,</span>
+                <span class="token property">"predictDate"</span><span class="token operator">:</span><span class="token string">"2023-05-28"</span><span class="token punctuation">,</span>
+                <span class="token property">"qpf"</span><span class="token operator">:</span><span class="token string">"3.7"</span><span class="token punctuation">,</span>
+                <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"2023-05-28 05:15:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"sunset"</span><span class="token operator">:</span><span class="token string">"2023-05-28 19:30:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"tempDay"</span><span class="token operator">:</span><span class="token string">"21"</span><span class="token punctuation">,</span>
+                <span class="token property">"tempNight"</span><span class="token operator">:</span><span class="token string">"18"</span><span class="token punctuation">,</span>
+                <span class="token property">"updatetime"</span><span class="token operator">:</span><span class="token string">"2023-05-28 22:07:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"uvi"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDegreesDay"</span><span class="token operator">:</span><span class="token string">"45"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDegreesNight"</span><span class="token operator">:</span><span class="token string">"0"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDirDay"</span><span class="token operator">:</span><span class="token string">"东北风"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDirNight"</span><span class="token operator">:</span><span class="token string">"北风"</span><span class="token punctuation">,</span>
+                <span class="token property">"windLevelDay"</span><span class="token operator">:</span><span class="token string">"3-4"</span><span class="token punctuation">,</span>
+                <span class="token property">"windLevelNight"</span><span class="token operator">:</span><span class="token string">"2"</span><span class="token punctuation">,</span>
+                <span class="token property">"windSpeedDay"</span><span class="token operator">:</span><span class="token string">"5.6"</span><span class="token punctuation">,</span>
+                <span class="token property">"windSpeedNight"</span><span class="token operator">:</span><span class="token string">"0.9"</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">"conditionDay"</span><span class="token operator">:</span><span class="token string">"小雨"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionIdDay"</span><span class="token operator">:</span><span class="token string">"7"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionIdNight"</span><span class="token operator">:</span><span class="token string">"7"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionNight"</span><span class="token operator">:</span><span class="token string">"小雨"</span><span class="token punctuation">,</span>
+                <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"75"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonphase"</span><span class="token operator">:</span><span class="token string">"WaxingGibbous"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonrise"</span><span class="token operator">:</span><span class="token string">"2023-05-29 13:35:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonset"</span><span class="token operator">:</span><span class="token string">"2023-05-29 01:47:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"pop"</span><span class="token operator">:</span><span class="token string">"40"</span><span class="token punctuation">,</span>
+                <span class="token property">"predictDate"</span><span class="token operator">:</span><span class="token string">"2023-05-29"</span><span class="token punctuation">,</span>
+                <span class="token property">"qpf"</span><span class="token operator">:</span><span class="token string">"2.0"</span><span class="token punctuation">,</span>
+                <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"2023-05-29 05:14:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"sunset"</span><span class="token operator">:</span><span class="token string">"2023-05-29 19:31:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"tempDay"</span><span class="token operator">:</span><span class="token string">"25"</span><span class="token punctuation">,</span>
+                <span class="token property">"tempNight"</span><span class="token operator">:</span><span class="token string">"19"</span><span class="token punctuation">,</span>
+                <span class="token property">"updatetime"</span><span class="token operator">:</span><span class="token string">"2023-05-28 22:07:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"uvi"</span><span class="token operator">:</span><span class="token string">"4"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDegreesDay"</span><span class="token operator">:</span><span class="token string">"45"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDegreesNight"</span><span class="token operator">:</span><span class="token string">"315"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDirDay"</span><span class="token operator">:</span><span class="token string">"东北风"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDirNight"</span><span class="token operator">:</span><span class="token string">"西北风"</span><span class="token punctuation">,</span>
+                <span class="token property">"windLevelDay"</span><span class="token operator">:</span><span class="token string">"3-4"</span><span class="token punctuation">,</span>
+                <span class="token property">"windLevelNight"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span>
+                <span class="token property">"windSpeedDay"</span><span class="token operator">:</span><span class="token string">"5.6"</span><span class="token punctuation">,</span>
+                <span class="token property">"windSpeedNight"</span><span class="token operator">:</span><span class="token string">"2.4"</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">"conditionDay"</span><span class="token operator">:</span><span class="token string">"小雨"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionIdDay"</span><span class="token operator">:</span><span class="token string">"7"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionIdNight"</span><span class="token operator">:</span><span class="token string">"31"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionNight"</span><span class="token operator">:</span><span class="token string">"多云"</span><span class="token punctuation">,</span>
+                <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"78"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonphase"</span><span class="token operator">:</span><span class="token string">"WaxingGibbous"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonrise"</span><span class="token operator">:</span><span class="token string">"2023-05-30 14:33:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonset"</span><span class="token operator">:</span><span class="token string">"2023-05-30 02:11:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"pop"</span><span class="token operator">:</span><span class="token string">"60"</span><span class="token punctuation">,</span>
+                <span class="token property">"predictDate"</span><span class="token operator">:</span><span class="token string">"2023-05-30"</span><span class="token punctuation">,</span>
+                <span class="token property">"qpf"</span><span class="token operator">:</span><span class="token string">"1.8"</span><span class="token punctuation">,</span>
+                <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"2023-05-30 05:14:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"sunset"</span><span class="token operator">:</span><span class="token string">"2023-05-30 19:32:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"tempDay"</span><span class="token operator">:</span><span class="token string">"26"</span><span class="token punctuation">,</span>
+                <span class="token property">"tempNight"</span><span class="token operator">:</span><span class="token string">"17"</span><span class="token punctuation">,</span>
+                <span class="token property">"updatetime"</span><span class="token operator">:</span><span class="token string">"2023-05-28 22:07:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"uvi"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDegreesDay"</span><span class="token operator">:</span><span class="token string">"45"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDegreesNight"</span><span class="token operator">:</span><span class="token string">"315"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDirDay"</span><span class="token operator">:</span><span class="token string">"东北风"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDirNight"</span><span class="token operator">:</span><span class="token string">"西北风"</span><span class="token punctuation">,</span>
+                <span class="token property">"windLevelDay"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span>
+                <span class="token property">"windLevelNight"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span>
+                <span class="token property">"windSpeedDay"</span><span class="token operator">:</span><span class="token string">"2.4"</span><span class="token punctuation">,</span>
+                <span class="token property">"windSpeedNight"</span><span class="token operator">:</span><span class="token string">"0.9"</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">"conditionDay"</span><span class="token operator">:</span><span class="token string">"多云"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionIdDay"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionIdNight"</span><span class="token operator">:</span><span class="token string">"31"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionNight"</span><span class="token operator">:</span><span class="token string">"多云"</span><span class="token punctuation">,</span>
+                <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"63"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonphase"</span><span class="token operator">:</span><span class="token string">"WaxingGibbous"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonrise"</span><span class="token operator">:</span><span class="token string">"2023-05-31 15:33:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonset"</span><span class="token operator">:</span><span class="token string">"2023-05-31 02:35:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"pop"</span><span class="token operator">:</span><span class="token string">"20"</span><span class="token punctuation">,</span>
+                <span class="token property">"predictDate"</span><span class="token operator">:</span><span class="token string">"2023-05-31"</span><span class="token punctuation">,</span>
+                <span class="token property">"qpf"</span><span class="token operator">:</span><span class="token string">"0.0"</span><span class="token punctuation">,</span>
+                <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"2023-05-31 05:14:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"sunset"</span><span class="token operator">:</span><span class="token string">"2023-05-31 19:32:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"tempDay"</span><span class="token operator">:</span><span class="token string">"29"</span><span class="token punctuation">,</span>
+                <span class="token property">"tempNight"</span><span class="token operator">:</span><span class="token string">"19"</span><span class="token punctuation">,</span>
+                <span class="token property">"updatetime"</span><span class="token operator">:</span><span class="token string">"2023-05-28 22:07:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"uvi"</span><span class="token operator">:</span><span class="token string">"9"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDegreesDay"</span><span class="token operator">:</span><span class="token string">"90"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDegreesNight"</span><span class="token operator">:</span><span class="token string">"225"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDirDay"</span><span class="token operator">:</span><span class="token string">"东风"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDirNight"</span><span class="token operator">:</span><span class="token string">"西南风"</span><span class="token punctuation">,</span>
+                <span class="token property">"windLevelDay"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span>
+                <span class="token property">"windLevelNight"</span><span class="token operator">:</span><span class="token string">"2"</span><span class="token punctuation">,</span>
+                <span class="token property">"windSpeedDay"</span><span class="token operator">:</span><span class="token string">"0.9"</span><span class="token punctuation">,</span>
+                <span class="token property">"windSpeedNight"</span><span class="token operator">:</span><span class="token string">"2.4"</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">"conditionDay"</span><span class="token operator">:</span><span class="token string">"多云"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionIdDay"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionIdNight"</span><span class="token operator">:</span><span class="token string">"31"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionNight"</span><span class="token operator">:</span><span class="token string">"多云"</span><span class="token punctuation">,</span>
+                <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"53"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonphase"</span><span class="token operator">:</span><span class="token string">"WaxingGibbous"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonrise"</span><span class="token operator">:</span><span class="token string">"2023-06-01 16:36:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonset"</span><span class="token operator">:</span><span class="token string">"2023-06-01 03:01:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"pop"</span><span class="token operator">:</span><span class="token string">"20"</span><span class="token punctuation">,</span>
+                <span class="token property">"predictDate"</span><span class="token operator">:</span><span class="token string">"2023-06-01"</span><span class="token punctuation">,</span>
+                <span class="token property">"qpf"</span><span class="token operator">:</span><span class="token string">"0.0"</span><span class="token punctuation">,</span>
+                <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"2023-06-01 05:13:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"sunset"</span><span class="token operator">:</span><span class="token string">"2023-06-01 19:33:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"tempDay"</span><span class="token operator">:</span><span class="token string">"31"</span><span class="token punctuation">,</span>
+                <span class="token property">"tempNight"</span><span class="token operator">:</span><span class="token string">"21"</span><span class="token punctuation">,</span>
+                <span class="token property">"updatetime"</span><span class="token operator">:</span><span class="token string">"2023-05-28 22:07:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"uvi"</span><span class="token operator">:</span><span class="token string">"10"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDegreesDay"</span><span class="token operator">:</span><span class="token string">"0"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDegreesNight"</span><span class="token operator">:</span><span class="token string">"315"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDirDay"</span><span class="token operator">:</span><span class="token string">"北风"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDirNight"</span><span class="token operator">:</span><span class="token string">"西北风"</span><span class="token punctuation">,</span>
+                <span class="token property">"windLevelDay"</span><span class="token operator">:</span><span class="token string">"2"</span><span class="token punctuation">,</span>
+                <span class="token property">"windLevelNight"</span><span class="token operator">:</span><span class="token string">"3-4"</span><span class="token punctuation">,</span>
+                <span class="token property">"windSpeedDay"</span><span class="token operator">:</span><span class="token string">"2.4"</span><span class="token punctuation">,</span>
+                <span class="token property">"windSpeedNight"</span><span class="token operator">:</span><span class="token string">"5.6"</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">"conditionDay"</span><span class="token operator">:</span><span class="token string">"小雨"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionIdDay"</span><span class="token operator">:</span><span class="token string">"7"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionIdNight"</span><span class="token operator">:</span><span class="token string">"30"</span><span class="token punctuation">,</span>
+                <span class="token property">"conditionNight"</span><span class="token operator">:</span><span class="token string">"晴"</span><span class="token punctuation">,</span>
+                <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"47"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonphase"</span><span class="token operator">:</span><span class="token string">"WaxingGibbous"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonrise"</span><span class="token operator">:</span><span class="token string">"2023-06-02 17:43:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"moonset"</span><span class="token operator">:</span><span class="token string">"2023-06-02 03:31:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"pop"</span><span class="token operator">:</span><span class="token string">"20"</span><span class="token punctuation">,</span>
+                <span class="token property">"predictDate"</span><span class="token operator">:</span><span class="token string">"2023-06-02"</span><span class="token punctuation">,</span>
+                <span class="token property">"qpf"</span><span class="token operator">:</span><span class="token string">"0.0"</span><span class="token punctuation">,</span>
+                <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"2023-06-02 05:13:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"sunset"</span><span class="token operator">:</span><span class="token string">"2023-06-02 19:34:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"tempDay"</span><span class="token operator">:</span><span class="token string">"26"</span><span class="token punctuation">,</span>
+                <span class="token property">"tempNight"</span><span class="token operator">:</span><span class="token string">"18"</span><span class="token punctuation">,</span>
+                <span class="token property">"updatetime"</span><span class="token operator">:</span><span class="token string">"2023-05-28 22:07:00"</span><span class="token punctuation">,</span>
+                <span class="token property">"uvi"</span><span class="token operator">:</span><span class="token string">"10"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDegreesDay"</span><span class="token operator">:</span><span class="token string">"0"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDegreesNight"</span><span class="token operator">:</span><span class="token string">"315"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDirDay"</span><span class="token operator">:</span><span class="token string">"北风"</span><span class="token punctuation">,</span>
+                <span class="token property">"windDirNight"</span><span class="token operator">:</span><span class="token string">"西北风"</span><span class="token punctuation">,</span>
+                <span class="token property">"windLevelDay"</span><span class="token operator">:</span><span class="token string">"2"</span><span class="token punctuation">,</span>
+                <span class="token property">"windLevelNight"</span><span class="token operator">:</span><span class="token string">"2"</span><span class="token punctuation">,</span>
+                <span class="token property">"windSpeedDay"</span><span class="token operator">:</span><span class="token string">"0.9"</span><span class="token punctuation">,</span>
+                <span class="token property">"windSpeedNight"</span><span class="token operator">:</span><span class="token string">"2.4"</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"msg"</span><span class="token operator">:</span><span class="token string">"success"</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="响应数据实例-3"><a href="#响应数据实例-3" class="headerlink" title="响应数据实例"></a>响应数据实例</h5><pre class="line-numbers language-json"><code class="language-json"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<hr>
+<script type="text/javascript">
+  axios.get('https://api.oioweb.cn/api/weather/GetWeather')  
+  .then(res => {
+  if(res.data.code == 200) {
+    const result = res.data.result
+    console.log("天气信息查询")
+    console.log(result)
+    var languageJsonNum = document.querySelectorAll(".language-json")
+    console.log(languageJsonNum)
+    languageJsonNum[13].textContent = JSON.stringify(result, null, 2)
+  } else {
+    console.log("请求失败！")
+  }
+  })  
+  .catch(error => {  
+    console.error(error);
+  });  
+</script>
+
+<hr>
+<p>以上就是我对<a href="https://api.oioweb.cn/" target="_blank" rel="noopener">教书先生API</a>提供的部分API的介绍，基本上如果使用渲染数据的话都是非常方便的，感兴趣的小伙伴可以去拜访拜访大佬！</p>
+<h4 id="附录：教书先生API所有接口"><a href="#附录：教书先生API所有接口" class="headerlink" title="附录：教书先生API所有接口"></a>附录：<a href="https://api.oioweb.cn/" target="_blank" rel="noopener">教书先生API</a>所有接口</h4><table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">描述</th>
+<th align="left">官方文档路径</th>
+<th align="left">调用次数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<hr>
+<script type="text/javascript">
+  var tableBodies = document.getElementsByTagName('tbody');
+  var lastTbody = tableBodies[tableBodies.length - 1];
+  lastTbody.innerHTML = ''
+  lastTbody.innerHTML = '<tr><td>请求失败！请检查网络连接。</td></tr>'
+  axios.get('https://api.oioweb.cn/libraries')  
+  .then(res => {
+  if(res.data.code == 200) {
+    const result = res.data.result
+    console.log("目前教书先生API共提供" + result.length + "个接口")
+    console.log(result)
+    var tableHtml = ""
+    for(i = 0; i < result.length; i++) {
+      tableHtml += '<tr><td>' + result[i].name + '</td>' + '<td>' + result[i].description + '</td>' + '<td><a href="https://api.oioweb.cn/doc/' + result[i].router + '">https://api.oioweb.cn/doc/' + result[i].router + '</a></td>' + '<td>' + result[i].sum + '</td></tr>'
+    }
+    lastTbody.innerHTML = ''
+    lastTbody.innerHTML = tableHtml
+  } else {
+    console.log("请求失败！")
+  }
+  })  
+  .catch(error => {  
+    console.error(error);
+  });  
+</script>
+
+<hr>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr />
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://wcisay.github.io" class="b-link-green">Mr.Wangの博客</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2023/09/28/jiao-shu-xian-sheng-api-shi-li/" class="b-link-green">教书先生API实例</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/11/14/git-xiang-guan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Git相关">
+                        
+                        <span class="card-title">Git相关</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            初次使用在github或者gitee新建一个仓库进入项目目录初始化（生成.git目录）：git init连接远程仓库：git remote add origin http://github.com/仓库地址所有文件加入暂存区：git add
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2023-11-14
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/项目管理/" class="post-category" target="_blank">
+                                    项目管理
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Git/" target="_blank">
+                        <span class="chip bg-color">Git</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/07/11/shu-ju-ku-xiang-guan-zhi-shi-dian-zheng-li-zhong/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="数据库相关知识点（整理中）">
+                        
+                        <span class="card-title">数据库相关知识点（整理中）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            常用的聚合函数有哪五种？count()、sum()、avg()、min()、max()
+count()：求表的行数或者指定表中某个列的列值行数，null值被忽略
+select count(字段) from 表名 --得到该列值的非null值
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-07-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/数据库/" class="post-category" target="_blank">
+                                    数据库
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MySQL/" target="_blank">
+                        <span class="chip bg-color">MySQL</span>
+                    </a>
+                    
+                    <a href="/tags/SQL-Server/" target="_blank">
+                        <span class="chip bg-color">SQL Server</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />' +
+            '来源: Mr.Wangの博客<br />' +
+            '作者: wzm<br />' +
+            '链接: <a href="' + url + '">' + url + '</a><br />' +
+            '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {
+            bodyElement.removeChild(newdiv);
+        }, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 2024 Wzm.
+            <a href="https://beian.miit.gov.cn/">蜀ICP备2024046860号-1</a>
+            <br>
+            <span id="sitetime"></span><span class="my-face"></span>
+            <br>
+
+            
+
+            
+            
+            <span id="busuanzi_container_site_pv" style='display:none'></span>
+            总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+            
+
+            
+            <span id="busuanzi_container_site_uv" style='display:none'></span>
+            人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+            
+
+            
+
+            
+            &nbsp; | &nbsp;字数统计:&nbsp;
+            <span class="white-color">34.4k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=2954510949@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=2954510949&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2022, 5, 18, 59, 59, 59);
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }
+    siteTime();
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.bootcss.com/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+    <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+    <script src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    
+    <script src="/libs/others/clicklove.js"></script>
+    
+
+    
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    <script type="text/javascript">
+        var OriginTitile = document.title,
+            st;
+        document.addEventListener("visibilitychange", function () {
+            document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                    document.title = OriginTitile
+                }, 3e3))
+        })
+    </script>
+
+    <!-- 鼠标点击烟花爆炸效果 -->
+    
+
+    <!-- 背景雪花飘落特效 -->
+    
+    <script type="text/javascript">
+        //只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+        }
+    </script>
+    
+
+    <!-- 鼠标点击文字特效 -->
+    
+    <script src="/js/wenzi.js" type="text/javascript"></script>
+    
+
+    <!-- 背景雪花飘落特效 -->
+    
+
+    <!-- 在线聊天工具 -->
+    
+
+    <!-- 背景 canvas-nest -->
+    
+    <script type="text/javascript">
+        var windowWidth = $(window).width();
+        if (windowWidth > 992) {
+            document.write(
+                '<script type="text/javascript" color="0,0,255" pointColor="0,0,255" opacity= "0.8" zIndex="--1" count="150"src="/libs/background/canvas-nest.js"><\/script>'
+                );
+        }
+    </script>
+    
+
+    <!-- 背景静止彩带 -->
+    
+
+    <!-- 背景动态彩带 -->
+    
+    <script type="text/javascript">
+        var windowWidth = $(window).width();
+        if (windowWidth > 992) {
+            document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+        }
+    </script>
+    
+
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+
+</html>
