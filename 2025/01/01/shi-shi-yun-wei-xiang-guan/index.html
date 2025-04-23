@@ -737,14 +737,14 @@ Ubuntu
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.8k
+                    6.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    27 分
+                    28 分
                 </div>
                 
                 
@@ -849,8 +849,23 @@ tmpfs           176M     0  176M   0% /run/user/0<span aria-hidden="true" class=
 
 –permanent 永久生效，如果没有此参数，则只能维持当前 服 务生命周期内，重新启动后失效；
 
-firewall-cmd --zone=public --add-port=3306/tcp --permanent</code></pre><h6 id="查看已开放端口"><a href="#查看已开放端口" class="headerlink" title="查看已开放端口"></a>查看已开放端口</h6><pre><code>firewall-cmd --list-ports</code></pre><h4 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h4><p>centos</p>
-<p>Ubuntu</p>
+firewall-cmd --zone=public --add-port=3306/tcp --permanent</code></pre><h6 id="查看已开放端口"><a href="#查看已开放端口" class="headerlink" title="查看已开放端口"></a>查看已开放端口</h6><pre><code>firewall-cmd --list-ports</code></pre><h4 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h4><p>centos / Ubuntu 切换至root账号</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 使用 su 命令（需要知道root密码）</span>
+<span class="token comment" spellcheck="true"># 密码输入正确后，你会看到终端提示符变为 #，表示当前用户是root</span>
+<span class="token punctuation">[</span>wzm@localhost ~<span class="token punctuation">]</span>$ <span class="token function">su</span> -
+密码：
+上一次登录：二 4月 22 20:45:32 CST 2025pts/0 上
+
+<span class="token comment" spellcheck="true"># 直接指定切换到root用户</span>
+<span class="token punctuation">[</span>wzm@localhost ~<span class="token punctuation">]</span>$ <span class="token function">su</span> root
+密码：
+
+
+<span class="token comment" spellcheck="true"># 使用 sudo 命令（需要当前用户有sudo权限）</span>
+<span class="token comment" spellcheck="true"># 执行命令后，系统会提示你输入当前用户的密码（而不是root密码）</span>
+<span class="token function">sudo</span> <span class="token function">su</span> -
+<span class="token comment" spellcheck="true"># 或</span>
+<span class="token function">sudo</span> -i<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><h5 id="k8s"><a href="#k8s" class="headerlink" title="k8s"></a>k8s</h5><h5 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h5><h6 id="检查docker状态"><a href="#检查docker状态" class="headerlink" title="检查docker状态"></a>检查docker状态</h6><pre><code>systemctl status docker</code></pre><h6 id="重启docker"><a href="#重启docker" class="headerlink" title="重启docker"></a>重启docker</h6><pre><code>systemctl restart docker
 
 service docker restart</code></pre><h6 id="systemctl和service区别"><a href="#systemctl和service区别" class="headerlink" title="systemctl和service区别"></a>systemctl和service区别</h6><p>基于不同的服务管理工具</p>
@@ -1922,7 +1937,7 @@ MySQL主从复制主库配置1、修改配置文件
 
             
             &nbsp; | &nbsp;字数统计:&nbsp;
-            <span class="white-color">34.4k</span> 字
+            <span class="white-color">34.5k</span> 字
             
 
             
@@ -2106,6 +2121,6 @@ $(function () {
     </script>
     
 
-<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 
 </html>
