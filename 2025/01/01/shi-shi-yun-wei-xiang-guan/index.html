@@ -737,14 +737,14 @@ Ubuntu
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.9k
+                    7.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    28 分
+                    30 分
                 </div>
                 
                 
@@ -849,8 +849,7 @@ tmpfs           176M     0  176M   0% /run/user/0<span aria-hidden="true" class=
 
 –permanent 永久生效，如果没有此参数，则只能维持当前 服 务生命周期内，重新启动后失效；
 
-firewall-cmd --zone=public --add-port=3306/tcp --permanent</code></pre><h6 id="查看已开放端口"><a href="#查看已开放端口" class="headerlink" title="查看已开放端口"></a>查看已开放端口</h6><pre><code>firewall-cmd --list-ports</code></pre><h4 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h4><p>centos / Ubuntu 切换至root账号</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 使用 su 命令（需要知道root密码）</span>
+firewall-cmd --zone=public --add-port=3306/tcp --permanent</code></pre><h6 id="查看已开放端口"><a href="#查看已开放端口" class="headerlink" title="查看已开放端口"></a>查看已开放端口</h6><pre><code>firewall-cmd --list-ports</code></pre><h4 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h4><h5 id="centos-Ubuntu-切换至root账号"><a href="#centos-Ubuntu-切换至root账号" class="headerlink" title="centos / Ubuntu 切换至root账号"></a>centos / Ubuntu 切换至root账号</h5><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 使用 su 命令（需要知道root密码）</span>
 <span class="token comment" spellcheck="true"># 密码输入正确后，你会看到终端提示符变为 #，表示当前用户是root</span>
 <span class="token punctuation">[</span>wzm@localhost ~<span class="token punctuation">]</span>$ <span class="token function">su</span> -
 密码：
@@ -866,6 +865,59 @@ firewall-cmd --zone=public --add-port=3306/tcp --permanent</code></pre><h6 id="�
 <span class="token function">sudo</span> <span class="token function">su</span> -
 <span class="token comment" spellcheck="true"># 或</span>
 <span class="token function">sudo</span> -i<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="centos-Ubuntu-授权相同点"><a href="#centos-Ubuntu-授权相同点" class="headerlink" title="centos / Ubuntu 授权相同点"></a>centos / Ubuntu 授权相同点</h5><ol>
+<li>权限机制<ul>
+<li>都遵循标准的Linux权限机制，通过<strong>用户（User）</strong>、<strong>组（Group）</strong>和<strong>其他（Others）</strong>三个类别，以及<strong>读（r）</strong>、<strong>写（w）</strong>、<strong>执行（x）</strong>三种基本权限来控制文件和文件夹的访问。</li>
+<li>使用相同的命令（如<code>chmod</code>、<code>chown</code>、<code>chgrp</code>）来管理权限。</li>
+</ul>
+</li>
+<li>特殊权限位<ul>
+<li>都支持<strong>SUID（Set User ID）</strong>、<strong>SGID（Set Group ID）</strong>和<strong>粘滞位（Sticky Bit）</strong>等特殊权限位。</li>
+</ul>
+</li>
+<li>访问控制列表（ACL）<ul>
+<li>都支持ACL（Access Control Lists），允许更细粒度的权限控制。</li>
+</ul>
+</li>
+</ol>
+<p>centos / Ubuntu 授权区别</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>centos</th>
+<th>Ubuntu</th>
+<th>总结</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>默认权限设置</strong></td>
+<td>默认创建的文件权限为 <code>644</code>（用户：rw-，组：r–，其他：r–）<br>默认创建的文件夹权限为 <code>755</code>（用户：rwx，组：r-x，其他：r-x）</td>
+<td>默认创建的文件权限为 <code>664</code>（用户：rw-，组：rw-，其他：r–）<br>默认创建的文件夹权限为 <code>775</code>（用户：rwx，组：rwx，其他：r-x）。</td>
+<td>Ubuntu默认分配更宽松的权限给组用户，而CentOS默认权限更严格</td>
+</tr>
+<tr>
+<td><strong>权限管理工具</strong></td>
+<td>更倾向于使用传统的命令行工具（如<code>chmod</code>、<code>chown</code>）进行权限管理</td>
+<td>除了命令行工具，还提供了图形化工具（如<code>Nautilus</code>文件管理器的属性对话框）来简化权限管理</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>默认用户组</strong></td>
+<td>默认用户组通常与用户名相同（如用户<code>user1</code>的默认组为<code>user1</code>）</td>
+<td>默认用户组可能不同，例如第一个用户的默认组可能为<code>sudo</code>或<code>admin</code></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>SELinux（Security-Enhanced Linux）</strong></td>
+<td>默认启用SELinux，提供更严格的安全策略，可能影响文件和文件夹的访问权限</td>
+<td>默认不启用SELinux，但提供了AppArmor作为替代的安全模块</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>基本权限指令</p>
+<p>chmod（修改权限）</p>
+<p>chown（修改所有者）</p>
 <h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><h5 id="k8s"><a href="#k8s" class="headerlink" title="k8s"></a>k8s</h5><h5 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h5><h6 id="检查docker状态"><a href="#检查docker状态" class="headerlink" title="检查docker状态"></a>检查docker状态</h6><pre><code>systemctl status docker</code></pre><h6 id="重启docker"><a href="#重启docker" class="headerlink" title="重启docker"></a>重启docker</h6><pre><code>systemctl restart docker
 
 service docker restart</code></pre><h6 id="systemctl和service区别"><a href="#systemctl和service区别" class="headerlink" title="systemctl和service区别"></a>systemctl和service区别</h6><p>基于不同的服务管理工具</p>
@@ -1937,7 +1989,7 @@ MySQL主从复制主库配置1、修改配置文件
 
             
             &nbsp; | &nbsp;字数统计:&nbsp;
-            <span class="white-color">34.5k</span> 字
+            <span class="white-color">34.9k</span> 字
             
 
             
